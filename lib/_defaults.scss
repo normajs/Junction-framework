@@ -1,0 +1,49 @@
+// ------------------------------------
+//   $DEBUG
+// ------------------------------------
+
+// Debug mode will visually highlight any potential markup/accessibility quirks
+// in the browser. Set to `true` or `false`.
+$debug-mode: false!default;
+
+
+
+
+
+// ------------------------------------
+//   $BORDER-BOX
+// ------------------------------------
+
+// Do you want all elements to adopt `box-sizing:border-box;` as per
+// paulirish.com/2012/box-sizing-border-box-ftw ?
+
+$global-border-box: true!default;
+
+
+
+
+
+// ------------------------------------
+//   $BASE
+// ------------------------------------
+
+
+$base-font-size: 22px!default;
+$base-line-height: 30px!default;
+$base-icon-size: 8px!default;
+$base-font-family: sans-serif!default;
+
+
+// -----------------------------------
+//    $FRAMEWORK VARIABLES
+// -----------------------------------
+$base-spacing-unit: $base-line-height!default;
+$half-spacing-unit: $base-spacing-unit / 2!default;
+$line-height-ratio: $base-line-height / $base-font-size;
+
+
+// -----------------------------------
+//    $COMPLEX-OBJECTS
+// -----------------------------------
+$use-grids: true !default;
+$use-widths: true !default;

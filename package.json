@@ -1,0 +1,30 @@
+{
+  "name": "holtzmann-framework",
+  "version": "0.1.0",
+  "description": "CSS layout framework for the Holtzmann Library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/normajs/holtzmann-framework.git"
+  },
+  "keywords": [
+    "sass",
+    "framework"
+  ],
+  "author": "NewSpring Web",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/normajs/holtzmann-framework/issues"
+  },
+  "homepage": "https://github.com/normajs/holtzmann-framework",
+  "devDependencies": {
+    "norma-sass": "0.0.9"
+  },
+  "dependencies": {
+    "holtzmann-mixins": "^0.1.1",
+    "normalize-sass": "^1.0.0"
+  }
+}
