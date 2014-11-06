@@ -1,0 +1,9 @@
+
+@if $use-lists == true {
+  // Remove vertical spacing from nested lists.
+
+  li > ul,
+  li > ol {
+    margin-bottom: 0;
+  }
+}

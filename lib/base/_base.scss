@@ -3,6 +3,10 @@
   html {
     -webkit-font-smoothing: antialiased;
 
+    overflow-y: scroll;
+
+    min-height: 100%;
+
     color: $base-font-color;
 
     font-size: 100%;

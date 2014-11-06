@@ -1,0 +1,13 @@
+
+@if $use-sections == true {
+  section {
+    overflow: hidden;
+
+    width: 100%;
+    margin: 0 auto;
+
+    > .shell {
+      background-color: inherit;
+    }
+  }
+}
