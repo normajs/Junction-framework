@@ -1,0 +1,21 @@
+
+@if $use-fixed-ratios == true {
+  // $ratios: (
+  //   'ratio--portrait'      '1' '2',
+  //   'ratio--square'        '1' '1',
+  //   'ratio--landscape'     '2' '1',
+  //   'ratio--thin'          '4' '1',
+  // ) !default;
+
+  @each $ratio in $ratios {
+    // Grab the alias and the values from their respective locations in
+    // the list.
+    $alias: nth($ratio, 1);
+    $width: nth($ratio, 2);
+    $height: nth($ratio, 3);
+
+    @include namespace($alias) {
+      @include fixed-ratio(number($width), number($height));
+    }
+  }
+}

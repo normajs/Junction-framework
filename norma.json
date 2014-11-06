@@ -1,7 +1,7 @@
 {
   "name": "Holtzmann-framework",
   "sass": {
-    "src": "lib/**",
+    "src": "lib/**/*",
     "dest": "out/"
   }
 }

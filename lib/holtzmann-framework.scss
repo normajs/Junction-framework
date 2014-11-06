@@ -43,12 +43,31 @@
 @import 'defaults';
 
 // Mixin Library
-@import '../node_modules/holtzmann-mixins/mixins/holtzmann-mixins';
+@import '../node_modules/holtzmann-mixins/lib/holtzmann-mixins';
 
 // Normalize
 @import '../node_modules/normalize-sass/normalize';
 
 
-// Complex Objects
-@import 'grids';
-@import 'widths';
+// Base Sheets
+@import './base/reset';
+@import './base/base';
+@import './base/images';
+@import './base/body-copy';
+@import './base/headings';
+
+
+// Helper Objects
+@import './helpers/widths';
+@import './helpers/hidden';
+
+
+
+// Layout Objects
+@import './layout/grids';
+@import './layout/floating';
+@import './layout/alignment';
+@import './layout/fixed-ratios';
+
+// Trump Objects
+@import './trumps/spacing';

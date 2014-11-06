@@ -1,0 +1,14 @@
+
+@if $use-base == true {
+  html {
+    -webkit-font-smoothing: antialiased;
+
+    color: $base-font-color;
+
+    font-size: 100%;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+}

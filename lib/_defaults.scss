@@ -20,18 +20,48 @@ $debug-mode: false!default;
 $global-border-box: true!default;
 
 
+// ------------------------------------
+//   $RATIOS
+// ------------------------------------
+$ratios: (
+  'ratio--portrait'      '1' '2',
+  'ratio--square'        '1' '1',
+  'ratio--landscape'     '2' '1',
+  'ratio--thin'          '4' '1',
+) !default;
 
 
 
 // ------------------------------------
-//   $BASE
+//   $BASE-VARIABLES
 // ------------------------------------
 
 
 $base-font-size: 22px!default;
 $base-line-height: 30px!default;
 $base-icon-size: 8px!default;
+$base-font-color: #3d3d3d!default;
 $base-font-family: sans-serif!default;
+
+
+// ------------------------------------
+//   $BASE-VARIABLES
+// ------------------------------------
+$base-icon-size: 48px!default;
+$handheld-base-font-size: 20px!default;
+$handheld-base-line-height: 26px!default;
+$h1: ($base-font-size * 2.8)!default;
+$h2: ($base-font-size * 2.6)!default;
+$h3: ($base-font-size * 1.3)!default;
+$h4: ($base-font-size * 1.25)!default;
+$h5: ($base-font-size * 1.1)!default;
+$h6: ($base-font-size * .9)!default;
+$handheld-h1: ($base-font-size * 2.5)!default;
+$handheld-h2: ($base-font-size * 1.6)!default;
+$handheld-h3: ($base-font-size * 1.2)!default;
+$handheld-h4: ($base-font-size * 1.25)!default;
+$handheld-h5: ($base-font-size * 1.1)!default;
+$handheld-h6: ($base-font-size * .9)!default;
 
 
 // -----------------------------------
@@ -42,8 +72,37 @@ $half-spacing-unit: $base-spacing-unit / 2!default;
 $line-height-ratio: $base-line-height / $base-font-size;
 
 
+
+
 // -----------------------------------
-//    $COMPLEX-OBJECTS
+//    $BASE-OBJECTS
 // -----------------------------------
-$use-grids: true !default;
+$use-reset: true !default;
+$use-base: true !default;
+$use-body-copy: true !default;
+$use-images: true !default;
+$use-headings: true !default;
+
+
+// -----------------------------------
+//    $HELPER-OBJECTS
+// -----------------------------------
+
 $use-widths: true !default;
+$use-hidden: true !default;
+
+
+
+// -----------------------------------
+//    $LAYOUT-OBJECTS
+// -----------------------------------
+$use-alignment: true !default;
+$use-fixed-ratios: true !default;
+$use-floating: true !default;
+$use-grids: true !default;
+
+
+// -----------------------------------
+//    $TRUMPS-OBJECTS
+// -----------------------------------
+$use-spacing: true !default;

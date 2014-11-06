@@ -1,0 +1,36 @@
+
+@if $use-floating == true {
+  %_floating {
+    @include floating(middle, center, floating__item);
+  }
+
+  .floating,
+  .floating--left,
+  .floating--right,
+  .floating--top,
+  .floating--bottom {
+    @extend %_floating;
+  }
+
+  .floating--left {
+    text-align: left;
+  }
+
+  .floating--right {
+    text-align: right;
+  }
+
+  .floating--top {
+    &:before,
+    .floating__item {
+      vertical-align: top;
+    }
+  }
+
+  .floating--bottom {
+    &:before,
+    .floating__item {
+      vertical-align: bottom;
+    }
+  }
+}
