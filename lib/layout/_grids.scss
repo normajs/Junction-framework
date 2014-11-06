@@ -1,24 +1,27 @@
 
 @if $use-grids == true {
-
   .grid {
-    margin-left: -$base-spacing-unit;
-    list-style: none;
     margin-bottom: 0;
+    margin-left: -$base-spacing-unit;
+
+    list-style: none;
   }
 
 
   .grid > .grid {
-      margin-left: 0;
+    margin-left: 0;
   }
 
   %_grid__item {
+    position: relative;
+
     display: inline-block;
+
     width: 100%;
     padding-left: $base-spacing-unit;
-    position: relative;
+
     vertical-align: top;
-    @if $global-border-box == false{
+    @if $global-border-box == false {
       @include vendor(box-sizing, border-box);
     }
   }
@@ -29,7 +32,7 @@
 
   .grid__item--padded {
     @extend %_grid__item;
+
     margin-bottom: $base-spacing-unit;
   }
-
 }
