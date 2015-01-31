@@ -1,6 +1,6 @@
 {
   "name": "holtzmann-framework",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "CSS layout framework for the Holtzmann Library",
   "main": "index.js",
   "scripts": {
@@ -20,11 +20,9 @@
     "url": "https://github.com/normajs/holtzmann-framework/issues"
   },
   "homepage": "https://github.com/normajs/holtzmann-framework",
-  "devDependencies": {
-    "norma-sass": "0.0.9"
-  },
   "dependencies": {
-    "holtzmann-mixins": "^0.1.1",
+    "holtzmann-mixins": "^0.1.3",
+    "norma-sass": "^0.3.4",
     "normalize-sass": "^1.0.0"
   }
 }

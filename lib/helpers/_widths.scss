@@ -1,3 +1,5 @@
+
+
 @mixin _widths ($alias) {
   // One-whole
   .#{$alias}one-whole {
@@ -140,7 +142,7 @@
 }
 
 @if $use-widths {
-  @include _widths('');
+  @include _widths("");
 
 
   @each $breakpoint in $breakpoints {
@@ -148,7 +150,7 @@
     $condition: nth($breakpoint, 2);
 
     @include media-query($alias) {
-      @include _widths('#{$alias}-');
+      @include _widths("#{$alias}-");
     }
   }
 }

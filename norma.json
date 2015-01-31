@@ -1,7 +1,11 @@
 {
   "name": "Holtzmann-framework",
-  "sass": {
-    "src": "lib/**/*",
-    "dest": "out/"
+  "tasks":{
+    "sass": {
+      "src": "lib/**/*",
+      "dest": "out/",
+      "comb": true,
+      "lint": true
+    }
   }
 }
