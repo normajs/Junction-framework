@@ -42,12 +42,11 @@
 // Default variables
 @import "defaults";
 
-// Mixin Library
+// Mixins
 @import "../node_modules/holtzmann-mixins/lib/holtzmann-mixins";
 
 // Normalize
 @import "../node_modules/normalize-sass/normalize";
-
 
 // Base Sheets
 @import "./base/reset";
@@ -60,12 +59,6 @@
 @import "./base/horizontal-rules";
 
 
-// Helper Objects
-@import "./helpers/widths";
-@import "./helpers/hidden";
-
-
-
 // Layout Objects
 @import "./layout/grids";
 @import "./layout/floating";
@@ -73,6 +66,10 @@
 @import "./layout/fixed-ratios";
 
 
+// Helper Objects
+@import "./helpers/widths";
+
 
 // Trump Objects
 @import "./trumps/spacing";
+@import "./trumps/hidden";
