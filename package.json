@@ -21,9 +21,7 @@
   },
   "homepage": "https://github.com/normajs/holtzmann-framework",
   "dependencies": {
-    "holtzmann-mixins": "^0.1.3",
     "norma-copy": "^0.4.0",
-    "norma-sass": "^0.4.4",
-    "normalize-sass": "^1.0.0"
+    "norma-sass": "^0.4.4"
   }
 }

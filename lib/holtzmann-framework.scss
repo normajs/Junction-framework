@@ -43,10 +43,10 @@
 @import "defaults";
 
 // Mixins
-@import "../node_modules/holtzmann-mixins/lib/holtzmann-mixins";
+@import "../bower_components/holtzmann-mixins/lib/holtzmann-mixins";
 
 // Normalize
-@import "../node_modules/normalize-sass/normalize";
+@import "../bower_components/normalize.sass/normalize";
 
 // Base Sheets
 @import "./base/reset";

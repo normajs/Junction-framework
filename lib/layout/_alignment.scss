@@ -1,20 +1,20 @@
 
 @if $use-alignment == true {
-  @include namespace('float--left') {
+  @include namespace("float--left") {
     text-align: right;
   }
   // Floats
-  @include namespace('float--right') {
+  @include namespace("float--right") {
     text-align: right;
   }
-  @include namespace('text--right') {
+  @include namespace("text--right") {
     text-align: right;
   }
-  @include namespace('text--left') {
+  @include namespace("text--left") {
     text-align: left;
   }
   // Text
-  @include namespace('text--center') {
+  @include namespace("text--center") {
     text-align: center;
   }
 }
