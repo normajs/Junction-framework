@@ -1,0 +1,11 @@
+{
+  "name": "holtzmann-field",
+  "tasks": {
+    "sass": {
+      "src": "./lib/**/*",
+      "dest": "./test/css",
+      "comb": true,
+      "lint": true
+    }
+  }
+}

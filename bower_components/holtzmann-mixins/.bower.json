@@ -1,0 +1,31 @@
+{
+  "name": "holtzmann mixins",
+  "homepage": "https://github.com/normajs/holtzmann-mixins",
+  "authors": [
+    "jbaxleyiii <james@whitefloordesign.com>"
+  ],
+  "description": "Mixin library from the holtzmann framework",
+  "main": "lib/_holtzmann-mixins.scss",
+  "keywords": [
+    "sass",
+    "holtzmann"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "26c3280bf9",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "26c3280bf95d017f900c5669ccab14a88f75510d"
+  },
+  "_source": "git://github.com/NewSpring/holtzmann-mixins.git",
+  "_target": "*",
+  "_originalSource": "NewSpring/holtzmann-mixins"
+}
