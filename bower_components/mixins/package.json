@@ -1,7 +1,7 @@
 {
-  "name": "holtzmann-mixins",
+  "name": "junctions-mixins",
   "version": "0.1.3",
-  "description": "Mixin libray for the Holtzmann Framework",
+  "description": "Mixin libray for the Junction Framework",
   "repository": {
     "type": "git",
     "url": "https://github.com/normajs/holtzmann-mixins.git"

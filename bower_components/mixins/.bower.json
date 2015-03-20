@@ -19,13 +19,13 @@
     "test",
     "tests"
   ],
-  "_release": "26c3280bf9",
+  "_release": "46046351e4",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "26c3280bf95d017f900c5669ccab14a88f75510d"
+    "commit": "46046351e41cf135c12aab9a6bd95884cae6a2c1"
   },
-  "_source": "git://github.com/NewSpring/holtzmann-mixins.git",
+  "_source": "git://github.com/NewSpring/junction-mixins.git",
   "_target": "*",
-  "_originalSource": "NewSpring/holtzmann-mixins"
+  "_originalSource": "NewSpring/junction-mixins"
 }

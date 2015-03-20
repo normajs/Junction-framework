@@ -1,7 +1,7 @@
-Holtzmann-Field
+Junction-Mixins
 ===============
 
-Sass Mixin library that powers the Holtzmann front-end framework
+Sass Mixin library that powers the Junction front-end framework
 
 ### Functions
 
@@ -22,6 +22,7 @@ Sass Mixin library that powers the Holtzmann front-end framework
  - $use-keyframes
  - $use-columns
  - $use-shapes
+ - $use-typography
  - $use-newspring-icon
 
 

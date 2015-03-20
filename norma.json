@@ -1,9 +1,9 @@
 {
-  "name": "Holtzmann-framework",
+  "name": "junction-framework",
   "tasks":{
     "bower": {
       "packages": {
-        "holtzmann-mixins": "NewSpring/holtzmann-mixins",
+        "mixins": "NewSpring/junction-mixins",
         "normalize.sass": "~2.0.0"
       }
     },
@@ -14,7 +14,7 @@
       "lint": true
     },
     "copy": {
-      "src": "out/holtzmann-framework",
+      "src": "out/framework",
       "dest": "./",
       "order": "post",
       "ext": ["css"]

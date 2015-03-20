@@ -1,11 +1,11 @@
 // ============================================================
 //
-//  Holtzmann-Framework -- Read First
+//  Junction-Framework -- Read First
 //
 //
 //  $WARNING
 //
-//  The Holtzmann-Framework, being an OO framework, work in
+//  The Junction-Framework, being an OO framework, work in
 //  keeping with the open/closed principle. The variables
 //  you set previously are now being used throughout the core
 //  to style everything we need for a base. Any custom styles SHOULD
@@ -43,7 +43,7 @@
 @import "defaults";
 
 // Mixins
-@import "../bower_components/holtzmann-mixins/lib/holtzmann-mixins";
+@import "../bower_components/mixins/lib/mixins";
 
 // Normalize
 @import "../bower_components/normalize.sass/normalize";
