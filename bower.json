@@ -1,7 +1,0 @@
-{
-  "name": "bower_components",
-  "dependencies": {
-    "holtzmann-mixins": "normajs/holtzmann-mixins",
-    "normalize.sass": "~2.0.0"
-  }
-}

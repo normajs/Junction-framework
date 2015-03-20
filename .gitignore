@@ -3,4 +3,5 @@ out/
 .DS_Store
 node_modules/
 test
-bower_components
+
+.norma

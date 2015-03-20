@@ -3,7 +3,7 @@
   "tasks":{
     "bower": {
       "packages": {
-        "holtzmann-mixins": "normajs/holtzmann-mixins",
+        "holtzmann-mixins": "NewSpring/holtzmann-mixins",
         "normalize.sass": "~2.0.0"
       }
     },
