@@ -34,7 +34,6 @@ $use-typography: true!default;
           // loop through media query styles
           @each $_query, $_query-styles in map-get($_styles, "media-query") {
 
-            @warn $_query, $_query-styles;
             @include media-query($_query) {
               #{$_element} {
                 @each $_property, $_value in $_query-styles {
