@@ -1,4 +1,6 @@
 
+$use-vendor: true!default;
+
 @if $use-vendor == true {
 
   // The vendor mixin prefixes a value with vendor

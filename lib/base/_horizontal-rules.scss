@@ -1,4 +1,6 @@
 
+$use-horizontal-rules: true !default;
+
 @if $use-horizontal-rules == true {
   hr {
     display: block;

@@ -24,6 +24,7 @@
   z-index: 1;
 }
 
+$use-fixed-ratio: true!default;
 
 @if $use-fixed-ratio == true {
   @if $use-positions == true {

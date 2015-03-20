@@ -1,4 +1,6 @@
 
+$use-alignment: true !default;
+
 @if $use-alignment == true {
   @include namespace("float--left") {
     text-align: right;

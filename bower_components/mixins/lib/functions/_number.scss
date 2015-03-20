@@ -1,4 +1,6 @@
 
+$use-number: true!default;
+
 @if $use-number == true {
   @function number($string) {
     // Matrices

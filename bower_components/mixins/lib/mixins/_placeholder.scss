@@ -1,5 +1,7 @@
 
-@if $use-placeholder  == true {
+$use-placeholder: true!default;
+
+@if $use-placeholder == true {
   // This mixin allows for vendor prefixed placeholder
   // values to be outputted all at once
 

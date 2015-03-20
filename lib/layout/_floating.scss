@@ -1,4 +1,6 @@
 
+$use-floating: true !default;
+
 @if $use-floating == true {
   %_floating {
     @include floating(middle, center, floating__item);

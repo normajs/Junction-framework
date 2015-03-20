@@ -1,4 +1,6 @@
 
+$use-spacing: true !default;
+
 @if $use-spacing == true {
   // Margins
   .push {

@@ -1,3 +1,6 @@
+
+$use-images: true !default;
+
 @if $use-images == true {
   // Fluid Images
   img {

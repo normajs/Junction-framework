@@ -1,4 +1,6 @@
 
+$use-lists: true !default;
+
 @if $use-lists == true {
   // Remove vertical spacing from nested lists.
 

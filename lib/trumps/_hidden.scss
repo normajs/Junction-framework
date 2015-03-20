@@ -1,4 +1,5 @@
 
+$use-hidden: true !default;
 
 @if $use-hidden == true {
   @include namespace("visuallyhidden") {

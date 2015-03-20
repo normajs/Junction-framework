@@ -1,4 +1,6 @@
 
+$use-extend: true!default;
+
 @if $use-extend == true {
   // Function for replicating javascript extend method of defaluts
   // http://hugogiraudel.com/2014/05/05/bringing-configuration-objects-to-sass/

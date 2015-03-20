@@ -1,5 +1,7 @@
 
-// @if $use-fixed-ratios == true {
+$use-fixed-ratios: true !default;
+
+@if $use-fixed-ratios == true {
 // $ratios: (
 //   ratio--portrait: (
 //     width: 1,
@@ -19,22 +21,22 @@
 //   )
 // ) !default;
 
-@each $ratio, $_ratio in $ratios {
-  // Grab the alias and the values from their respective locations in
-  // the list.
-  $alias: "#{$ratio}";
-  $width: map-get($_ratio, "width");
-  $height: map-get($_ratio, "height");
+  @each $ratio, $_ratio in $ratios {
+    // Grab the alias and the values from their respective locations in
+    // the list.
+    $alias: "#{$ratio}";
+    $width: map-get($_ratio, "width");
+    $height: map-get($_ratio, "height");
 
-  @include namespace($alias) {
-    @include fixed-ratio(number($width), number($height));
+    @include namespace($alias) {
+      @include fixed-ratio(number($width), number($height));
+    }
+  }
+
+  %_ratio__item {
+    @include absolute(top 0 bottom 0 left 0 right 0);
+  }
+  .ratio__item {
+    @extend %_ratio__item;
   }
 }
-
-%_ratio__item {
-  @include absolute(top 0 bottom 0 left 0 right 0);
-}
-.ratio__item {
-  @extend %_ratio__item;
-}
-// }

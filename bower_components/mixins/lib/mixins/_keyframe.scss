@@ -1,5 +1,7 @@
 
-@if $use-keyframes  == true {
+$use-keyframes: true!default;
+
+@if $use-keyframes == true {
   // Create CSS keyframe animations for all vendors in one go, e.g.:
   //
   //   .foo{

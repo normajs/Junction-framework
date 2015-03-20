@@ -1,4 +1,6 @@
 
+$use-newspring-icon: true!default;
+
 @if $use-newspring-icon == true {
   @if $use-positions == true and $use-shapes == true and $use-vendor == true {
     // ============================================================

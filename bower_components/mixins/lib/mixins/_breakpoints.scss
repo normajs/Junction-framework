@@ -1,4 +1,6 @@
 
+$use-breakpoints: true!default;
+
 @if $use-breakpoints  == true {
   $breakpoints: (
   //Mobile devices meant to be held with one hand

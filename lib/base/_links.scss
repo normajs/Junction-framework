@@ -1,4 +1,6 @@
 
+$use-links: true !default;
+
 @if $use-links == true {
   a {
     position: relative;

@@ -1,4 +1,6 @@
 
+$use-floating: true!default;
+
 @if $use-floating == true {
   // ============================================================
   //
@@ -31,7 +33,7 @@
   //     .container {
   //         @include floating(middle, center, floated);
   //     }
-  // 
+  //
   //
   //    [1]: slight margin right to handle whitespace issues
   //

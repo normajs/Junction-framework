@@ -1,4 +1,6 @@
 
+$use-map: true!default;
+
 @if $use-map == true {
   // map-fetch($map, $keys)
   //

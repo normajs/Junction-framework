@@ -1,4 +1,6 @@
 
+$use-namespace: true!default;
+
 @if $use-namespace == true {
   @if $use-breakpoints == true {
     @mixin namespace($name, $_breakpoints: $breakpoints) {

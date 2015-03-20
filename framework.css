@@ -389,6 +389,7 @@ html {
 	overflow-y: scroll;
 	min-height: 100%;
 	font-size: 100%;
+	color: #3d3d3d;
 }
 
 body {
@@ -432,6 +433,19 @@ h5 {
 p {
 	font-size: 1.25em;
 	line-height: 1.25;
+}
+
+.font--dark {
+	color: #303030;
+}
+
+.font--light {
+	color: #adadad;
+}
+
+.font--brand,
+.font--primary {
+	color: #6bac43;
 }
 
 a {

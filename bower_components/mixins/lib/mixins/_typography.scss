@@ -1,4 +1,6 @@
 
+$use-typography: true!default;
+
 @if $use-typography == true {
 
   @mixin typography {
