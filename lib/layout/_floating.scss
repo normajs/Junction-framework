@@ -4,23 +4,22 @@
     @include floating(middle, center, floating__item);
   }
 
-  .floating,
-  .floating--left,
-  .floating--right,
-  .floating--top,
-  .floating--bottom {
+  .floating {
     @extend %_floating;
   }
 
   .floating--left {
+    @extend %_floating;
     text-align: left;
   }
 
   .floating--right {
+    @extend %_floating;
     text-align: right;
   }
 
   .floating--top {
+    @extend %_floating;
     &:before,
     .floating__item {
       vertical-align: top;
@@ -28,6 +27,7 @@
   }
 
   .floating--bottom {
+    @extend %_floating;
     &:before,
     .floating__item {
       vertical-align: bottom;

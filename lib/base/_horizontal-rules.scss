@@ -4,14 +4,13 @@
     display: block;
 
     width: 100%;
+    // typically used after a section which
+    // will end with margin-bottom
+    // so make the top less space than the bottom
     margin-top: $base-spacing-unit;
-    margin-right: auto;
     margin-bottom: $base-spacing-unit*2;
-    margin-left: auto;
     padding: 0;
 
-    border-style: inset;
-    border-right: 0;
-    border-left: 0;
+
   }
 }

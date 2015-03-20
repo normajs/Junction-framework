@@ -1,10 +1,14 @@
 
 @if $use-grids == true {
-  .grid {
+  %_grid {
     margin-bottom: 0;
     margin-left: -$base-spacing-unit;
 
     list-style: none;
+  }
+
+  .grid {
+    @extend %_grid;
   }
 
   .grid > .grid {
@@ -28,6 +32,7 @@
   .grid__item {
     @extend %_grid__item;
   }
+
 
   .grid__item--padded {
     @extend %_grid__item;

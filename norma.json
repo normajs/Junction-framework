@@ -1,6 +1,12 @@
 {
   "name": "Holtzmann-framework",
   "tasks":{
+    "bower": {
+      "packages": {
+        "holtzmann-mixins": "normajs/holtzmann-mixins",
+        "normalize.sass": "~2.0.0"
+      }
+    },
     "sass": {
       "src": "lib/**/*",
       "dest": "out/",
