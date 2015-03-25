@@ -1,0 +1,9 @@
+
+$use-shapes: true !default;
+
+@if $use-shapes == true {
+  .circle,
+  .round {
+    @extend %_circle;
+  }
+}

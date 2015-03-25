@@ -1,0 +1,25 @@
+
+$use-icons: true!default;
+
+@if $use-icons == true {
+  %_icon {
+    position: relative;
+
+    width: ($icon-size + ($border-size*2));
+    height: ($icon-size + ($border-size*2));
+  }
+
+  .icon {
+    @extend %_icon;
+  }
+
+  &[class*="fa-"] {
+    @extend %_icon;
+
+    margin-bottom: 0;
+
+    text-align: center;
+
+    line-height: ($icon-size + ($border-size*2));
+  }
+}

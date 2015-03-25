@@ -104,6 +104,12 @@
 	z-index: 1;
 }
 
+.circle,
+.round {
+	border-radius: 50%;
+	content: "";
+}
+
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 
 html {
@@ -405,6 +411,37 @@ img[height] {
 	max-width: none;
 }
 
+.background,
+.background--fill,
+.background--cover,
+.background--right,
+.background--left,
+.background--fixed {
+	position: relative;
+	overflow: hidden;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.background--fill,
+.background--cover {
+	background-size: cover;
+}
+
+.background--right {
+	background-position: center right;
+}
+
+.background--left {
+	background-position: center left;
+}
+
+.background--fixed {
+	background-attachment: fixed;
+	background-position: top;
+	background-size: 100%;
+}
+
 h1 {
 	font-size: 3.375em;
 	line-height: 1.05;
@@ -583,6 +620,11 @@ hr {
 	right: 0;
 	bottom: 0;
 	left: 0;
+}
+
+.outlined {
+	border: 3px solid #6bac43;
+	border-radius: 2px;
 }
 
 .one-whole {

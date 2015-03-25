@@ -13,4 +13,49 @@ $use-images: true !default;
   img[height] {
     max-width: none;
   }
+
+  // base background element
+  %_background {
+    position: relative; // is this needed?
+
+    overflow: hidden;
+
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  .background {
+    @extend %_background;
+  }
+
+  // cover background-image
+  .background--fill,
+  .background--cover {
+    @extend %_background;
+
+    background-size: cover;
+  }
+
+  // shift image to the right
+  .background--right {
+    @extend %_background;
+
+    background-position: center right;
+  }
+
+  // shift image to the left
+  .background--left {
+    @extend %_background;
+
+    background-position: center left;
+  }
+
+  // fixed image for fun scrolling effects
+  .background--fixed {
+    @extend %_background;
+
+    background-attachment: fixed;
+    background-position: top;
+    background-size: 100%;
+  }
 }
