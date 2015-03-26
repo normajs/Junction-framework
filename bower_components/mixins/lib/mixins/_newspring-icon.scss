@@ -15,7 +15,7 @@ $use-newspring-icon: true!default;
     //
     // ============================================================
 
-    @mixin _newspring--icon-color ($_options) {
+    @mixin _newspring--icon-color ($_options: ()) {
 
       $_options: extend((
         size: 48px,
@@ -23,6 +23,11 @@ $use-newspring-icon: true!default;
         add-on: 'n',
         add-on-color: #fff
       ), $_options);
+
+
+      $add-on: map-get($_options, add-on);
+      $color: map-get($_options, color);
+      $add-on-color: map-get($_options, add-on-color);
 
 
       // If you want the NewSpring n
@@ -145,7 +150,7 @@ $use-newspring-icon: true!default;
     }
 
 
-    @mixin newspring--icon ($_options) {
+    @mixin newspring--icon ($_options: ()) {
 
       $_options: extend((
         size: 48px,
@@ -161,7 +166,7 @@ $use-newspring-icon: true!default;
       height: map-get($_options, size);
 
       // If you want the n in the mark
-      @if $add-on == 'n' {
+      @if map-get($_options, add-on) == 'n' {
         @extend %_newspring-icon-n;
       }
     }

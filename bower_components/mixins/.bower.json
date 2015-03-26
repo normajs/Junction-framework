@@ -19,11 +19,11 @@
     "test",
     "tests"
   ],
-  "_release": "2e27b264db",
+  "_release": "cc557b95e4",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "2e27b264dbfac47238107843ecbdde8acb9d3093"
+    "commit": "cc557b95e4f34cadab797c8c76eef7ba48dd02fa"
   },
   "_source": "git://github.com/NewSpring/junction-mixins.git",
   "_target": "*",
