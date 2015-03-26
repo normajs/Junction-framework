@@ -15,9 +15,16 @@ $use-newspring-icon: true!default;
     //
     // ============================================================
 
-    @mixin _newspring--icon-color (
-    $color: #6bac43, $add-on: 'n', $add-on-color: #fff
-    ) {
+    @mixin _newspring--icon-color ($_options) {
+
+      $_options: extend((
+        size: 48px,
+        color: #6bac43,
+        add-on: 'n',
+        add-on-color: #fff
+      ), $_options);
+
+
       // If you want the NewSpring n
       @if $add-on == 'n' {
         // Set background color
@@ -33,6 +40,8 @@ $use-newspring-icon: true!default;
           background-color: $color;
         }
       }
+
+
       // If you want stripes
       @elseif $add-on == 'stripes' {
         //set stripe size
@@ -54,24 +63,6 @@ $use-newspring-icon: true!default;
       @else {
         // Set background color
         background-color: $color;
-      }
-
-      &.outlined {
-        border-color: $color;
-        background-color: transparent;
-
-        &:before {
-          border-color: $color;
-          // Set color based on variable
-          background-color: transparent;
-        }
-
-        &:after {
-          border-color: $color;
-          border-bottom-color: transparent;
-          // Set color based on background variable
-          background-color: transparent;
-        }
       }
     }
 
@@ -154,54 +145,24 @@ $use-newspring-icon: true!default;
     }
 
 
-    @mixin newspring--icon (
-    $size, $color: #6bac43, $add-on: 'n', $add-on-color: #fff
-    ) {
-      // Set sizing variables for small and large
-      $small: $size * .5;
-      $large: ($size * 2);
+    @mixin newspring--icon ($_options) {
 
-      @include newspring--icon-color($color, $add-on, $add-on-color);
+      $_options: extend((
+        size: 48px,
+        color: #6bac43,
+        add-on: 'n',
+        add-on-color: #fff
+      ), $_options);
+
+      @include _newspring--icon-color($_options);
       // set base width and height from variable
 
-      width: $size;
-      height: $size;
-
-
-
-      &.icon--small {
-        // set base width and height from variable
-        width: $small;
-        height: $small;
-      }
-
-      &.icon--large {
-        // set base width and height from variable
-        width: $large;
-        height: $large;
-      }
-
-      &.outlined {
-        border-width: $border-size;
-        border-style: solid;
-      }
-
-
+      width: map-get($_options, size);
+      height: map-get($_options, size);
 
       // If you want the n in the mark
       @if $add-on == 'n' {
         @extend %_newspring-icon-n;
-
-        &.outlined {
-          &:before {
-            border-width: $border-size;
-            border-style: solid;
-          }
-          &:after {
-            border-width: $border-size;
-            border-style: solid;
-          }
-        }
       }
     }
   } @else {

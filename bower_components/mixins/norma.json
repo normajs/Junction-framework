@@ -4,7 +4,7 @@
     "sass": {
       "src": "./lib/**/*",
       "dest": "./test/css",
-      "comb": true,
+      "comb": false,
       "lint": true
     }
   }
