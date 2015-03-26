@@ -12,11 +12,13 @@ $use-floating: true !default;
 
   .floating--left {
     @extend %_floating;
+
     text-align: left;
   }
 
   .floating--right {
     @extend %_floating;
+
     text-align: right;
   }
 

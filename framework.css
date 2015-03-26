@@ -512,6 +512,19 @@ hr {
 	padding: 0;
 }
 
+.icon,
+[class*="fa-"] {
+	position: relative;
+	width: 54px;
+	height: 54px;
+}
+
+[class*="fa-"] {
+	margin-bottom: 0;
+	text-align: center;
+	line-height: 54px;
+}
+
 .grid {
 	margin-bottom: 0;
 	margin-left: -25px;

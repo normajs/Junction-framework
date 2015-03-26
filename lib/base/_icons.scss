@@ -5,8 +5,8 @@ $use-icons: true!default;
   %_icon {
     position: relative;
 
-    width: ($icon-size + ($border-size*2));
-    height: ($icon-size + ($border-size*2));
+    width: ($base-icon-size + ($border-size*2));
+    height: ($base-icon-size + ($border-size*2));
   }
 
   .icon {
@@ -20,6 +20,6 @@ $use-icons: true!default;
 
     text-align: center;
 
-    line-height: ($icon-size + ($border-size*2));
+    line-height: ($base-icon-size + ($border-size*2));
   }
 }

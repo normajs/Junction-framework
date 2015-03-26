@@ -41,31 +41,42 @@ $use-buttons: true !default;
   //
   //
   // ============================================================
-  $button-size: $icon-size * .5;
+  // by default this is 48px
+  // we want our btns to end up the same height for one liners
+  $button-height: $base-icon-size;
 
   %btn,
   .btn {
+
+    // round corners into half circles no matter the height
     @include radius(1000px);
 
+    // contain all children elements (like abs position icons)
     position: relative;
 
+    // inline-block btns so they will flow in line with text
     display: inline-block;
+    // don't let anything escape the btn
     overflow: hidden;
 
-    padding: ($button-size/2) + 1 ($button-size * 2) ($button-size/2) - 1;
+    // the + 1 and - 1 help with leading of many fonts where equal
+    // padding doesn't look equal in practice
+    // the /4 is to pad half of the btn
+    padding: ($button-height/4) + 1 ($button-height * 4) ($button-height/4) - 1;
 
     cursor: pointer;
+    text-align: center;
+    vertical-align: middle;
     text-decoration: none;
-    text-align: center,
-    vertical-align: middle,
-    letter-spacing: 1px,
-    text-transform: uppercase
-
-    font-size: $button-size * .85;
-    line-height: 1.33333333;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 
     color: $brand-color;
     border: $border-size solid $brand-color;
+    // these seem like magic numbers, need to investigate
+
+    font-size: $button-size * .85;
+    line-height: 1.33333333;
 
     &:hover {
       color: map-get($colors, light);
@@ -197,7 +208,6 @@ $use-buttons: true !default;
         width: ($button-size * 4);
       }
     }
-
   }
 
 
@@ -282,6 +292,4 @@ $use-buttons: true !default;
       }
     }
   }
-
-
 }
