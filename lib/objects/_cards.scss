@@ -1,0 +1,9 @@
+@if $use-cards == true {
+  .card {
+    margin-bottom: $half-spacing-unit;
+    padding: $half-spacing-unit;
+
+    border-top: 0;
+    background-color: map-get($colors, white);
+  }
+}

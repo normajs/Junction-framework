@@ -1,0 +1,122 @@
+@if $use-overlays == true {
+  // ============================================================
+  //
+  //   $OVERLAY
+  //
+  //   The .overlay class is a complex object class that classfies an
+  //   element as an overlay on all NewSpring Sites
+  //
+  //   @extendable:
+  //     .overlay--light
+  //     .overlay--dark
+  //     .overlay--opaque
+  //
+  //   Used in markup:
+  //
+  //   <div class="overlay"></div>
+  //
+  //   Things the overlay class does:
+  //
+  //     Lorem ipsum Laborum qui magna proident.
+  //
+  //
+  // ============================================================
+
+  // only extend if zindex isn't set
+  @if map-has-key($zindex, overlay) == false {
+    $zindex: extend($zindex,
+      (
+        overlay: 1
+      )
+    );
+  }
+
+
+
+  %_overlay {
+    position: relative;
+    z-index: map-get($zindex, "overlay");
+    &:after {
+      @include vendor(transition, all .1s ease-in-out);
+      @include absolute(top 0 bottom 0 left 0 right 0);
+
+      display: block;
+
+      width: 100%;
+      height: 100%;
+
+      content: "";
+    }
+  }
+
+
+  .overlay {
+    @extend %_overlay;
+  }
+
+  .overlay__item {
+    position: relative;
+    z-index: map-get($zindex, "overlay") + 1;
+  }
+
+  .overlay--solid {
+    @extend %_overlay;
+    &:before {
+      background: rgba(map-get($colors, "dark"), .6);
+    }
+  }
+
+  .overlay--solid-light {
+    @extend %_overlay;
+    &:before {
+      background: rgba(map-get($colors, "dark"), .1);
+    }
+  }
+
+  .overlay--solid-dark {
+    @extend %_overlay;
+    &:before {
+      background: rgba(map-get($colors, "dark"), .8);
+    }
+  }
+
+
+  .overlay--gradient {
+    @extend %_overlay;
+    &:after {
+      top: auto;
+
+      height: 70%;
+
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, transparent), color-stop(100%, #000));
+      background: -webkit-linear-gradient(top, transparent 0%, #000 100%);
+      background:         linear-gradient(to bottom, transparent 0%, #000 100%);
+    }
+  }
+
+  .overlay--gradient-left {
+    @extend %_overlay;
+    &:after {
+      right: auto;
+
+      width: 80%;
+
+      background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(#000, .9)), color-stop(100%, transparent));
+      background: -webkit-linear-gradient(left, rgba(#000, .9) 0%, transparent 100%);
+      background:         linear-gradient(to right, rgba(#000, .9) 0%, transparent 100%);
+    }
+  }
+
+  .overlay--gradient-right {
+    @extend %_overlay;
+    &:after {
+      left: auto;
+
+      width: 80%;
+
+      background: -webkit-gradient(linear, right top, right top, color-stop(0%, rgba(#000, .9)), color-stop(100%, transparent));
+      background: -webkit-linear-gradient(right, rgba(#000, .9) 0%, transparent 100%);
+      background:         linear-gradient(to left, rgba(#000, .9) 0%, transparent 100%);
+    }
+  }
+}

@@ -1,0 +1,100 @@
+@if $use-buttons-social == true {
+  
+  // -----------------------------------
+  //    $BRAND-COLORS
+  // -----------------------------------
+  $brand-colors: (
+    apple: (
+      color: #b4b5b9,
+      icon: "\f179"
+    ),
+    android: (
+     color: #a4c639,
+     icon: "\f17b"
+    ),
+    dropbox: (
+      color: #007ee5,
+      icon: "\f16b"
+    ),
+    facebook: (
+      color: #3b5998,
+      icon: "\f09a"
+    ),
+    foursquare: (
+      color: #0072b1,
+      icon: "\f180"
+    ),
+    github: (
+      color: #4183c4,
+      icon: "\f09b"
+    ),
+    google: (
+      color: #dd4b39,
+      icon: "\f0d5"
+    ),
+    instagram: (
+      color: #3f729b,
+      icon: "\f16d"
+    ),
+    pinterest: (
+      color: #cc2127,
+      icon: "\f231"
+    ),
+    tumblr: (
+      color: #35465c,
+      icon: "\f173"
+    ),
+    twitter: (
+      color: #55acee,
+      icon: "\f099"
+    ),
+    windows: (
+      color: #00bcf2,
+      icon: "\f17a"
+    ),
+    youtube: (
+      color: #b31217,
+      icon: "\f16a"
+    )
+  )!default;
+
+  // -----------------------------------
+  //    $BRANDS
+  // -----------------------------------
+  $brands: (
+    "facebook", "google", "twitter"
+  )!default;
+
+
+  // Social Link Buttons
+  %_btn--social {
+    @extend %_btn--icon;
+
+    text-transform: none;
+
+    &:before {
+      color: map-get($colors, light-color);
+
+      font-family: FontAwesome;
+    }
+
+    &:hover {
+      opacity: .7;
+      color: map-get($colors, light-color);
+    }
+  }
+
+  // Loop through the list of brands selected to make buttons
+  @each $brand in $brands {
+    $_brand: map-fetch($brand-colors, $brand);
+
+    .btn--#{$brand} {
+      @extend %_btn--social;
+
+      background-color: map-get($_brand, "color");
+      &:before {
+        content: map-get($_brand, "icon");
+      }
+    }
+  }
+}

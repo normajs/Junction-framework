@@ -160,6 +160,7 @@ $use-newspring-icon: true!default;
       ), $_options);
 
       @include _newspring--icon-color($_options);
+      @extend %_newspring-icon;
       // set base width and height from variable
 
       width: map-get($_options, size);
