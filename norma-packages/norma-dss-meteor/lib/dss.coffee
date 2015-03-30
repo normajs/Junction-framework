@@ -1,13 +1,14 @@
 
-Through = require "through"
+HTTP = require "http"
 Fs = require "fs"
 Path = require "path"
-Buffer = require("buffer").Buffer
-Handlebars = require "handlebars"
+Querystring = require "querystring"
+Url = require "url"
+
+Through = require "through"
 Dss = require "dss"
-Norma = require "normajs"
-File = require "vinyl"
 Crypto = require "crypto"
+Norma = require "normajs"
 
 
 # handle variables
@@ -34,6 +35,8 @@ Dss.parser "variable", (i, line, block, css) ->
       name: name
       description: line.replace(tokens.join(""), "")
       value: variables[name]
+      markup:
+        example: "$#{name}"
     }
   return
 
@@ -51,9 +54,9 @@ Dss.parser(
 
 
 
-module.exports = (template) ->
+module.exports = (dest) ->
 
-  template or= "index.html"
+  dest or= "localhost:3000/api/v1/blocks"
 
   firstFile = null
   contents = null
@@ -96,33 +99,37 @@ module.exports = (template) ->
 
 
   end = ->
-    config = Norma.config()
-    tmpl = Fs.readFileSync Path.join(__dirname, "./default.handlebars"), {
-      encoding: "utf8"
-    }
 
-    try
-      html = Handlebars.compile(tmpl)({
-        project: config
-        files: contents
-      })
-    catch e
-      Norma.emit "error", e
+    Norma.log "updating application..."
 
-    if html
+    loc = Url.parse dest
 
-      joinedPath = Path.join(firstFile.base, template);
+    options =
+      hostname: loc.hostname
+      path: loc.path
+      method: "POST"
+      headers:
+        "Content-Type": "application/json"
 
-      templateFile = new File({
-        cwd: firstFile.cwd
-        base: firstFile.base
-        path: joinedPath
-        contents: new Buffer html
-      })
+    if loc.port
+      options.port = Number loc.port
 
-      @.emit("data", templateFile)
+    req = HTTP.request options, (res) ->
+      res.setEncoding 'utf8'
+      res.on 'data', (chunk) ->
+        Norma.log "updated app with: #{chunk}"
+        return
+      return
+
+
+    req.write JSON.stringify contents
+
+    req.end()
+
 
     @.emit "end"
+
+
 
 
   return Through read, end

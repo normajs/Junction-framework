@@ -1,6 +1,6 @@
 {
   "name": "junction-framework",
-  "tasks":{
+  "tasks": {
     "bower": {
       "packages": {
         "normalize.sass": "~2.0.0"
@@ -16,11 +16,32 @@
       "src": "out/framework",
       "dest": "./",
       "order": "post",
-      "ext": ["css"]
+      "ext": [
+        "css"
+      ]
     },
-    "dss": {
+    "dss-meteor": {
       "src": "lib/**/*",
-      "dest": "styleguide/"
+      "dest": "http://localhost:3000/api/v1/blocks"
+    },
+    "meteor": {
+      "dev": true,
+      "src": "styleguide",
+      "settings": "styleguide/settings.json",
+      "packages": [
+        "meteor-platform",
+        "iron:router",
+        "iron:location",
+        "meteorhacks:fast-render",
+        "meteorhacks:subs-manager",
+        "cfs:http-methods",
+        "http",
+        "coffeescript"
+      ],
+      "platforms": [
+        "server",
+        "browser"
+      ]
     }
   }
 }

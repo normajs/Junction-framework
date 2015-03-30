@@ -10,7 +10,7 @@ module.exports = (config, name) ->
   name or= "dss"
 
   src = Path.resolve(config.tasks[name].src)
-  dest = Path.resolve(config.tasks[name].dest)
+  dest = config.tasks[name].dest
 
   ###
 
@@ -26,8 +26,7 @@ module.exports = (config, name) ->
       ])
     #   # .pipe $.newer("#{dest}.css")
     #   # .pipe $.plumber()
-      .pipe Dss()
-      .pipe Norma.dest(dest)
+      .pipe Dss(dest)
       .on("error", Norma.log)
 
 

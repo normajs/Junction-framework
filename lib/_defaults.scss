@@ -2,12 +2,12 @@
 // ------------------------------------
 //   $BORDER-BOX
 // ------------------------------------
-
-// Do you want all elements to adopt `box-sizing:border-box;` as per
-// paulirish.com/2012/box-sizing-border-box-ftw ?
+//
 // @name Border Box
 // @variable global-border-box - Do you want all elements to adopt `box-sizing:border-box;`?
 // @link http://paulirish.com/2012/box-sizing-border-box-ftw
+// @description border box is great for padding
+//
 $global-border-box: true!default;
 
 
@@ -34,6 +34,10 @@ $line-height-ratio: $base-line-height / $base-font-size;
 // -----------------------------------
 //    $LAYERS
 // -----------------------------------
+//
+// @name Z-index
+// @variable zindex - object containing all default zindexs for the framework
+//
 $zindex: (
   base: 0,
   modal: 100,
@@ -45,6 +49,10 @@ $zindex: (
 // ------------------------------------
 //   $RATIOS
 // ------------------------------------
+//
+// @name Ratios
+// @variable ratios - object containing all default ratios for the framework
+//
 $ratios: (
   ratio--portrait: (
     width: "1",
@@ -64,6 +72,10 @@ $ratios: (
 // -----------------------------------
 //    $COLORS
 // -----------------------------------
+//
+// @name Colors
+// @variable colors - object containing all default colors for the framework
+//
 $colors: (
   "primary": #6bac43,
   "secondary": #1c683e,

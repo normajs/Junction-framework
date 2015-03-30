@@ -1,5 +1,5 @@
 {
-  "name": "norma-dss",
+  "name": "norma-dss-meteor",
   "type": "package",
   "main": "package.coffee",
   "tasks": {
