@@ -1,0 +1,23 @@
+
+// @name Colours
+// @variable foo - blue
+
+$foo: blue;
+
+
+
+// @name Button
+// @description Your standard form button.
+//
+// @state :hover - Highlights when hovering.
+// @state :disabled - Dims the button when disabled.
+// @state .primary - Indicates button is the primary action.
+// @state .smaller - A smaller button
+// @link https://newspring.cc
+//
+// @markup
+//   <button>This is a button</button>
+
+.btn {
+  color: $foo;
+}

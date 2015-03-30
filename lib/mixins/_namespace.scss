@@ -22,6 +22,6 @@ $use-namespace: true!default;
       }
     }
   } @else {
-    @warn '@namespace depends on @breakpoints';
+    @warn "@namespace depends on @breakpoints";
   }
 }

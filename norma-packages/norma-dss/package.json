@@ -1,0 +1,19 @@
+{
+  "name": "norma-dss",
+  "version": "0.0.1",
+  "description": "dss package for the Norma build tool",
+  "main": "package.coffee",
+  "keywords": [
+    "norma"
+  ],
+  "dependencies": {
+    "crypto": "0.0.3",
+    "dss": "^1.0.4",
+    "dss-parser-variable": "^0.1.0",
+    "gulp-plumber": "^1.0.0",
+    "handlebars": "^3.0.1",
+    "normajs": "^1.2.6",
+    "through": "^2.3.6",
+    "vinyl": "^0.4.6"
+  }
+}

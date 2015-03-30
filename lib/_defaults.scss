@@ -1,11 +1,3 @@
-// ------------------------------------
-//   $DEBUG
-// ------------------------------------
-
-// Debug mode will visually highlight any potential markup/accessibility quirks
-// in the browser. Set to `true` or `false`.
-$debug-mode: false!default;
-
 
 // ------------------------------------
 //   $BORDER-BOX
@@ -13,7 +5,9 @@ $debug-mode: false!default;
 
 // Do you want all elements to adopt `box-sizing:border-box;` as per
 // paulirish.com/2012/box-sizing-border-box-ftw ?
-
+// @name Border Box
+// @variable global-border-box - Do you want all elements to adopt `box-sizing:border-box;`?
+// @link http://paulirish.com/2012/box-sizing-border-box-ftw
 $global-border-box: true!default;
 
 
@@ -82,7 +76,6 @@ $colors: (
   "base": #ddd,
   "alert": #c64f55
 ) !default;
-
 $brand-color: map-get($colors, primary);
 
 // -----------------------------------

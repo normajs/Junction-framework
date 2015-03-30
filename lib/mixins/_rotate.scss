@@ -21,9 +21,9 @@ $use-rotate: true!default;
     // Safari and Chrome
     -webkit-transform: rotate($degree);
     // IE 9
-    -ms-transform: rotate($degree);
+        -ms-transform: rotate($degree);
     // Opera
-    -o-transform: rotate($degree);
-    transform: rotate($degree);
+         -o-transform: rotate($degree);
+            transform: rotate($degree);
   }
 }

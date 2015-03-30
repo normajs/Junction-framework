@@ -13,7 +13,7 @@
   &:before {
     display: block;
 
-    content: '';
+    content: "";
   }
 }
 
@@ -55,7 +55,7 @@ $use-fixed-ratio: true!default;
     // =============================================================
 
 
-    @mixin fixed-ratio($width, $height, $child: 'ratio__item') {
+    @mixin fixed-ratio($width, $height, $child: "ratio__item") {
       // Get percentage based off of width and height variables
       $percentage : ($height/$width * 100%);
 
@@ -67,7 +67,7 @@ $use-fixed-ratio: true!default;
         padding-top: $percentage;
       }
 
-      @if $child == 'ratio__item' {
+      @if $child == "ratio__item" {
       } @else {
         // Set child to fill all of parent element
         .#{$child} {
@@ -76,6 +76,6 @@ $use-fixed-ratio: true!default;
       }
     }
   } @else {
-    @warn '@fixed-ratio depends on @positions'
+    @warn "@fixed-ratio depends on @positions"
   }
 }

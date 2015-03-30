@@ -39,7 +39,7 @@ $use-floating: true!default;
   //
   // ============================================================
 
-  @mixin floating($vertical, $horizontal, $child: 'floated') {
+  @mixin floating($vertical, $horizontal, $child: "floated") {
     text-align: $horizontal;
     &:before {
       display: inline-block;
@@ -47,7 +47,7 @@ $use-floating: true!default;
       height: 100%;
       margin-right: -.25em; // [1]
 
-      content: '';
+      content: "";
       vertical-align: $vertical;
     }
 
