@@ -1,13 +1,17 @@
 @if $use-accordions == true {
-  // ============================================================
   //
-  // $ACCORDION
+  // @name Accordion
+  // @class .accordion
   //
-  // The .accordion class is a complex object class that classfies a
-  // container and children as a single or mulptile accordion
+  // @description The .accordion class is a complex object class that classfies a block and element as a single or mulptile accordion
+  // @complex-object true
   //
-  // Used in markup:
+  // @block .accordion
+  // @element .accordion__item
   //
+  //
+  //
+  // @markup
   // <div class="accordion" data-accordion>
   //
   //   <div class="accordion__item">
@@ -26,7 +30,6 @@
   //
   // </div>
   //
-  // ============================================================
   .accordion {
     > .expanded {
       * {
@@ -47,7 +50,18 @@
   // -----------------------------------
   //    $ACCORDION-ITEM
   // -----------------------------------
-
+  //
+  // @name Accordion Item
+  // @class .accordion__item
+  //
+  // @description child element to the .accordion class
+  // @complex-object true
+  //
+  // @block .accordion
+  // @element .accordion__item
+  //
+  // @state .expanded - applied to show contents of .accordion__item container
+  //
   .accordion__item {
     overflow: hidden;
 

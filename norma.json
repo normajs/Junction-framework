@@ -20,6 +20,11 @@
         "css"
       ]
     },
+    "styleguide-copy": {
+      "@extend": "copy",
+      "src": "out/framework",
+      "dest": "styleguide/client/stylesheets/"
+    },
     "dss-meteor": {
       "src": "lib/**/*",
       "dest": "http://localhost:3000/api/v1/blocks"

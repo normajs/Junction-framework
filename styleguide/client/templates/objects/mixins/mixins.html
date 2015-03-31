@@ -1,0 +1,23 @@
+<template name="mixins">
+  {{#if Template.subscriptionsReady}}
+    {{#each mixins}}
+      <section>
+        <h3> {{name}} </h3>
+        <p>
+          {{description}}
+        </p>
+        {{#each parameter}}
+        <h4>
+          ${{name}}: {{description}}
+        </h4>
+        {{/each}}
+        <pre><code>{{scss.example}}</code></pre>
+        <pre><code>{{css.example}}</code></pre>
+      </section>
+    {{/each}}
+
+  {{else}}
+    Loading...
+  {{/if}}
+
+</template>

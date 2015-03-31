@@ -2,23 +2,30 @@
 $use-columns: true!default;
 
 @if $use-columns == true {
-  // ============================================================
-  //
-  //   $COLUMNS
-  //
-  //   Used to generate columns in text
-  //
-  //   @param count         :  Number
-  //   @param gap           :  px, em
-  //
-  //   Used in sass:
-  //
-  //   .className {
-  //       @include columns(2, 10px)
-  //   }
-  //
-  // ============================================================
 
+
+  // @name columns
+  // @mixin true
+  //
+  // @description Used to generate columns in text
+  //
+  // @parameter count - number of columns desired
+  // @parameter gap - width of gap
+  //
+  // @scss
+  // .className {
+  //   @include columns(2, 10px);
+  // }
+  //
+  // @css
+  // .className {
+  //   -webkit-column-count: 2;
+  //      -moz-column-count: 2;
+  //           column-count: 2;
+  //   -webkit-column-gap: 10px;
+  //      -moz-column-gap: 10px;
+  //           column-gap: 10px;
+  // }
   @mixin columns($count, $gap) {
     -webkit-column-count: $count;
        -moz-column-count: $count;

@@ -1,0 +1,18 @@
+<template name="complexObjects">
+  {{#if Template.subscriptionsReady}}
+    {{#each complexObjects}}
+      <section>
+        <h3> {{name}} </h3>
+        <p>
+          {{description}}
+        </p>
+        {{{markup.example}}}
+        <pre><code>{{markup.example}}</code></pre>
+      </section>
+    {{/each}}
+
+  {{else}}
+    Loading...
+  {{/if}}
+
+</template>

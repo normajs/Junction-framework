@@ -1,0 +1,61 @@
+<template name="variables">
+  {{#if Template.subscriptionsReady}}
+    {{#each variables}}
+      <section>
+        {{> variableDescription}}
+      </section>
+    {{/each}}
+
+  {{else}}
+    Loading...
+  {{/if}}
+
+
+</template>
+
+<template name="variableDescription">
+
+  <h3>
+    {{name}}
+  </h3>
+
+  {{#if description}}
+  <p>
+    {{description}}
+  </p>
+  {{/if}}
+
+  {{#if link}}
+  <p>
+    <a href="{{link}}">{{link}}</a>
+  </p>
+  {{/if}}
+
+  <h4>
+    From {{file}}
+  </h4>
+
+  <div class="grid">
+    {{#each variable}}
+    <div class="grid__item">
+      <h3>
+        <strong>{{name}}</strong>
+      </h3>
+
+      {{#if description}}
+      <p>
+        {{description}}
+      </p>
+      {{/if}}
+
+      <pre><code class="scss">{{markup.example}}: {{value}};</code></pre>
+
+
+    </div>
+    {{/each}}
+  </div>
+
+
+
+
+</template>

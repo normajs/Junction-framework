@@ -26,6 +26,12 @@ $base-line-height: 25px;
 // -----------------------------------
 //    $FRAMEWORK VARIABLES
 // -----------------------------------
+//
+// @name Framework Variables
+// @variable base-spacing-unit - base unit of measurement
+// @variable half-spacing-unit - shorthand of $base-spacing-unit/2
+// @variable line-height-ratio - ratio of base line height / base font size
+//
 $base-spacing-unit: $base-line-height!default;
 $half-spacing-unit: $base-spacing-unit / 2!default;
 $line-height-ratio: $base-line-height / $base-font-size;
