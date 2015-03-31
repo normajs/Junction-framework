@@ -76,7 +76,7 @@ makeBlock = (name) ->
 
     ###
     # remove all prior comments
-    smallBlock = block.split("").splice(i - 1).join("")
+    smallBlock = block.split("").splice(i + name.length + 1).join("")
     # split into indiviual lines for cleaning
     smallBlock = smallBlock.split("\n")
     # remove first whitespace character of each line
@@ -90,16 +90,12 @@ makeBlock = (name) ->
     finalChunk = smallBlock
 
 
-    console.log "checking #{name}..."
 
     _filter = (chunk, index) ->
 
       match = chunk.match /[\t\f ]\@/gm
 
       if not match
-        # safe to split normally
-        console.log "@#{name} is safe to split"
-
         nextParserIndex = chunk.indexOf('@', index)
 
         markupLength = if nextParserIndex > -1 then nextParserIndex else chunk.length
@@ -208,7 +204,6 @@ module.exports = (dest) ->
 
     Dss.parse file.contents.toString(), parseOptions, (dssFile) ->
 
-      console.log dssFile.blocks
 
       isBlank = (dssFile) ->
         dssFile.blocks.length == 0
