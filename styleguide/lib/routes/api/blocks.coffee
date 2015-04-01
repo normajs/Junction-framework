@@ -12,18 +12,6 @@ if Meteor.isServer
           file = block.file
 
           for parts, index in block.blocks by -1
-            for item of parts
-              if not parts[item]
-                delete parts[item]
-
-            # delete empty item
-            if not Object.keys(parts).length
-              block.blocks.splice(index, 1)
-              continue
-
-            # add file reference
-            parts.file = block.file
-
             Blocks.upsert(
               name: parts.name
               parts

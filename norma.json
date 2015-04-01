@@ -9,8 +9,8 @@
     "sass": {
       "src": "lib/**/*",
       "dest": "out/",
-      "comb": false,
-      "lint": false
+      "comb": true,
+      "lint": true
     },
     "copy": {
       "src": "out/framework",

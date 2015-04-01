@@ -6,185 +6,93 @@ Querystring = require "querystring"
 Url = require "url"
 
 Through = require "through"
+_ = require "underscore"
 Dss = require "dss"
-Crypto = require "crypto"
 Norma = require "normajs"
 
-
-# handle variables
-Dss.parser "variable", (i, line, block, css) ->
-
-  fileVariables = {}
-  fileVariablesRx = /^[\$|@]([a-zA-Z0-9_-]+):([^\;]+)\;/gim
-  lineSplitRx = /((\s|-\s)+)/
-  variables = {}
-
-  hash = Crypto.createHash('md5').update(css).digest('hex')
-
-  if !fileVariables[hash]
-    while (match = fileVariablesRx.exec(css)) != null
-      variables[match[1].trim()] = match[2].trim()
-    fileVariables[hash] = variables
-
-  # Extract name and any delimiter with description
-  tokens = line.split(lineSplitRx, 2)
-  name = tokens[0].trim()
-
-  if variables.hasOwnProperty(name)
-    return {
-      name: name
-      description: line.replace(tokens.join(""), "")
-      value: variables[name]
-      markup:
-        example: "$#{name}"
-    }
-  return
-
-makeDescription = (name) ->
-  return Dss.parser(name, (i, line, block, file) ->
-    parameter = line.split(' - ')
-    return {
-      name: if (parameter[0]) then Dss.trim(parameter[0]) else ''
-      description: if (parameter[1]) then Dss.trim(parameter[1]) else ''
-    }
-  )
-
-descriptive = [
-  "parameter"
-  "bugs"
-]
-
-makeDescription(item) for item in descriptive
+Vars = require "./vars"
+Simple = require "./simple"
+Descriptive = require "./descriptive"
+Code = require "./code"
 
 
-makeBlock = (name) ->
-  return Dss.parser(name, (i, line, block, file) ->
-    # taken from dss.markup
+_simple = [
+  # name
+  "class"
+  "link"
+  # description
 
-    # find the next instance of a parser (if there is one based on the @ symbol)
-    # in order to isolate the current multi-line parser
+  "function"
+  "mixin"
+  "extend"
 
-    ###
-
-      Warning! bad/weird code follows!
-
-      In order to handle sass (which uses @ symbols in directives)
-      while still breaking between parser tags, I did this
-      weird regex lookup and counting method. Sadly my regex skills are
-      quite awful so this could be WAY better with someone smarter than
-      me
-
-    ###
-    # remove all prior comments
-    smallBlock = block.split("").splice(i + name.length + 1).join("")
-    # split into indiviual lines for cleaning
-    smallBlock = smallBlock.split("\n")
-    # remove first whitespace character of each line
-    for _line, index in smallBlock
-      smallBlock[index] = _line.substring(1, _line.length)
-    # rebuild into block
-
-    smallBlock = smallBlock.join("\n")
-
-    # set finalChunk to chunk for early returns
-    finalChunk = smallBlock
-
-
-
-    _filter = (chunk, index) ->
-
-      match = chunk.match /[\t\f ]\@/gm
-
-      if not match
-        nextParserIndex = chunk.indexOf('@', index)
-
-        markupLength = if nextParserIndex > -1 then nextParserIndex else chunk.length
-
-        return markupLength
-
-
-      currentTotal = 1
-      for _match, index in match
-        oldTotal = chunk.indexOf("@", currentTotal)
-        currentTotal = chunk.indexOf("@", oldTotal + 1)
-
-      markupLength = currentTotal - 1
-      return markupLength
-
-
-
-    _chunkSize = _filter smallBlock, 1
-    finalChunk = smallBlock.split("").splice(1, _chunkSize - 1).join("")
-
-    markup = finalChunk
-
-    markup = do (markup) ->
-      ret = []
-      lines = markup.split('\n')
-      lines.forEach (line) ->
-        pattern = '*'
-        index = line.indexOf(pattern)
-        if index > 0 and index < 10
-          line = line.split('').splice(index + pattern.length, line.length).join('')
-        # multiline
-        if lines.length <= 2
-          line = Dss.trim(line)
-
-        if line and line != "@#{name}"
-          ret.push line
-        return
-      ret.join '\n'
-
-    obj =
-      example: markup
-
-    if name is "markup"
-      obj.escaped = markup.replace(/</g, '&lt;').replace(/>/g, '&gt;')
-
-    return obj
-
-  )
-
-findBlocks = [
-  "css"
-  "scss"
-  "markup"
-]
-
-makeBlock(item) for item in findBlocks
-
-
-# # Replace link with HTML wrapped version
-# Dss.parser(
-#   "link"
-#   (i, line, block) ->
-#
-#
-#     exp = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/
-#
-#     return line.replace exp, (match) ->
-#       return match
-# )
-
-makePlain = (_string) ->
-  return Dss.parser(_string, (i, line, block) ->
-    return line
-  )
-
-plainReturns = [
+  "base"
+  "helper"
+  "object"
   "complex-object"
+  "trump"
+
+  "private"
+
   "block"
   "element"
   "modifier"
-  "mixin"
-  "link"
+
+  "namespaced"
+
+  "note"
 ]
 
-makePlain(item) for item in plainReturns
 
-module.exports = (dest) ->
+_descriptive = [
 
-  dest or= "localhost:3000/api/v1/blocks"
+  "extends"
+  "mixins"
+
+  "parameter"
+  "default"
+
+  "bug"
+
+]
+
+_code = [
+
+  "scss"
+  "less"
+  "stylus"
+  "sass"
+  "css"
+
+  "markup"
+
+  "javascript"
+  "coffeescript"
+
+]
+
+
+
+module.exports = (config) ->
+
+
+  Dss.parser "variable", Vars
+
+  if config.simple
+    _simple = _.union _simple, config.simple
+
+  Dss.parser(item, Simple) for item in _simple
+
+  if config.descriptive
+    _descriptive = _.union _descriptive, config.descriptive
+  Dss.parser item, Descriptive for item in _descriptive
+
+  if config.code
+    _code = _.union _code, config.code
+  Dss.parser item, Code(item) for item in _code
+
+
+  dest = if config.dest then config.dest else "localhost:3000/api/v1/blocks"
 
   firstFile = null
   contents = null
@@ -202,8 +110,10 @@ module.exports = (dest) ->
 
     parseOptions = {}
 
-    Dss.parse file.contents.toString(), parseOptions, (dssFile) ->
+    if config.parseOptions
+      parseOptions = _.extend parseOptions, config.parseOptions
 
+    Dss.parse file.contents.toString(), parseOptions, (dssFile) ->
 
       isBlank = (dssFile) ->
         dssFile.blocks.length == 0
@@ -214,13 +124,41 @@ module.exports = (dest) ->
       firstFile or= file
       contents or= []
 
+      # filter
       dssFile.blocks = (blocks for blocks in dssFile.blocks if isValid)
+
+      objToArray = _descriptive.slice()
+      objToArray.push "variable"
+      objToArray.push "state"
+
+      for _block, index in dssFile.blocks by -1
+
+        _block.file = dssFile.file
+
+        for item of _block
+          if not _block[item]
+            delete _block[item]
+
+        # delete empty item
+        if not Object.keys(_block).length
+          dssFile.blocks.splice(index, 1)
+          continue
+
+
+        for _obj in objToArray
+          if not _block[_obj]
+            continue
+
+          if _.isObject(_block[_obj])
+            _block[_obj] = [_block[_obj]]
+
+
+
 
       if isBlank(dssFile)
         return
 
       dssFile["file"] = Path.basename file.path
-
       contents.push dssFile
 
 
@@ -231,8 +169,18 @@ module.exports = (dest) ->
 
     Norma.log "updating application..."
 
+
+    if Fs.existsSync( Path.join(process.cwd(), dest))
+      _pipe = require(Path.join(process.cwd(), dest))(contents)
+      @.emit "end"
+      return
+
     loc = Url.parse dest
 
+    if not loc.hostname
+      Norma.log "please include a valid url or a file to send data"
+      @.emit "end"
+      return
 
     options =
       hostname: loc.hostname
@@ -243,6 +191,7 @@ module.exports = (dest) ->
 
     if loc.port
       options.port = Number loc.port
+
 
     req = HTTP.request options, (res) ->
       res.setEncoding 'utf8'

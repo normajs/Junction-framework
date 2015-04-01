@@ -26,7 +26,7 @@ module.exports = (config, name) ->
       ])
     #   # .pipe $.newer("#{dest}.css")
     #   # .pipe $.plumber()
-      .pipe Dss(dest)
+      .pipe Dss(config.tasks[name])
       .on("error", Norma.log)
 
 

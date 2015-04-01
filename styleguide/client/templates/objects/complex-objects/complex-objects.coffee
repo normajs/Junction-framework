@@ -13,6 +13,8 @@ Template.complexObjects.helpers
         $exists: true
     ).fetch()
 
+    console.log complexObjects
+
     filteredObjects = []
 
     for _object in complexObjects

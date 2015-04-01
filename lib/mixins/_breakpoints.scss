@@ -1,25 +1,49 @@
 
 $use-breakpoints: true!default;
+$breakpoints: (
+  // Mobile devices meant to be held with one hand
+  "palm": "screen and (max-width: 480px)",
+  "palm-wide": "screen and (min-width: 481px) and (max-width: 768px)",
+  "palm-wide-and-up": "screen and (min-width: 481px)",
+  "handheld": "screen and (max-width: 768px)",
+  // Devices meant to be held with two hands but not on a desk
+  "lap": "screen and (min-width: 769px) and (max-width: 1024px)",
+  "lap-and-up": "screen and (min-width: 769px)",
+  "lap-wide": "screen and (min-width: 1025px) and (max-width: 1280px)",
+  "lap-wide-and-up": "screen and (min-width: 1025px)",
+  "portable": "screen and (min-width: 769px) and (max-width: 1280px)",
+  // Devices meant to stand and be used on a table/desk
+  "desk": "screen and (min-width: 1281px) and (max-width: 1680px)",
+  "desk-and-up": "screen and (min-width: 1281px)",
+  "desk-wide": "screen and (min-width: 1681px)",
+  "anchored": "screen and (min-width: 1281px)",
+) !default;
 
 @if $use-breakpoints  == true {
-  $breakpoints: (
-  //Mobile devices meant to be held with one hand
-  "palm"          "screen and (max-width: 480px)",
-  "palm-wide"     "screen and (min-width: 481px) and (max-width: 768px)",
-  "palm-wide-and-up" "screen and (min-width: 481px)",
-  "handheld"      "screen and (max-width: 768px)",
-  //Devices meant to be held with two hands but not on a desk
-  "lap"           "screen and (min-width: 769px) and (max-width: 1024px)",
-  "lap-and-up"    "screen and (min-width: 769px)",
-  "lap-wide"      "screen and (min-width: 1025px) and (max-width: 1280px)",
-  "lap-wide-and-up" "screen and (min-width: 1025px)",
-  "portable"      "screen and (min-width: 769px) and (max-width: 1280px)",
-  //Devices meant to stand and be used on a table/desk
-  "desk"          "screen and (min-width: 1281px) and (max-width: 1680px)",
-  "desk-and-up"   "screen and (min-width: 1281px)",
-  "desk-wide"     "screen and (min-width: 1681px)",
-  "anchored"      "screen and (min-width: 1281px)",
-  ) !default;
+  //
+  // @name media-query
+  // @description shorthand to easily create media queries
+  //
+  // @mixin true
+  //
+  // @parameter $mq - media query to wrap content in
+  //
+  // @variable breakpoints - base set of breakpoints available, can be extended using the extend function
+  //
+  // @scss
+  //   .foobar {
+  //     @include media-query(palm) {
+  //       display: none;
+  //     }
+  //   }
+  //
+  // @css
+  //   @media screen and (max-width: 480px) {
+  //     .foobar {
+  //
+  //     }
+  //   }
+  //
 
 
   // Mixin for creating breakpoints on the fly from a standard list
@@ -27,11 +51,11 @@ $use-breakpoints: true!default;
     $breakpoint-found: false;
 
     // Loop through the list of breakpoints we’ve provided in our settings file.
-    @each $breakpoint in $breakpoints {
+    @each $breakpoint, $_name in $breakpoints {
       // Grab the alias and the condition from their respective locations in
       // the list.
-      $alias: nth($breakpoint, 1);
-      $condition: nth($breakpoint, 2);
+      $alias: $_name;
+      $condition: $breakpoint;
 
       // If the media query we’ve specified has an alias and a condition...
       @if $mq == $alias and $condition {

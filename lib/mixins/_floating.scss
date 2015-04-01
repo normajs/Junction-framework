@@ -2,7 +2,6 @@
 $use-floating: true!default;
 
 @if $use-floating == true {
-
   //
   // @name floating
   // @mixin true
@@ -16,6 +15,7 @@ $use-floating: true!default;
   // @parameter vertical - top, middle, bottom
   // @parameter horizontal - left, center, right
   // @parameter child - String
+  // @default child - "floating__item"
   //
   //
   // @scss
@@ -51,8 +51,7 @@ $use-floating: true!default;
   //
   // @explanation
   //  [1]: slight margin right to handle whitespace issues
-
-
+  //
   @mixin floating($vertical, $horizontal, $child: "floating__item") {
     text-align: $horizontal;
     &:before {

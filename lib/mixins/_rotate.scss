@@ -2,21 +2,27 @@
 $use-rotate: true!default;
 
 @if $use-rotate == true {
-  // ============================================================
   //
-  //     $ROTATE
+  // @name rotate
+  // @description Used to rotate an element with multiple browser support
   //
-  //     Used to rotate an element with multiple browser support
+  // @mixin true
   //
-  //     @param degree         :  0deg
+  // @parameter $degree - number + deg to rotate item
   //
-  //     Used in sass:
+  // @scss
+  //   .className {
+  //      @include rotate(45deg)
+  //   }
   //
-  //     .className {
-  //         @include rotate(45deg)
-  //     }
+  // @css
+  //   .className {
+  //     -webkit-transform: rotate($degree);
+  //     -ms-transform: rotate($degree);
+  //     -o-transform: rotate($degree);
+  //     transform: rotate($degree);
+  //   }
   //
-  // ============================================================
   @mixin rotate($degree) {
     // Safari and Chrome
     -webkit-transform: rotate($degree);

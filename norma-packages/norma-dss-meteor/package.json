@@ -14,6 +14,7 @@
     "handlebars": "^3.0.1",
     "http-post": "^0.1.1",
     "normajs": "^1.2.6",
-    "through": "^2.3.6"
+    "through": "^2.3.6",
+    "underscore": "^1.8.2"
   }
 }

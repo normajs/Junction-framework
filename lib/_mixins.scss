@@ -4,8 +4,9 @@
 
 
 @import "./functions/extend";
-@import "./functions/number";
 @import "./functions/maps";
+@import "./functions/number";
+
 
 @import "./mixins/vendor";
 @import "./mixins/rotate";
@@ -16,12 +17,12 @@
 
 @import "./mixins/breakpoints";
 @import "./mixins/namespace";
-
-@import "./mixins/keyframe";
-
-@import "./mixins/columns";
-@import "./mixins/shapes";
-
-@import "./mixins/typography";
-
-@import "./mixins/newspring-icon";
+//
+// @import "./mixins/keyframe";
+//
+// @import "./mixins/columns";
+// @import "./mixins/shapes";
+//
+// @import "./mixins/typography";
+//
+// @import "./mixins/newspring-icon";
