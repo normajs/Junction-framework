@@ -51,12 +51,7 @@ $breakpoints: (
     $breakpoint-found: false;
 
     // Loop through the list of breakpoints we’ve provided in our settings file.
-    @each $breakpoint, $_name in $breakpoints {
-      // Grab the alias and the condition from their respective locations in
-      // the list.
-      $alias: $_name;
-      $condition: $breakpoint;
-
+    @each $alias, $condition in $breakpoints {
       // If the media query we’ve specified has an alias and a condition...
       @if $mq == $alias and $condition {
         // ...tell the mixin that we’ve found it...

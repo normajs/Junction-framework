@@ -1,23 +1,33 @@
 <template name="mixins">
   {{#if Template.subscriptionsReady}}
     {{#each mixins}}
-      <section>
+      <div class="card soft">
         <h3> {{name}} </h3>
         <p>
           {{description}}
         </p>
+
         {{#each parameter}}
-        <h4>
-          ${{name}}: {{description}}
-        </h4>
+          {{#if name}}
+            <h5>
+              {{name}}: {{description}}
+            </h5>
+          {{/if}}
         {{/each}}
-        <pre><code>{{scss.example}}</code></pre>
-        <pre><code>{{css.example}}</code></pre>
-      </section>
+
+        {{#if scss.example}}
+          <pre class="{{#if css.example}}push-bottom{{/if}}"><code>//scss
+{{scss.example}}</code></pre>
+        {{/if}}
+
+        {{#if css.example}}
+          <pre><code>/* css */
+{{css.example}}</code></pre>
+        {{/if}}
+
+      </div>
     {{/each}}
 
-  {{else}}
-    Loading...
   {{/if}}
 
 </template>

@@ -9,7 +9,7 @@ $use-namespace: true!default;
     //
     // @description Used to wrap scss code in breakpoints with added classes for adjusting declarations on the flly
     //
-    // @parameter $name - name of class to add breakpoints too
+    // @parameter $name - name of class to add breakpoints too (supports lists)
     // @parameter $breakpoints - map containing list of breakpoints
     // @default $breakpoints - $breakpoints variable
     //
@@ -32,16 +32,33 @@ $use-namespace: true!default;
     //
 
     @mixin namespace($name, $_breakpoints: $breakpoints) {
-      .#{$name} {
-        @content
+      // generate random number to prevent sharing of extends
+      $_placeholder-name: random(99999);
+
+      %_temp-#{$_placeholder-name} {
+        @content;
       };
 
-      @each $breakpoint, $alias in $_breakpoints {
+      @each $class in $name {
+        .#{$class} {
+          @extend %_temp-#{$_placeholder-name};
+        };
+      }
+
+      // breakpoint it up
+      @each $alias, $breakpoint in $_breakpoints {
         //Map to all known breakpoints
         @include media-query(#{$alias}) {
-          .#{$alias}-#{$name} {
-            @content
+
+          %_#{$alias}-temp-#{$_placeholder-name} {
+            @content;
           };
+          @each $class in $name {
+
+            .#{$alias}-#{$class} {
+              @extend %_#{$alias}-temp-#{$_placeholder-name};
+            };
+          }
         }
       }
     }

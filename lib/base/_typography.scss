@@ -2,18 +2,13 @@
 $use-typography: true !default;
 
 @if $use-typography == true {
+
+  //
+  // @name typography
+  // @description set base type styles from variables
+  //
+  // @base true
+  //
   @include typography();
 
-  .font--dark {
-    color: map-get($font-colors, "dark");
-  }
-
-  .font--light {
-    color: map-get($font-colors, "light");
-  }
-
-  .font--brand,
-  .font--primary {
-    color: map-get($colors, "primary");
-  }
 }

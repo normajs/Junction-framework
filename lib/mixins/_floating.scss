@@ -12,10 +12,10 @@ $use-floating: true!default;
   // @bugs overflow - if the element is too large for the container, the psuedo element can push the content to below theparent container.
   //
   //
-  // @parameter vertical - top, middle, bottom
-  // @parameter horizontal - left, center, right
-  // @parameter child - String
-  // @default child - "floating__item"
+  // @parameter $vertical - top, middle, bottom
+  // @parameter $horizontal - left, center, right
+  // @parameter $child - String
+  // @default $child - "floating__item"
   //
   //
   // @scss

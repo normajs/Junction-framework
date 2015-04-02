@@ -34,10 +34,6 @@ _simple = [
 
   "private"
 
-  "block"
-  "element"
-  "modifier"
-
   "namespaced"
 
   "note"
@@ -53,6 +49,10 @@ _descriptive = [
   "default"
 
   "bug"
+
+  "block"
+  "element"
+  "modifier"
 
 ]
 

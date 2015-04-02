@@ -9,8 +9,8 @@ $use-positions: true!default;
   // @mixin true
   // @private true
   //
-  // @parameter position - String (fixed, absolute, relative)
-  // @parameter args - Mixture of px, em, and strings
+  // @parameter $position - String (fixed, absolute, relative)
+  // @parameter $args - Mixture of px, em, and strings
   //
   // @note
   //    Should not be used in projects. This mixin is used by
@@ -55,7 +55,7 @@ $use-positions: true!default;
   //
   // @mixin true
   //
-  // @parameter args - Mixture of px, em, %, and strings
+  // @parameter $args - Mixture of px, em, %, and strings
   //
   // @scss
   // .className {
@@ -105,7 +105,7 @@ $use-positions: true!default;
   //
   // @mixin true
   //
-  // @parameter args - Mixture of px, em, %, and strings
+  // @parameter $args - Mixture of px, em, %, and strings
   //
   // @scss
   // .className {
@@ -153,7 +153,7 @@ $use-positions: true!default;
   //
   // @mixin true
   //
-  // @parameter args - Mixture of px, em, %, and strings
+  // @parameter $args - Mixture of px, em, %, and strings
   //
   // @scss
   // .className {

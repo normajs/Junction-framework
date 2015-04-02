@@ -1,7 +1,4 @@
 <template name="home">
-  <section>
-
-  </section>
 
   <section>
     <h1>
@@ -10,14 +7,14 @@
     <p>
       Green is a UI kit for all of NewSpring's digital properties. Green provides guidelines for the aesthetic, function and form of user interfaces to provide a consistent experience for our people. This is a living document and is under constant interation.
     </p>
-    <div class="grid">
-      <div class="grid__item one-whole lap-and-up-one-third">
+    <div class="grid"><div class="grid__item one-whole lap-and-up-one-third">
         <h3>
           Junction Framework
         </h3>
         <p>
           NewSpring uses the in-house developed <a href="https://github.com/NewSpring/junction-framework">Junction Framework</a> as the base styles and css framework for digital properteis. Junction provides Green styling for your application.
         </p>
+
       </div><div class="grid__item one-whole lap-and-up-one-third">
         <h3>
           Interaction kit
@@ -32,14 +29,15 @@
         <p>
           General design guidelines for Green to create a harmonious user experience regardless of the technical stack of your application.
         </p>
-      </div>
-    </div>
+      </div></div>
 
   </section>
+
   {{> mixins}}
-  {{> complexObjects}}
-  {{> variables}}
+
   {{!--
 
+    {{> complexObjects}}
+    {{> variables}}
   --}}
 </template>

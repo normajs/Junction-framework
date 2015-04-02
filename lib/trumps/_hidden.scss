@@ -2,6 +2,14 @@
 $use-hidden: true !default;
 
 @if $use-hidden == true {
+  //
+  // @name .visuallyhidden
+  // @class .visuallyhidden
+  // @description hide item without setting display to none
+  //
+  // @trump true
+  // @namespaced true
+  //
   @include namespace("visuallyhidden") {
     position: absolute !important;
 

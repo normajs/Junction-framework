@@ -1,157 +1,153 @@
 
 $use-widths: true !default;
 
-@mixin _widths ($alias) {
-  // One-whole
-  .#{$alias}one-whole {
+
+
+@if $use-widths == true {
+  //
+  // @name widths
+  // @description creates human readable names for changing with of item base on media queries.
+  //
+  //
+  // @helper true
+  // @namespaced true
+  //
+  // One-half
+  $_one-half: one-half,
+  two-quarters,
+  three-sixths,
+  four-eighths,
+  five-tenths,
+  six-twelfths;
+  // Thirds
+  $_one-third: one-third,
+  two-sixths,
+  three-ninths,
+  four-twelfths;
+  // Two thirds
+  $_two-thirds: two-thirds,
+  four-sixths,
+  six-ninths,
+  eight-twelfths;
+  // Quarters
+  $_one-quarter: one-quarter,
+  two-eighths,
+  three-twelfths;
+  // three quarters
+  $_three-quarters: three-quarters,
+  six-eighths,
+  nine-twelfths;
+  // Fifths
+  $_one-fifth: one-fifth,
+  two-tenths;
+  // two fifths
+  $_two-fifths: two-fifths,
+  four-tenths;
+  // 3/5
+  $_three-fifths: three-fifths,
+  six-tenths;
+  //4/5
+  $_four-fifths: four-fifths,
+  eight-tenths;
+  // Sixths
+  $_one-sixth: one-sixth,
+  two-twelfths;
+  // 5/6
+  $_five-sixths: five-sixths,
+  ten-twelfths;
+
+  @include namespace(one-whole) {
     width: 100%;
   }
-
-  // One-half
-  .#{$alias}one-half,
-  .#{$alias}two-quarters,
-  .#{$alias}three-sixths,
-  .#{$alias}four-eighths,
-  .#{$alias}five-tenths,
-  .#{$alias}six-twelfths {
+  @include namespace($_one-half) {
     width: 50%;
   }
-
-
-  // Thirds
-  .#{$alias}one-third,
-  .#{$alias}two-sixths,
-  .#{$alias}three-ninths,
-  .#{$alias}four-twelfths {
+  @include namespace($_one-third) {
     width: 33.3333333%;
   }
-
-  .#{$alias}two-thirds,
-  .#{$alias}four-sixths,
-  .#{$alias}six-ninths,
-  .#{$alias}eight-twelfths {
+  @include namespace($_two-thirds) {
     width: 66.6666666%;
   }
-
-  // Quarters
-  .#{$alias}one-quarter,
-  .#{$alias}two-eighths,
-  .#{$alias}three-twelfths {
+  @include namespace($_one-quarter) {
     width: 25%;
   }
-
-  .#{$alias}three-quarters,
-  .#{$alias}six-eighths,
-  .#{$alias}nine-twelfths {
+  @include namespace($_three-quarters) {
     width: 75%;
   }
-
-  // Fifths
-  .#{$alias}one-fifth,
-  .#{$alias}two-tenths {
+  @include namespace($_one-fifth) {
     width: 20%;
   }
-
-  .#{$alias}two-fifths,
-  .#{$alias}four-tenths {
+  @include namespace($_two-fifths) {
     width: 40%;
   }
-
-  .#{$alias}three-fifths,
-  .#{$alias}six-tenths {
+  @include namespace($_three-fifths) {
     width: 60%;
   }
-
-
-  .#{$alias}four-fifths,
-  .#{$alias}eight-tenths {
+  @include namespace($_four-fifths) {
     width: 80%;
   }
-
-  // Sixths
-  .#{$alias}one-sixth,
-  .#{$alias}two-twelfths {
+  @include namespace($_one-sixth) {
     width: 16.6666666%;
   }
-
-  .#{$alias}five-sixths,
-  .#{$alias}ten-twelfths {
+  @include namespace($_five-sixths) {
     width: 83.3333333%;
   }
-
   // Eighths
-  .#{$alias}one-eighth {
+  @include namespace(one-eighth) {
     width: 12.5%;
   }
-  .#{$alias}three-eighths {
+  @include namespace(three-eighths) {
     width: 37.5%;
   }
-  .#{$alias}five-eighths {
+  @include namespace(five-eighths) {
     width: 62.5%;
   }
-  .#{$alias}seven-eighths {
+  @include namespace(seven-eighths) {
     width: 87.5%;
   }
-
   // Ninths
-  .#{$alias}one-ninth {
+  @include namespace(one-ninth) {
     width: 11.1111111%;
   }
-  .#{$alias}two-ninths {
+  @include namespace(two-ninths) {
     width: 22.2222222%;
   }
-  .#{$alias}four-ninths {
+  @include namespace(four-ninths) {
     width: 44.4444444%;
   }
-  .#{$alias}five-ninths {
+  @include namespace(five-ninths) {
     width: 55.5555555%;
   }
-  .#{$alias}seven-ninths {
+  @include namespace(seven-ninths) {
     width: 77.7777777%;
   }
-  .#{$alias}eight-ninths {
+  @include namespace(eight-ninths) {
     width: 88.8888888%;
   }
-
   // Tenths
-  .#{$alias}one-tenth {
+  @include namespace(one-tenth) {
     width: 10%;
   }
-  .#{$alias}three-tenths {
+  @include namespace(three-tenths) {
     width: 30%;
   }
-  .#{$alias}seven-tenths {
+  @include namespace(seven-tenths) {
     width: 70%;
   }
-  .#{$alias}nine-tenths {
+  @include namespace(nine-tenths) {
     width: 90%;
   }
-
   // Twelfths
-  .#{$alias}one-twelfth {
+  @include namespace(one-twelfth) {
     width: 8.3333333%;
   }
-  .#{$alias}five-twelfths {
+  @include namespace(five-twelfths) {
     width: 41.6666666%;
   }
-  .#{$alias}seven-twelfths {
+  @include namespace(seven-twelfths) {
     width: 58.3333333%;
   }
-  .#{$alias}eleven-twelfths {
+  @include namespace(eleven-twelfths) {
     width: 91.6666666%;
-  }
-}
-
-@if $use-widths {
-  @include _widths("");
-
-
-  @each $breakpoint in $breakpoints {
-    $alias: nth($breakpoint, 1);
-    $condition: nth($breakpoint, 2);
-
-    @include media-query($alias) {
-      @include _widths("#{$alias}-");
-    }
   }
 }

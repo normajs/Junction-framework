@@ -11,6 +11,15 @@ Template.mixins.helpers
       "mixin": "true"
     ).fetch()
 
+    for _var in mixins
+
+      if _.isArray _var.parameter
+        if _.isArray _var.parameter[0]
+          _var.parameter = _var.parameter[0].slice()
+        continue
+
+      _var.parameter = [_var.parameter]
+
     return mixins
 
 
