@@ -11,6 +11,7 @@ if Meteor.isServer
         for block in data
           file = block.file
 
+
           for parts, index in block.blocks by -1
             Blocks.upsert(
               name: parts.name

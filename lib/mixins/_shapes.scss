@@ -2,43 +2,52 @@
 $use-shapes: true!default;
 
 @if $use-shapes == true {
-  // ============================================================
   //
-  //   $RADIUS
+  // @name radius
+  // @description creates radius based off of size value or percentage
   //
-  //   creates radius based off of size value or percentage
+  // @mixin true
   //
-  //   @param radius        :  px, em, %
+  // @parameter $radius - border-radius to set
   //
-  //   Used in sass:
   //
-  //   .className {
-  //       @include radius(7px);
-  //   }
+  // @scss
+  // .className {
+  //   @include radius(7px);
+  // }
   //
-  // ============================================================
-
+  // @css
+  // .className {
+  //   border-radius: 7px
+  // }
+  //
   @mixin radius($radius) {
     border-radius: $radius;
   }
 
 
-  // ============================================================
-  //
-  //   $CIRCLE
-  //
-  //   creates a circle
-  //
-  //   @param size        :  px, em
-  //
-  //   Used in sass:
-  //
-  //   .className:before {
-  //       @include circle(10px);
-  //   }
-  //
-  // ============================================================
 
+  //
+  // @circle
+  // @description creates a circle
+  //
+  // @parameter $size - size of the circle to create
+  //
+  // @extends %_circle - base rounded circle
+  //
+  // @scss
+  // .className {
+  //   @include circle(10px);
+  // }
+  //
+  // @css
+  // .className {
+  //   content: "";
+  //   width: 10px;
+  //   height: 10px;
+  //   border-radius: 50%;
+  // }
+  //
   %_circle {
     @include radius(50%);
 
@@ -56,70 +65,34 @@ $use-shapes: true!default;
 
 
 
-
-
-  // ============================================================
   //
-  //   $CHECKMARK
+  // @name triangle
+  // @description creates a triangle from border elements
   //
-  //   creates a checkmark
+  // @parameter $width - width of triangle
+  // @parameter $height - height of triangle
+  // @parameter $direction - up, down, left, right
+  // @parameter $color - color of triangle
   //
-  //   @param size         :  px, em, rem
-  //   @param color        :  String, hex, rgb, rgba
+  // @extends $_triangle - base triangle classes
   //
-  //   Used in sass:
+  // @scss
+  // .className {
+  //   @include triangle(10px, 8px, right, aliceblue);
+  // }
   //
-  //   .className:before {
-  //       @include checkmark(10px, aliceblue);
-  //   }
+  // @css
+  // .className {
+  //   content: "";
+  //   display: block;
+  //   width: 0;
+  //   height: 0;
+  //   border-top: 8px solid transparent;
+  //   border-bottom: 8px solid transparent;
+  //   border-left: 10px solid aliceblue;
   //
-  // ============================================================
-  %_checkmark {
-    // Rotate the L 45 degrees to turn it into a checkmark
-    @include rotate(45deg);
-
-    display: block;
-
-    content: "";
-  }
-
-  @mixin checkmark($size, $color) {
-    @extend %_checkmark;
-    // Make it a small rectangle so the border will create an L-shape
-
-    width: $size/2;
-    height: $size;
-    // Add a border on the bottom and left, creating that 'L'
-
-    border: solid $color;
-    border-width: 0 $size/4 $size/4 0;
-  }
-
-
-
-
-
-
-
-  // ============================================================
+  // }
   //
-  //   $TRIANGLE
-  //
-  //   creates a triangle
-  //
-  //   @param width           :  px, em
-  //   @param height          :  px, em
-  //   @param direction       :  up, down, left, right
-  //   @param color           :  hex, rgb, rgba
-  //
-  //   Used in sass:
-  //
-  //   .className:before {
-  //       @include triangle(10px, 8px, right, aliceblue);
-  //   }
-  //
-  // ============================================================
-
   %_triangle {
     display: block;
 
@@ -135,30 +108,30 @@ $use-shapes: true!default;
 
     // Right
     @if $direction == right {
-      border-top: $height * .57142 solid transparent;
-      border-bottom: $height * .57142 solid transparent;
+      border-top: $height solid transparent;
+      border-bottom: $height solid transparent;
       border-left: $width solid $color;
     }
     // Left
 
     @if $direction == left {
-      border-top: $height * .57142 solid transparent;
+      border-top: $height solid transparent;
       border-right: $width solid $color;
-      border-bottom: $height * .57142 solid transparent;
+      border-bottom: $height solid transparent;
     }
 
     // Up
     @if $direction == up {
-      border-right: $width * .57142 solid transparent;
+      border-right: $width solid transparent;
       border-bottom: $height solid $color;
-      border-left: $width * .57142 solid transparent;
+      border-left: $width solid transparent;
     }
 
     // Down
     @if $direction == down {
       border-top: $height solid $color;
-      border-right: $width * .57142 solid transparent;
-      border-left: $width * .57142 solid transparent;
+      border-right: $width solid transparent;
+      border-left: $width solid transparent;
     }
   }
 
@@ -166,26 +139,38 @@ $use-shapes: true!default;
 
 
 
-
-  // ============================================================
   //
-  //   $ARROW
+  // @name arrow
   //
-  //   creates a border arrow
+  // @description creates a border arrow
   //
-  //   @param direction       :  up, down, left, right
-  //   @param size            :  px, em
-  //   @param color           :  hex, rgb, rgba
-  //   @param thickness       :  px, em
+  // @parameter $direction - up, down, left, right
+  // @parameter $size - size of arrow
+  // @parameter $color - hex, rgb, rgba
+  // @parameter $thickness - thickness of arrow border
   //
-  //   Used in sass:
+  // @extends %_arrow - base object for arrow
   //
-  //   .className:before {
-  //       @include arrow(right, 10px, aliceblue, 2px);
-  //   }
+  // @scss
+  // .className {
+  //   @include arrow(right, 10px, aliceblue, 2px);
+  // }
   //
-  // ============================================================
-
+  // @css
+  // .className {
+  //   content: "";
+  //   display: block;
+  //   width: 10px;
+  //   height: 10px;
+  //   border: solid aliceblue;
+  //   border-width: 2px 0 0 2px;
+  //   -webkit-transform: rotate(135deg);
+  //   -ms-transform: rotate(135deg);
+  //   -o-transform: rotate(135deg);
+  //   transform: rotate(135deg);
+  //   margin-left: -5px;
+  // }
+  //
   %_arrow {
     display: block;
 
@@ -193,7 +178,7 @@ $use-shapes: true!default;
   }
 
 
-  @mixin arrow($direction, $size, $color, $thickness: $border-size) {
+  @mixin arrow($direction, $size, $color, $thickness) {
     @extend %_arrow;
 
     width: $size;

@@ -1,5 +1,6 @@
 Path = require "path"
 Norma = require "normajs"
+Plumber = require "gulp-plumber"
 
 
 Dss = require "./lib/dss"
@@ -24,8 +25,7 @@ module.exports = (config, name) ->
     Norma.src([
       src + ".{scss,less,css,stylus,sass}"
       ])
-    #   # .pipe $.newer("#{dest}.css")
-    #   # .pipe $.plumber()
+      .pipe Plumber()
       .pipe Dss(config.tasks[name])
       .on("error", Norma.log)
 
@@ -42,6 +42,7 @@ module.exports = (config, name) ->
 
   ###
   Norma.tasks["#{name}"].ext = ["scss", "less", "css", "stylus", "sass"]
+  Norma.tasks["#{name}"].order = "post"
 
   # Export all of your tasks
   module.exports.tasks = Norma.tasks

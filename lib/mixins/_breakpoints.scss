@@ -31,18 +31,18 @@ $breakpoints: (
   // @variable breakpoints - base set of breakpoints available, can be extended using the extend function
   //
   // @scss
-  //   .foobar {
-  //     @include media-query(palm) {
-  //       display: none;
-  //     }
+  // .foobar {
+  //   @include media-query(palm) {
+  //     display: none;
   //   }
+  // }
   //
   // @css
-  //   @media screen and (max-width: 480px) {
-  //     .foobar {
-  //
-  //     }
+  // @media screen and (max-width: 480px) {
+  //   .foobar {
+  //     display: none;
   //   }
+  // }
   //
 
 

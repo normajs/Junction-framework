@@ -11,17 +11,17 @@ $use-rotate: true!default;
   // @parameter $degree - number + deg to rotate item
   //
   // @scss
-  //   .className {
-  //      @include rotate(45deg)
-  //   }
+  // .className {
+  //    @include rotate(45deg)
+  // }
   //
   // @css
-  //   .className {
-  //     -webkit-transform: rotate($degree);
-  //     -ms-transform: rotate($degree);
-  //     -o-transform: rotate($degree);
-  //     transform: rotate($degree);
-  //   }
+  // .className {
+  //   -webkit-transform: rotate(45deg);
+  //   -ms-transform: rotate(45deg);
+  //   -o-transform: rotate(45deg);
+  //   transform: rotate(45deg);
+  // }
   //
   @mixin rotate($degree) {
     // Safari and Chrome

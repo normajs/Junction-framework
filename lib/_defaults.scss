@@ -11,30 +11,33 @@
 $global-border-box: true!default;
 
 
-
-// ------------------------------------
-//   $BASE-VARIABLES
-// ------------------------------------
-$base-font-color: #3d3d3d!default;
-$base-font-family: sans-serif!default;
-$base-icon-size: 48px!default;
-$base-font-size: 20px;
-$base-line-height: 25px;
-
-
-
 // -----------------------------------
 //    $FRAMEWORK VARIABLES
 // -----------------------------------
 //
 // @name Framework Variables
+// @variable base-font-color - base color for fonts to render
+// @variable base-font-family - default font family for body to render
+// @variable base-font-size - base font size for p tags
+// @variable base-line-height - base line height for p tags
 // @variable base-spacing-unit - base unit of measurement
 // @variable half-spacing-unit - shorthand of $base-spacing-unit/2
 // @variable line-height-ratio - ratio of base line height / base font size
+// @variable base-border-size - default border thickness
+// @variable base-border-radius - default border roundness
 //
+// fonts
+$base-font-color: #3d3d3d!default;
+$base-font-family: sans-serif!default;
+$base-font-size: 20px!default;
+$base-line-height: 25px!default;
+// iconography
+$base-border-radius: 2px !default;
+$base-border-size: 3px !default;
+$base-icon-size: 48px!default;
+// units
 $base-spacing-unit: $base-line-height!default;
 $half-spacing-unit: $base-spacing-unit / 2!default;
-$line-height-ratio: $base-line-height / $base-font-size;
 
 
 // -----------------------------------
@@ -81,6 +84,8 @@ $ratios: (
 //
 // @name Colors
 // @variable colors - object containing all default colors for the framework
+// @variable font-colors - map containing default font colors
+// @variable brand-color - mapping of primary color from $colors variable
 //
 $colors: (
   "primary": #6bac43,
@@ -94,12 +99,7 @@ $colors: (
   "base": #ddd,
   "alert": #c64f55
 ) !default;
-$brand-color: map-get($colors, primary);
-
-// -----------------------------------
-//    $FONT-COLORS
-// -----------------------------------
-
+//
 $font-colors: (
   "base": $base-font-color,
   "light": #adadad,
@@ -107,97 +107,5 @@ $font-colors: (
   "dark": #303030,
   "white": #fff
 )!default;
-
-
-// ------------------------------------
-//   $FONT-SAMPLE
-// ------------------------------------
-
-$fonts: (
-  base: (
-    h1: (
-      font-size: 3.375em,
-      line-height: 1.05,
-      media-query: (
-        "palm": (
-          font-size: 2em,
-          line-height: 1.25
-        ),
-        "lap": (
-          font-size: 2.5em,
-          line-height: 1.125
-        )
-      )
-    ),
-    h2: (
-      font-size: 2.25em,
-      line-height: 1.25,
-      "palm": (
-        font-size: 1.625em,
-        line-height: 1.15
-      ),
-      "lap": (
-        font-size: 2em,
-        line-height: 1.25
-      )
-    ),
-    h3: (
-      font-size: 1.75em,
-      line-height: 1.25,
-      "palm": (
-        font-size: 1.375em,
-        line-height: 1.13
-      ),
-      "lap": (
-        font-size: 1.5em,
-        line-height: 1.25
-      )
-    ),
-    h4: (
-      font-size: 1.375em,
-      line-height: 1.2222222,
-      "palm": (
-        font-size: 1.125em,
-        line-height: 1.22
-      ),
-      "lap": (
-        font-size: 1.125em,
-        line-height: 1.1111
-      )
-    ),
-    h5: (
-      font-size: 1em,
-      line-height: 1.25
-    ),
-    p: (
-      font-size: 1.25em,
-      line-height: 1.25,
-      "palm": (
-        font-size: 1em,
-        line-height: 1.15
-      ),
-      "lap": (
-        font-size: 1.15em,
-        line-height: 1.15
-      )
-    )
-  )
-)!default;
-
-// type sets
-$typography: (
-  h1: "base",
-  h2: "base",
-  h3: "base",
-  h4: "base",
-  h5: "base",
-  p: "base"
-)!default;
-
-
-
-// -----------------------------------
-//    $BORDERS
-// -----------------------------------
-$border-radius: 2px !default;
-$border-size: 3px !default;
+//
+$brand-color: map-get($colors, primary);

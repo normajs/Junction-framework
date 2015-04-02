@@ -13,18 +13,18 @@ $use-vendor: true!default;
   // @parameter $value - the value(s) to assign
   //
   // @scss
-  //   .foo {
-  //     @include vendor(rotate, 30deg);
-  //   }
+  // .foo {
+  //   @include vendor(rotate, 30deg);
+  // }
   //
   // @css
-  //   .foo {
-  //     -webkit-rotate: 30deg;
-  //     -moz-rotate: 30deg;
-  //     -ms-rotate: 30deg;
-  //     -o-rotate: 30deg;
-  //     rotate: 30deg;
-  //   }
+  // .foo {
+  //   -webkit-rotate: 30deg;
+  //   -moz-rotate: 30deg;
+  //   -ms-rotate: 30deg;
+  //   -o-rotate: 30deg;
+  //   rotate: 30deg;
+  // }
   //
 
   @mixin vendor($property, $value...) {

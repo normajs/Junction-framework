@@ -2,20 +2,53 @@
 $use-keyframes: true!default;
 
 @if $use-keyframes == true {
-  // Create CSS keyframe animations for all vendors in one go, e.g.:
   //
-  //   .foo{
-  //     @include vendor(animation, shrink 3s);
-  //   }
+  // @name keyframe
+  // @link twitter.com/integralist/status/260484115315437569
+  // @description Create CSS keyframe animations for all vendors in one go
   //
-  //   @include keyframe(shrink){
-  //     from{
+  // @mixin true
+  //
+  // @parameter $animation-name - name of the animation to create in vendor prefixes
+  //
+  // @scss
+  //   @include keyframe(shrink) {
+  //     from {
+  //        font-size:5em;
+  //     }
+  //   };
+  //
+  // @css
+  //   @-webkit-keyframes shrink {
+  //     from {
   //        font-size:5em;
   //     }
   //   }
   //
-  // Courtesy of @integralist: twitter.com/integralist/status/260484115315437569
-
+  //   @-moz-keyframes shrink {
+  //     from {
+  //        font-size:5em;
+  //     }
+  //   }
+  //
+  //   @-ms-keyframes shrink {
+  //     from {
+  //        font-size:5em;
+  //     }
+  //   }
+  //
+  //   @-o-keyframes shrink {
+  //     from {
+  //        font-size:5em;
+  //     }
+  //   }
+  //
+  //   @keyframes shrink {
+  //     from {
+  //        font-size:5em;
+  //     }
+  //   }
+  //
   @mixin keyframe($animation-name) {
     @-webkit-keyframes #{$animation-name} {
       @content;

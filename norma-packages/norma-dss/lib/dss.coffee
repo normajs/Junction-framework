@@ -116,7 +116,7 @@ module.exports = (config) ->
     Dss.parse file.contents.toString(), parseOptions, (dssFile) ->
 
       isBlank = (dssFile) ->
-        dssFile.blocks.length == 0
+        dssFile.blocks.length is 0
 
       isValid = (block) ->
         return block.name isnt undefined
@@ -198,8 +198,16 @@ module.exports = (config) ->
       res.on 'data', (chunk) ->
         Norma.log "updated app with: #{chunk}"
         return
+
+      res.on "error", (error) ->
+        Norma.emit "error", error
+        return
+
       return
 
+    req.on "error", (error) ->
+      Norma.emit "error", error
+      return
 
     req.write JSON.stringify contents
 

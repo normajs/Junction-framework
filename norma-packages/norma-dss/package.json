@@ -1,6 +1,6 @@
 {
-  "name": "norma-dss-meteor",
-  "version": "0.0.1",
+  "name": "norma-dss",
+  "version": "0.1.0",
   "description": "dss package for the Norma build tool",
   "main": "package.coffee",
   "keywords": [
@@ -9,9 +9,7 @@
   "dependencies": {
     "crypto": "0.0.3",
     "dss": "^1.0.4",
-    "dss-parser-variable": "^0.1.0",
     "gulp-plumber": "^1.0.0",
-    "handlebars": "^3.0.1",
     "http-post": "^0.1.1",
     "normajs": "^1.2.6",
     "through": "^2.3.6",

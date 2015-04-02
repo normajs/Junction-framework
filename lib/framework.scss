@@ -39,17 +39,19 @@
 //
 // ============================================================
 
+// Normalize
+@import "../bower_components/normalize.sass/normalize";
+
 // Default variables
 @import "defaults";
 
 // Mixins
 @import "mixins";
 
-// // Normalize
-// @import "../bower_components/normalize.sass/normalize";
-//
-// // Base Sheets
-// @import "./base/reset";
+
+
+// Base Sheets
+@import "./base/reset";
 // @import "./base/base";
 // @import "./base/buttons";
 // @import "./base/images";
@@ -58,8 +60,8 @@
 // @import "./base/lists";
 // @import "./base/horizontal-rules";
 // @import "./base/icons";
-//
-//
+
+
 // // Layout Objects
 // @import "./layout/grids";
 // @import "./layout/floating";

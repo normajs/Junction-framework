@@ -15,6 +15,8 @@ Template.variables.helpers
     for _var in vars
 
       if _.isArray _var.variable
+        if _.isArray _var.variable[0]
+          _var.variable = _var.variable[0].slice()
         continue
 
       _var.variable = [_var.variable]

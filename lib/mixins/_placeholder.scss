@@ -2,8 +2,32 @@
 $use-placeholder: true!default;
 
 @if $use-placeholder == true {
-  // This mixin allows for vendor prefixed placeholder
-  // values to be outputted all at once
+  //
+  // @name placeholder
+  // @description This mixin allows for vendor prefixed placeholder values to be outputted all at once
+  //
+  // @mixin true
+  //
+  // @scss
+  // input {
+  //   @include placeholder {
+  //     color: blue;
+  //   }
+  // }
+  //
+  // @css
+  // input::-webkit-input-placeholder {
+  //   color: blue;
+  // };
+  // input:-moz-placeholder {
+  //   color: blue;
+  // };
+  // input::-moz-placeholder {
+  //   color: blue;
+  // };
+  // input:-ms-input-placeholder {
+  //   color: blue;
+  // };
 
   @mixin placeholder {
     &::-webkit-input-placeholder {

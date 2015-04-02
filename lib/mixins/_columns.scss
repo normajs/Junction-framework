@@ -2,10 +2,11 @@
 $use-columns: true!default;
 
 @if $use-columns == true {
-  // @name columns
-  // @mixin true
   //
+  // @name columns
   // @description Used to generate columns in text
+  //
+  // @mixin true
   //
   // @parameter count - number of columns desired
   // @parameter gap - width of gap
@@ -24,6 +25,7 @@ $use-columns: true!default;
   //      -moz-column-gap: 10px;
   //           column-gap: 10px;
   // }
+  //
   @mixin columns($count, $gap) {
     -webkit-column-count: $count;
        -moz-column-count: $count;

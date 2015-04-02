@@ -3,17 +3,41 @@ $use-namespace: true!default;
 
 @if $use-namespace == true {
   @if $use-breakpoints == true {
+    //
+    // @name namespace
+    // @mixin true
+    //
+    // @description Used to wrap scss code in breakpoints with added classes for adjusting declarations on the flly
+    //
+    // @parameter $name - name of class to add breakpoints too
+    // @parameter $breakpoints - map containing list of breakpoints
+    // @default $breakpoints - $breakpoints variable
+    //
+    // @scss
+    //   @include namespace("visuallyhidden") {
+    //     position: absolute !important;
+    //
+    //     overflow: hidden !important;
+    //     clip: rect(0 0 0 0) !important;
+    //
+    //     width: 1px !important;
+    //     height: 1px !important;
+    //     margin: -1px !important;
+    //     padding: 0 !important;
+    //
+    //     border: 0 !important;
+    //   }
+    //
+    // @note warning! - this mixin generates a ton of code by default, use with extreme care!
+    //
+
     @mixin namespace($name, $_breakpoints: $breakpoints) {
       .#{$name} {
         @content
       };
 
-      @each $breakpoint in $_breakpoints {
-        // Grab the alias and the condition from their respective locations in
-        // the list.
-        $alias: nth($breakpoint, 1);
+      @each $breakpoint, $alias in $_breakpoints {
         //Map to all known breakpoints
-
         @include media-query(#{$alias}) {
           .#{$alias}-#{$name} {
             @content

@@ -2,6 +2,7 @@
 // for the junction mixin library. This allows more control over what
 // mixins you want to have available. By default they are all on.
 
+@import "./defaults";
 
 @import "./functions/extend";
 @import "./functions/maps";
@@ -17,12 +18,14 @@
 
 @import "./mixins/breakpoints";
 @import "./mixins/namespace";
-//
-// @import "./mixins/keyframe";
-//
-// @import "./mixins/columns";
-// @import "./mixins/shapes";
-//
-// @import "./mixins/typography";
-//
-// @import "./mixins/newspring-icon";
+
+@import "./mixins/keyframe";
+
+@import "./mixins/columns";
+@import "./mixins/shapes";
+
+@import "./mixins/typography";
+@import "./mixins/placeholder";
+
+// not yet documented!
+@import "./mixins/newspring-icon";

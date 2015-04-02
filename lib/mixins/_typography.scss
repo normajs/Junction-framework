@@ -1,8 +1,99 @@
 
 $use-typography: true!default;
 
-@if $use-typography == true {
 
+$fonts: (
+  base: (
+    h1: (
+      font-size: 3.375em,
+      line-height: 1.05,
+      media-query: (
+        "palm": (
+          font-size: 2em,
+          line-height: 1.25
+        ),
+        "lap": (
+          font-size: 2.5em,
+          line-height: 1.125
+        )
+      )
+    ),
+    h2: (
+      font-size: 2.25em,
+      line-height: 1.25,
+      "palm": (
+        font-size: 1.625em,
+        line-height: 1.15
+      ),
+      "lap": (
+        font-size: 2em,
+        line-height: 1.25
+      )
+    ),
+    h3: (
+      font-size: 1.75em,
+      line-height: 1.25,
+      "palm": (
+        font-size: 1.375em,
+        line-height: 1.13
+      ),
+      "lap": (
+        font-size: 1.5em,
+        line-height: 1.25
+      )
+    ),
+    h4: (
+      font-size: 1.375em,
+      line-height: 1.2222222,
+      "palm": (
+        font-size: 1.125em,
+        line-height: 1.22
+      ),
+      "lap": (
+        font-size: 1.125em,
+        line-height: 1.1111
+      )
+    ),
+    h5: (
+      font-size: 1em,
+      line-height: 1.25
+    ),
+    p: (
+      font-size: $base-font-size,
+      line-height: $base-line-height,
+      "palm": (
+        font-size: 1em,
+        line-height: 1.15
+      ),
+      "lap": (
+        font-size: 1.15em,
+        line-height: 1.15
+      )
+    )
+  )
+)!default;
+
+// type sets
+$typography: (
+  h1: "base",
+  h2: "base",
+  h3: "base",
+  h4: "base",
+  h5: "base",
+  p: "base"
+)!default;
+
+
+@if $use-typography == true {
+  //
+  // @name typography
+  // @description Dynamically generates a set of base type styles from a source map. Combining a source map with the name $fonts and a selector map named $typography, this mixin will create base styling for your stylesheets typography. It makes updating and setting base type as easy as updating a map or two.
+  //
+  // @mixin true
+  //
+  // @variable fonts - styles (including media-queries) for given font families
+  // @variable typography - list of fonts to use and for what elements
+  //
   @mixin typography {
     // Make sure to only run if typography and fonts variable exist
     // Also verify that they are maps and not strings or other things

@@ -27,6 +27,7 @@ module.exports = (name) ->
     # remove first whitespace character of each line
     for _line, index in smallBlock
       smallBlock[index] = _line.substring(1, _line.length)
+
     # rebuild into block
 
     smallBlock = smallBlock.join("\n")
@@ -50,6 +51,7 @@ module.exports = (name) ->
 
       currentTotal = 1
       for _match, index in match
+
         oldTotal = chunk.indexOf("@", currentTotal)
         currentTotal = chunk.indexOf("@", oldTotal + 1)
 
@@ -59,20 +61,21 @@ module.exports = (name) ->
 
 
     _chunkSize = _filter smallBlock, 1
-    finalChunk = smallBlock.split("").splice(1, _chunkSize - 1).join("")
+    markup = smallBlock.split("").splice(1, _chunkSize - 1).join("")
 
-    markup = finalChunk
 
     markup = do (markup) ->
       ret = []
       lines = markup.split('\n')
       lines.forEach (line) ->
+
         pattern = '*'
         index = line.indexOf(pattern)
         if index > 0 and index < 10
           line = line.split('').splice(index + pattern.length, line.length).join('')
         # multiline
         if lines.length <= 2
+
           line = Dss.trim(line)
 
         if line and line != "@#{name}"
@@ -82,6 +85,7 @@ module.exports = (name) ->
 
     obj =
       example: markup
+
 
     if name is "markup"
       obj.escaped = markup.replace(/</g, '&lt;').replace(/>/g, '&gt;')
