@@ -200,6 +200,35 @@ $use-buttons: true !default;
   }
 
 
+  //
+  // @name .btn--alert
+  // @class .btn--alert
+  // @description makes a alert button
+  //
+  // @extends %btn - extends base button object
+  //
+  // @state :hover - changes hover color to alert with darker text
+  //
+  // @block .btn
+  // @modifier .btn--alert - makes a alert colored button
+  //
+  // @markup
+  // <a href="#" class="btn--alert"></div>
+  //
+  .btn--alert {
+    @extend %btn;
+
+    color: map-get($colors, light);
+    border-color: map-get($colors, alert);
+    background-color: map-get($colors, alert);
+
+    &:hover {
+      border-color: darken(map-get($colors, alert), 10);
+      background-color: darken(map-get($colors, alert), 10);
+    }
+  }
+
+
 
 
   //
@@ -254,6 +283,8 @@ $use-buttons: true !default;
 
     .icon {
       @include absolute(right $base-icon-size * .25);
+
+      top: 0;
 
       width: $base-icon-size * .75 + $base-border-size;
       // remove height of icons to force 100% height

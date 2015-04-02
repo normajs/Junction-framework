@@ -2,24 +2,87 @@
 $use-icons: true!default;
 
 @if $use-icons == true {
-  %_icon {
+  //
+  // @name %_icon
+  // @description base selector for icons to extend that sets the width, height, and position to relative to contain sub items
+  //
+  // @extend true
+  //
+  %icon {
     position: relative;
 
-    width: ($base-icon-size + ($border-size*2));
-    height: ($base-icon-size + ($border-size*2));
+    display: block;
+
+    width: ($base-icon-size + ($base-border-size*2));
+    height: ($base-icon-size + ($base-border-size*2));
+
+    text-decoration: none;
+
+    &[class*="fa-"] {
+      margin-bottom: 0;
+
+      text-align: center;
+
+      line-height: ($base-icon-size + ($base-border-size*2));
+    }
   }
 
+  //
+  // @name icon
+  // @class .icon
+  // @description icon class to set size from default variable
+  //
+  // @block .icon
+  // @modifier .icon--filled
+  //
+  // @extends %icon
+  //
+  // @state .icon fa-* - any fontawesome class will be set to correct size in icon
+  //
+  // @markup
+  // <div class="icon fa fa-close"></div>
+  //
   .icon {
-    @extend %_icon;
+    @extend %icon;
   }
 
-  &[class*="fa-"] {
-    @extend %_icon;
+  //
+  // @name .icon--filled
+  // @class .icon--filled
+  // @description icon with background primary and light text
+  //
+  // @block .icon
+  // @modifier .icon--filled
+  //
+  // @extends %icon
+  //
+  // @markup
+  // <div class="icon--filled fa fa-close"></div>
+  //
+  .icon--filled {
+    @extend %icon;
 
-    margin-bottom: 0;
+    color: map-get($colors, light);
+    background-color: $brand-color;
+  }
 
-    text-align: center;
+  //
+  // @name .icon--alert
+  // @class .icon--alert
+  // @description icon with background of alert color and light text
+  //
+  // @block .icon
+  // @modifier .icon--alert
+  //
+  // @extends %icon
+  //
+  // @markup
+  // <div class="icon--alert fa fa-close"></div>
+  //
+  .icon--alert {
+    @extend %icon;
 
-    line-height: ($base-icon-size + ($border-size*2));
+    color: map-get($colors, light);
+    background-color: map-get($colors, alert);
   }
 }

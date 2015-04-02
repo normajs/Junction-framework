@@ -371,6 +371,7 @@ embed {
 .btn--corners,
 .btn--light,
 .btn--filled,
+.btn--alert,
 .btn--icon,
 .btn--facebook,
 .btn--google,
@@ -398,6 +399,7 @@ embed {
 .btn--corners:hover,
 .btn--light:hover,
 .btn--filled:hover,
+.btn--alert:hover,
 .btn--icon:hover,
 .btn--facebook:hover,
 .btn--google:hover,
@@ -449,6 +451,17 @@ embed {
 	background-color: #548735;
 }
 
+.btn--alert {
+	color: #fff;
+	border-color: #c64f55;
+	background-color: #c64f55;
+}
+
+.btn--alert:hover {
+	border-color: #ab373d;
+	background-color: #ab373d;
+}
+
 .btn--icon,
 .btn--facebook,
 .btn--google,
@@ -474,6 +487,7 @@ embed {
 .btn--icon .icon {
 	position: absolute;
 	right: 12px;
+	top: 0;
 	width: 39px;
 	height: auto;
 }
@@ -531,6 +545,34 @@ embed {
 
 .btn--twitter:hover {
 	background-color: #3ea1ec;
+}
+
+.icon,
+.icon--filled,
+.icon--alert {
+	position: relative;
+	display: block;
+	width: 54px;
+	height: 54px;
+	text-decoration: none;
+}
+
+[class*="fa-"].icon,
+[class*="fa-"].icon--filled,
+[class*="fa-"].icon--alert {
+	margin-bottom: 0;
+	text-align: center;
+	line-height: 54px;
+}
+
+.icon--filled {
+	color: #fff;
+	background-color: #6bac43;
+}
+
+.icon--alert {
+	color: #fff;
+	background-color: #c64f55;
 }
 
 .grid {
