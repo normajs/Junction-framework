@@ -17,6 +17,7 @@ $use-floating: true!default;
   // @parameter $child - String
   // @default $child - "floating__item"
   //
+  // @state :before - create an invisble guide to align off of
   //
   // @scss
   // .container {

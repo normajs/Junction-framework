@@ -39,6 +39,8 @@ $use-icons: true!default;
   //
   // @state .icon fa-* - any fontawesome class will be set to correct size in icon
   //
+  // @object true
+  //
   // @markup
   // <div class="icon fa fa-close"></div>
   //
@@ -55,6 +57,8 @@ $use-icons: true!default;
   // @modifier .icon--filled
   //
   // @extends %icon
+  //
+  // @object true
   //
   // @markup
   // <div class="icon--filled fa fa-close"></div>
@@ -75,6 +79,8 @@ $use-icons: true!default;
   // @modifier .icon--alert
   //
   // @extends %icon
+  //
+  // @object true
   //
   // @markup
   // <div class="icon--alert fa fa-close"></div>

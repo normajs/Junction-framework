@@ -55,28 +55,6 @@ $zindex: (
 
 
 
-// ------------------------------------
-//   $RATIOS
-// ------------------------------------
-//
-// @name Ratios
-// @variable ratios - object containing all default ratios for the framework
-//
-$ratios: (
-  ratio--portrait: (
-    width: "1",
-    height: "2"
-  ),
-  ratio--square: (
-    width: "1",
-    height: "1"
-  ),
-  ratio--landscape: (
-    width: "2",
-    height: "1"
-  )
-) !default;
-
 
 // -----------------------------------
 //    $COLORS

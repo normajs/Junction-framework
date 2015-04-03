@@ -1,26 +1,7 @@
+
+$use-overlays: true !default;
+
 @if $use-overlays == true {
-  // ============================================================
-  //
-  //   $OVERLAY
-  //
-  //   The .overlay class is a complex object class that classfies an
-  //   element as an overlay on all NewSpring Sites
-  //
-  //   @extendable:
-  //     .overlay--light
-  //     .overlay--dark
-  //     .overlay--opaque
-  //
-  //   Used in markup:
-  //
-  //   <div class="overlay"></div>
-  //
-  //   Things the overlay class does:
-  //
-  //     Lorem ipsum Laborum qui magna proident.
-  //
-  //
-  // ============================================================
 
   // only extend if zindex isn't set
   @if map-has-key($zindex, overlay) == false {
@@ -32,7 +13,16 @@
   }
 
 
-
+  //
+  // @name %_overlay
+  // @class .overlay
+  // @description The %_overlay object is the base container to extend for overlays
+  //
+  // @private true
+  // @extend true
+  //
+  // @state :after - fill the after with the overlay
+  //
   %_overlay {
     position: relative;
     z-index: map-get($zindex, "overlay");
@@ -49,7 +39,23 @@
     }
   }
 
-
+  //
+  // @name Overlay
+  // @class .overlay
+  // @description The .overlay class is an object class that creates a z-index managed overlay
+  //
+  // @block .overlay
+  // @element .overlay__item
+  //
+  // @complex-object true
+  //
+  // @state :after - fill the overlay with the color
+  //
+  // @markup
+  // <div class="overlay">
+  //   <h1> I'm shaded</h1>
+  // </div>
+  //
   .overlay {
     @extend %_overlay;
   }
@@ -59,6 +65,24 @@
     z-index: map-get($zindex, "overlay") + 1;
   }
 
+  //
+  // @name .overlay--solid
+  // @class .overlay--solid
+  // @description The .overlay--solid class creates a solid overlay
+  //
+  // @block .overlay
+  // @element .overlay__item
+  // @modifier .overlay--solid
+  //
+  // @complex-object true
+  //
+  // @state :after - fill the overlay with the color
+  //
+  // @markup
+  // <div class="overlay--solid">
+  //   <h1> I'm shaded</h1>
+  // </div>
+  //
   .overlay--solid {
     @extend %_overlay;
     &:before {
@@ -66,6 +90,24 @@
     }
   }
 
+  //
+  // @name .overlay--solid-light
+  // @class .overlay--solid-light
+  // @description The .overlay--solid-light class creates a solid-light overlay
+  //
+  // @block .overlay
+  // @element .overlay__item
+  // @modifier .overlay--solid-light
+  //
+  // @complex-object true
+  //
+  // @state :after - fill the overlay with the color
+  //
+  // @markup
+  // <div class="overlay--solid-light">
+  //   <h1> I'm shaded</h1>
+  // </div>
+  //
   .overlay--solid-light {
     @extend %_overlay;
     &:before {
@@ -73,6 +115,24 @@
     }
   }
 
+  //
+  // @name .overlay--solid-dark
+  // @class .overlay--solid-dark
+  // @description The .overlay--solid-dark class creates a solid-dark overlay
+  //
+  // @block .overlay
+  // @element .overlay__item
+  // @modifier .overlay--solid-dark
+  //
+  // @complex-object true
+  //
+  // @state :after - fill the overlay with the color
+  //
+  // @markup
+  // <div class="overlay--solid-dark">
+  //   <h1> I'm shaded</h1>
+  // </div>
+  //
   .overlay--solid-dark {
     @extend %_overlay;
     &:before {
@@ -80,7 +140,24 @@
     }
   }
 
-
+  //
+  // @name .overlay--gradient
+  // @class .overlay--gradient
+  // @description The .overlay--gradient class creates a gradient overlay
+  //
+  // @block .overlay
+  // @element .overlay__item
+  // @modifier .overlay--gradient
+  //
+  // @complex-object true
+  //
+  // @state :after - fill the overlay with the color
+  //
+  // @markup
+  // <div class="overlay--gradient">
+  //   <h1> I'm shaded</h1>
+  // </div>
+  //
   .overlay--gradient {
     @extend %_overlay;
     &:after {
@@ -94,6 +171,24 @@
     }
   }
 
+  //
+  // @name .overlay--gradient-left
+  // @class .overlay--gradient-left
+  // @description The .overlay--gradient-left class creates a gradient-left overlay
+  //
+  // @block .overlay
+  // @element .overlay__item
+  // @modifier .overlay--gradient-left
+  //
+  // @complex-object true
+  //
+  // @state :after - fill the overlay with the color
+  //
+  // @markup
+  // <div class="overlay--gradient-left">
+  //   <h1> I'm shaded</h1>
+  // </div>
+  //
   .overlay--gradient-left {
     @extend %_overlay;
     &:after {
@@ -107,6 +202,24 @@
     }
   }
 
+  //
+  // @name .overlay--gradient-right
+  // @class .overlay--gradient-right
+  // @description The .overlay--gradient-right class creates a gradient-right overlay
+  //
+  // @block .overlay
+  // @element .overlay__item
+  // @modifier .overlay--gradient-right
+  //
+  // @complex-object true
+  //
+  // @state :after - fill the overlay with the color
+  //
+  // @markup
+  // <div class="overlay--gradient-right">
+  //   <h1> I'm shaded</h1>
+  // </div>
+  //
   .overlay--gradient-right {
     @extend %_overlay;
     &:after {

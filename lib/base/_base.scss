@@ -18,10 +18,13 @@ $use-base: true !default;
     font-size: 100%;
 
     -webkit-font-smoothing: antialiased;
-    font: #{($base-font-size/16px)*1em}/#{$base-line-height} $base-font-family;
+
   }
 
   body {
     overflow-x: hidden;
+    font-size: #{(($base-font-size/16px) * 100)}%;
+    line-height: #{$base-line-height};
+    font-family: $base-font-family;
   }
 }

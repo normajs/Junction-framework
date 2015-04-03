@@ -26,8 +26,6 @@
 //
 //  MIXINS.............Mixin Library
 //
-//  NORMALIZE..........Awesome CSS reset
-//
 //  OBJECTS............Start defining objects
 //
 //
@@ -62,6 +60,7 @@
 @import "./helpers/outlined";
 @import "./helpers/shapes";
 @import "./helpers/widths";
+@import "./helpers/scrollable";
 @import "./helpers/float";
 
 
@@ -71,17 +70,18 @@
 @import "./objects/buttons";
 @import "./objects/buttons-social";
 @import "./objects/icons";
+@import "./objects/icons-social";
+@import "./objects/modals";
 
 // Complex Object
+@import "./complex-objects/accordions";
 @import "./complex-objects/grids";
+@import "./complex-objects/fixed-ratios";
+@import "./complex-objects/floating";
+@import "./complex-objects/locked";
+@import "./complex-objects/overlays";
+@import "./complex-objects/panels";
 
-// Layout Objects
-
-// @import "./layout/floating";
-
-// @import "./layout/fixed-ratios";
-//
-//
 
 // Trump Objects
 @import "./trumps/spacing";

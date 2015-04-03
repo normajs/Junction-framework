@@ -62,6 +62,7 @@ $use-buttons: true !default;
   //
   // @block .btn
   //
+  // @object true
   //
   // @markup
   // <a href="#" class="btn"></div>
@@ -79,6 +80,8 @@ $use-buttons: true !default;
   //
   // @block .btn
   // @modifier .btn--small - half size btn
+  //
+  // @object true
   //
   // @markup
   // <a href="#" class="btn--small"></div>
@@ -105,6 +108,8 @@ $use-buttons: true !default;
   //
   // @block .btn
   // @modifier .btn--disabled - disabled button state
+  //
+  // @object true
   //
   // @markup
   // <a href="#" class="btn--disabled"></div>
@@ -133,6 +138,8 @@ $use-buttons: true !default;
   // @block .btn
   // @modifier .btn--corners - removes rounding of btn
   //
+  // @object true
+  //
   // @markup
   // <a href="#" class="btn--corners"></div>
   //
@@ -154,6 +161,8 @@ $use-buttons: true !default;
   //
   // @block .btn
   // @modifier .btn--light - makes a light colored button
+  //
+  // @object true
   //
   // @markup
   // <a href="#" class="btn--light"></div>
@@ -183,6 +192,8 @@ $use-buttons: true !default;
   // @block .btn
   // @modifier .btn--filled - makes a filled colored button
   //
+  // @object true
+  //
   // @markup
   // <a href="#" class="btn--filled"></div>
   //
@@ -211,6 +222,8 @@ $use-buttons: true !default;
   //
   // @block .btn
   // @modifier .btn--alert - makes a alert colored button
+  //
+  // @object true
   //
   // @markup
   // <a href="#" class="btn--alert"></div>
@@ -268,6 +281,8 @@ $use-buttons: true !default;
   //
   // @block .btn
   // @modifier .btn--icon - button with icon in it
+  //
+  // @object true
   //
   // @markup
   // <a href="#" class="btn--icon"><i class="icon"></i></a>

@@ -47,19 +47,22 @@ $breakpoints: (
 
 
   // Mixin for creating breakpoints on the fly from a standard list
-  @mixin media-query($mq) {
+  @mixin media-query($mq...) {
     $breakpoint-found: false;
 
     // Loop through the list of breakpoints we’ve provided in our settings file.
     @each $alias, $condition in $breakpoints {
-      // If the media query we’ve specified has an alias and a condition...
-      @if $mq == $alias and $condition {
-        // ...tell the mixin that we’ve found it...
-        $breakpoint-found: true;
+      @for $i from 1 through length($mq) {
+        $_mq: nth($mq, $i);
+        // If the media query we’ve specified has an alias and a condition...
+        @if $_mq == $alias and $condition {
+          // ...tell the mixin that we’ve found it...
+          $breakpoint-found: true;
 
-        // ...and spit it out here.
-        @media #{$condition} {
-          @content;
+          // ...and spit it out here.
+          @media #{$condition} {
+            @content;
+          }
         }
       }
     }

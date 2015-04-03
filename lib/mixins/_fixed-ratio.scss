@@ -108,7 +108,7 @@ $use-fixed-ratio: true!default;
       // Get percentage based off of width and height variables
       $percentage : ($height/$width * 100%);
 
-      @extend %_fixed-ratio;
+      @extend %_ratio;
 
 
       // Use pseudo element to inflate container to ratio size

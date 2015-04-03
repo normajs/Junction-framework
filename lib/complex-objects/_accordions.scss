@@ -1,14 +1,15 @@
+$use-accordions: true!default;
+
 @if $use-accordions == true {
   //
   // @name Accordion
   // @class .accordion
-  //
   // @description The .accordion class is a complex object class that classfies a block and element as a single or mulptile accordion
+  //
   // @complex-object true
   //
   // @block .accordion
   // @element .accordion__item
-  //
   //
   //
   // @markup
