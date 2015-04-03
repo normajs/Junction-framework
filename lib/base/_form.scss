@@ -1,0 +1,60 @@
+
+$use-form: true !default;
+
+@if $use-form == true {
+  form {
+    max-width: 320px;
+
+    text-align: center;
+  }
+
+  fieldset {
+    border: 0;
+  }
+
+  legend {
+    @extend %h3;
+
+    margin-bottom: $base-spacing-unit * 1.5;
+  }
+
+  label {
+    display: none;
+
+    text-align: left;
+  }
+
+  input {
+    @extend %h6;
+    @include placeholder {
+      color: map-get($colors, base);
+    }
+
+    width: 100%;
+    padding: $half-spacing-unit;
+
+    border-bottom: solid $base-border-size map-get($colors, base);
+
+    font-weight: bold;
+
+    &:focus {
+      @include placeholder {
+        color: #fff;
+      }
+
+      border-bottom-color: $base-font-color;
+    }
+
+    &[data-value]:not([data-value=""]) {
+      border-bottom-color: $base-font-color;
+    }
+  }
+
+
+
+  button {
+    &[class*="icon"] {
+      display: inline-block;
+    }
+  }
+}

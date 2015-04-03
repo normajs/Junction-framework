@@ -29,8 +29,11 @@ $global-border-box: true!default;
 // fonts
 $base-font-color: #3d3d3d!default;
 $base-font-family: sans-serif!default;
-$base-font-size: 20px!default;
-$base-line-height: 25px!default;
+$base-font-size: 16px!default;
+$base-line-height: 18px!default;
+$line-height-ratio: $base-line-height/$base-font-size;
+
+
 // iconography
 $base-border-radius: 2px !default;
 $base-border-size: 3px !default;

@@ -33,13 +33,33 @@
 
     </section>
     <section class="panel__item--right portable-one-half desk-and-up-two-thirds scrollable">
-      {{> typography}}
+      <form>
+        <fieldset>
+          <legend>
+            Sign In
+          </legend>
+
+          <div class="input--alert">
+            <label for="email">Email</label>
+            <input name="email" data-value="" placeholder="name@address.com"/>
+            <span class="input__status">Not a valid email</span>
+          </div>
+
+          <div class="input">
+            <label for="password">Password</label>
+            <input name="password" data-value="" type="password" placeholder="Password"/>
+          </div>
+
+        </fieldset>
+        <button class="round fa fa-rebel icon--filled" type="submit"></button>
+      </form>
     </section>
   </div>
 
 
 
   {{!--
+    {{> typography}}
     {{> mixins}}
     {{> complexObjects}}
     {{> variables}}

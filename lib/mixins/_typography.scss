@@ -4,9 +4,9 @@ $use-typography: true!default;
 
 $fonts: (
   breakpoints: (
-    handheld: 16px,
-    portable: 18px,
-    anchored: 20px
+    handheld: $base-font-size,
+    portable: $base-font-size * 1.125,
+    anchored: $base-font-size * 1.25
   ),
   base: (
     h1: (
@@ -46,7 +46,7 @@ $fonts: (
     ),
     p: (
       font-size: $base-font-size/16px * 1em ,
-      line-height: $base-line-height,
+      line-height: $line-height-ratio,
       margin-bottom: $base-spacing-unit
     )
   )
@@ -98,6 +98,7 @@ $typography: (
         $_styles: map-fetch($fonts, $_type, $_element);
 
         // create element for styling
+        %#{$_element},
         #{$_element} {
           // loop through all styles
           @each $_property, $_value in $_styles {
@@ -107,17 +108,13 @@ $typography: (
               #{$_property}: $_value;
             }
           }
-        }
+          // if the given font has a media query for this element
+          @if map-has-key($_styles, "media-query") {
 
+            // loop through media query styles
+            @each $_query, $_query-styles in map-get($_styles, "media-query") {
 
-        // if the given font has a media query for this element
-        @if map-has-key($_styles, "media-query") {
-
-          // loop through media query styles
-          @each $_query, $_query-styles in map-get($_styles, "media-query") {
-
-            @include media-query($_query) {
-              #{$_element} {
+              @include media-query($_query) {
                 @each $_property, $_value in $_query-styles {
                   #{$_property}: $_value;
                 }
@@ -125,6 +122,8 @@ $typography: (
             }
           }
         }
+
+
       }
     }
   }
