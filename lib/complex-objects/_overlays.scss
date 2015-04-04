@@ -27,7 +27,6 @@ $use-overlays: true !default;
     position: relative;
     z-index: map-get($zindex, "overlay");
     &:after {
-      @include vendor(transition, all .1s ease-in-out);
       @include absolute(top 0 bottom 0 left 0 right 0);
 
       display: block;
@@ -53,11 +52,16 @@ $use-overlays: true !default;
   //
   // @markup
   // <div class="overlay">
-  //   <h1> I'm shaded</h1>
+  //   <div class="overlay__item">
+  //     <h1> I'm shaded</h1>
+  //   </div>
   // </div>
   //
   .overlay {
     @extend %_overlay;
+    &:after {
+      background: rgba(map-get($colors, "dark"), .6);
+    }
   }
 
   .overlay__item {
@@ -65,30 +69,7 @@ $use-overlays: true !default;
     z-index: map-get($zindex, "overlay") + 1;
   }
 
-  //
-  // @name .overlay--solid
-  // @class .overlay--solid
-  // @description The .overlay--solid class creates a solid overlay
-  //
-  // @block .overlay
-  // @element .overlay__item
-  // @modifier .overlay--solid
-  //
-  // @complex-object true
-  //
-  // @state :after - fill the overlay with the color
-  //
-  // @markup
-  // <div class="overlay--solid">
-  //   <h1> I'm shaded</h1>
-  // </div>
-  //
-  .overlay--solid {
-    @extend %_overlay;
-    &:before {
-      background: rgba(map-get($colors, "dark"), .6);
-    }
-  }
+
 
   //
   // @name .overlay--solid-light
@@ -110,7 +91,7 @@ $use-overlays: true !default;
   //
   .overlay--solid-light {
     @extend %_overlay;
-    &:before {
+    &:after {
       background: rgba(map-get($colors, "dark"), .1);
     }
   }
@@ -135,7 +116,7 @@ $use-overlays: true !default;
   //
   .overlay--solid-dark {
     @extend %_overlay;
-    &:before {
+    &:after {
       background: rgba(map-get($colors, "dark"), .8);
     }
   }

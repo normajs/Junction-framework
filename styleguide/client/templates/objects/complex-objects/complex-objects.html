@@ -1,14 +1,32 @@
 <template name="complexObjects">
   {{#if Template.subscriptionsReady}}
     {{#each complexObjects}}
-      <section>
+      <div class="card">
         <h3> {{name}} </h3>
         <p>
           {{description}}
         </p>
+        <h6>
+          Block: {{block.name}}
+        </h6>
+
+        {{#each element}}
+        <h6>
+          Element: {{name}}
+        </h6>
+        {{/each}}
+
         {{{markup.example}}}
-        <pre><code>{{markup.example}}</code></pre>
-      </section>
+        <pre class="push-ends"><code class="html">{{markup.example}}</code></pre>
+
+        {{#if children}}
+        <h4>Modifiers of {{name}}</h4>
+        {{/if}}
+        <div class="grid push-ends">{{#each children}}<div class="grid__item one-whole lap-and-up-one-half">
+            {{> _object}}
+          </div>{{/each}}</div>
+      </div>
+      <hr>
     {{/each}}
 
   {{else}}

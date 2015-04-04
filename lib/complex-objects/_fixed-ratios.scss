@@ -31,9 +31,10 @@ $ratios: (
 
   //
   // @name Ratios
+  // @class .ratio--landscape
   // @description Creates responsive fixed ratio containers using pseudo elements
   //
-  // @block .ratio--#{shape}
+  // @block .ratio--landscape
   // @element .ratio__item
   //
   // @complex-object true
@@ -45,8 +46,8 @@ $ratios: (
   // @namespaced true
   //
   // @markup
-  // <div class="ratio--square">
-  //   <div class="ratio__item">
+  // <div class="ratio--landscape">
+  //   <div class="ratio__item" style="background-color: #ddd;">
   //
   //   </div>
   // </div>

@@ -1,10 +1,15 @@
 <template name="variables">
   {{#if Template.subscriptionsReady}}
-    {{#each variables}}
-      <section>
-        {{> variableDescription}}
-      </section>
-    {{/each}}
+  <div class="grid">{{#each variables}}{{!--
+
+  --}}<div class="grid__item one-whole push-ends">
+
+      {{> variableDescription}}
+      <hr>
+
+    </div>{{!--
+
+    --}}{{/each}}</div>
 
   {{else}}
     Loading...
@@ -31,17 +36,17 @@
   </p>
   {{/if}}
 
+  {{#if file}}
   <h4>
     From {{file}}
   </h4>
+  {{/if}}
 
-  <div class="grid">
-    {{#each variable}}
+  <div class="grid">{{#each variable}}<div class="grid__item one-whole lap-and-up-one-half push-ends">
 
-    <div class="grid__item">
-      <h3>
+      <h5>
         <strong>{{name}}</strong>
-      </h3>
+      </h5>
 
       {{#if description}}
       <p>
@@ -52,9 +57,7 @@
       <pre><code class="scss">{{markup.example}}: {{value}};</code></pre>
 
 
-    </div>
-    {{/each}}
-  </div>
+    </div>{{/each}}</div>
 
 
 

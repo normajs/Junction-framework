@@ -29,7 +29,7 @@ $use-icons-social: true!default;
 
     //
     // @name brand icons
-    // @class .icon--brand-anme
+    // @class .icon--facebook
     // @description For every brand that is set in $brands, an icon style is generated
     //
     // @extends %icon - extends base icon object
@@ -46,6 +46,7 @@ $use-icons-social: true!default;
     //
     // @markup
     // <a href="#" class="icon--facebook"></div>
+    // <a href="#" class="icon--twitter icon--filled"></div>
     //
 
     // Loop through the list of brands selected to make buttons

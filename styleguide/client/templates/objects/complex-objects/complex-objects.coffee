@@ -7,27 +7,40 @@ Template.complexObjects.helpers
 
   complexObjects: ->
 
-    complexObjects = Blocks.find(
+    objects = Blocks.find(
       "complex-object": "true"
-      "class":
-        $exists: true
     ).fetch()
 
-    console.log complexObjects
+    blocks = []
 
-    filteredObjects = []
+    for _object in objects
 
-    for _object in complexObjects
-      if _object.block is _object.class
-        filteredObjects.push _object
+      if _object.block.length is 1
+        _object.block = _object.block[0]
+
+      if _object.block.name is _object.class
+        blocks.push _object
         continue
 
-      if _object.element is _object.class
-        parent = _.findWhere(complexObjects, {block : _object.block})
-        parent.element = _object
-        continue
+      # if _object.element?[0].name is _object.class
+      #   parent = _.findWhere(complexObjects, {block : _object.block})
+      #   parent.element = _object
+      #   continue
 
-    return filteredObjects
+    for _block in blocks
+
+      for _object in objects
+        if _object.name is _block.name
+          continue
+
+        if _object.block.name is _block.block.name
+          if not _block.children
+            _block.children = []
+
+          _block.children.push _object
+
+
+    return blocks
 
 
 Template.complexObjects.onRendered ->

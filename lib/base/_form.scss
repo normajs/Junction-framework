@@ -9,13 +9,15 @@ $use-form: true !default;
   }
 
   fieldset {
+    margin-bottom: $base-spacing-unit;
+
     border: 0;
   }
 
   legend {
     @extend %h3;
 
-    margin-bottom: $base-spacing-unit * 1.5;
+    margin-bottom: $base-spacing-unit * 1.25;
   }
 
   label {
@@ -42,10 +44,12 @@ $use-form: true !default;
         color: #fff;
       }
 
+      border-bottom-width: 2px;
       border-bottom-color: $base-font-color;
     }
 
     &[data-value]:not([data-value=""]) {
+      border-bottom-width: 2px;
       border-bottom-color: $base-font-color;
     }
   }

@@ -1,7 +1,7 @@
 <template name="mixins">
   {{#if Template.subscriptionsReady}}
     {{#each mixins}}
-      <div class="card soft">
+      <div class="push-ends">
         <h3> {{name}} </h3>
         <p>
           {{description}}
@@ -9,24 +9,24 @@
 
         {{#each parameter}}
           {{#if name}}
-            <h5>
-              {{name}}: {{description}}
-            </h5>
+          <div class="push-bottom">
+            <h7 class="push-bottom">{{description}}</h7>
+            <pre>{{name}}</pre>
+          </div>
           {{/if}}
         {{/each}}
 
-        {{#if scss.example}}
+        <div class="grid">{{#if scss.example}}<div class="grid__item lap-and-up-one-half">
           <pre class="{{#if css.example}}push-bottom{{/if}}"><code>//scss
 {{scss.example}}</code></pre>
-        {{/if}}
-
-        {{#if css.example}}
+        </div>{{/if}}{{#if css.example}}<div class="grid__item lap-and-up-one-half">
           <pre><code>/* css */
 {{css.example}}</code></pre>
-        {{/if}}
-
+        </div>{{/if}}</div>
       </div>
+      <hr>
     {{/each}}
+
 
   {{/if}}
 

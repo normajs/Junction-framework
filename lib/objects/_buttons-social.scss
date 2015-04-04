@@ -88,7 +88,7 @@ $brands: "facebook", "google", "twitter"!default;
 
   //
   // @name brand buttons
-  // @class .btn-brand-name
+  // @class .btn-facebook
   // @description For every brand that is set in $brands, a class and button style is generated
   //
   // @extends %btn--icon - extends base icon button object
@@ -98,12 +98,13 @@ $brands: "facebook", "google", "twitter"!default;
   // @object true
   //
   // @block .btn
-  // @modifier .btn-brand-name - For every brand that is set in $brands, a class and button style is generated
+  // @modifier .btn-facebook - For every brand that is set in $brands, a class and button style is generated
   //
   //
   // @markup
-  // <a href="#" class="btn--facebook"></div>
+  // <a href="#" class="btn--facebook">Facebook</a>
   //
+
   // Loop through the list of brands selected to make buttons
   @each $brand in $brands {
     $_brand: map-fetch($brand-colors, $brand);

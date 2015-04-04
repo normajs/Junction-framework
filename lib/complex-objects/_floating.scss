@@ -21,6 +21,8 @@ $use-floating: true !default;
   // @block .floating
   // @element .floating__item
   //
+  // @complex-object true
+  //
   // @state :before - create an invisble guide to align off of
   //
   // @bugs whitespace - due to the way browsers rendor whitespace, it is important that the parent floating element and the child have no white space between them
@@ -44,6 +46,8 @@ $use-floating: true !default;
   // @block .floating
   // @element .floating__item
   // @modifier .floating--left
+  //
+  // @complex-object true
   //
   // @state :before - create an invisble guide to align off of
   //
@@ -71,6 +75,8 @@ $use-floating: true !default;
   // @block .floating
   // @element .floating__item
   // @modifier .floating--right
+  //
+  // @complex-object true
   //
   // @state :before - create an invisble guide to align off of
   //

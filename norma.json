@@ -2,8 +2,9 @@
   "name": "junction-framework",
   "tasks": {
     "bower": {
-      "packages": {
-        "normalize.sass": "~2.0.0"
+      "/vendor": {
+        "fonts": "NewSpring/newspring-fonts",
+        "junction": "NewSpring/junction"
       }
     },
     "sass": {
@@ -22,7 +23,6 @@
     },
     "styleguide-copy": {
       "@extend": "copy",
-      "src": "out/framework",
       "dest": "styleguide/client/stylesheets/"
     },
     "dss": {
@@ -41,7 +41,8 @@
         "meteorhacks:subs-manager",
         "cfs:http-methods",
         "http",
-        "coffeescript"
+        "coffeescript",
+        "fourseven:scss"
       ],
       "platforms": [
         "server",

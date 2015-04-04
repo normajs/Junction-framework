@@ -9,6 +9,8 @@ $use-icons: true!default;
   // @extend true
   //
   %icon {
+    @extend %_circle;
+
     position: relative;
 
     display: block;

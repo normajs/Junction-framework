@@ -1,3 +1,6 @@
+
+$use-cards: true !default;
+
 @if $use-cards == true {
   //
   // @name %card
@@ -6,6 +9,8 @@
   // @extend true
   //
   %card {
+    position: relative;
+
     margin-bottom: $half-spacing-unit;
     padding: $half-spacing-unit;
 

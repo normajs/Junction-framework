@@ -14,6 +14,7 @@ $use-buttons: true !default;
   // @extend true
   //
   %btn {
+    @extend %h4;
     // round corners into half circles no matter the height
     @include radius(1000px);
     // contain all children elements (like abs position icons)
@@ -65,7 +66,7 @@ $use-buttons: true !default;
   // @object true
   //
   // @markup
-  // <a href="#" class="btn"></div>
+  // <a href="#" class="btn">Click Me</div>
   //
   .btn {
     @extend %btn;
@@ -84,7 +85,7 @@ $use-buttons: true !default;
   // @object true
   //
   // @markup
-  // <a href="#" class="btn--small"></div>
+  // <a href="#" class="btn--small">Click Me</div>
   //
   .btn--small {
     @extend %btn;
@@ -112,7 +113,7 @@ $use-buttons: true !default;
   // @object true
   //
   // @markup
-  // <a href="#" class="btn--disabled"></div>
+  // <a href="#" class="btn--disabled">Click Me</div>
   //
   .btn--disabled,
   .btn:disabled {
@@ -125,6 +126,9 @@ $use-buttons: true !default;
 
     &:hover {
       cursor: text;
+
+      color: map-get($colors, base);
+      background-color: inherit;
     }
   }
 
@@ -141,7 +145,7 @@ $use-buttons: true !default;
   // @object true
   //
   // @markup
-  // <a href="#" class="btn--corners"></div>
+  // <a href="#" class="btn--corners">Click me</div>
   //
   .btn--corners {
     @extend %btn;
@@ -165,7 +169,7 @@ $use-buttons: true !default;
   // @object true
   //
   // @markup
-  // <a href="#" class="btn--light"></div>
+  // <a href="#" class="btn--light">Click Me</div>
   //
   .btn--light {
     @extend %btn;
@@ -195,7 +199,7 @@ $use-buttons: true !default;
   // @object true
   //
   // @markup
-  // <a href="#" class="btn--filled"></div>
+  // <a href="#" class="btn--filled">Click Me</div>
   //
   .btn--filled {
     @extend %btn;
@@ -226,7 +230,7 @@ $use-buttons: true !default;
   // @object true
   //
   // @markup
-  // <a href="#" class="btn--alert"></div>
+  // <a href="#" class="btn--alert">Click Me</div>
   //
   .btn--alert {
     @extend %btn;
@@ -285,7 +289,7 @@ $use-buttons: true !default;
   // @object true
   //
   // @markup
-  // <a href="#" class="btn--icon"><i class="icon"></i></a>
+  // <a href="#" class="btn--icon"><i class="icon fa fa-times"></i>Click Me</a>
   //
   .btn--icon {
     @extend %btn--icon;

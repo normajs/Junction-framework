@@ -42,6 +42,7 @@
 
 // Mixins
 @import "mixins";
+@import "shim";
 
 // Base Sheets
 @import "./base/reset";
@@ -73,6 +74,7 @@
 @import "./objects/icons";
 @import "./objects/icons-social";
 @import "./objects/modals";
+@import "./objects/cards";
 
 // Complex Object
 @import "./complex-objects/accordions";
