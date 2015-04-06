@@ -66,6 +66,7 @@ $typography: (
 
 
 @if $use-typography == true {
+
   //
   // @name typography
   // @description Dynamically generates a set of base type styles from a source map. Combining a source map with the name $fonts and a selector map named $typography, this mixin will create base styling for your stylesheets typography. It makes updating and setting base type as easy as updating a map or two.
@@ -75,7 +76,11 @@ $typography: (
   // @variable fonts - styles (including media-queries) for given font families
   // @variable typography - list of fonts to use and for what elements
   //
+
+
   @mixin typography {
+
+
     // Make sure to only run if typography and fonts variable exist
     // Also verify that they are maps and not strings or other things
     @if global-variable-exists(typography) and variable-exists(fonts) and

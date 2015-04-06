@@ -29,8 +29,8 @@ $global-border-box: true!default;
 // fonts
 $base-font-color: #3d3d3d!default;
 $base-font-family: sans-serif!default;
-$base-font-size: 16px!default;
-$base-line-height: 18px!default;
+$base-font-size: 18px!default;
+$base-line-height: 20px!default;
 $line-height-ratio: $base-line-height/$base-font-size;
 
 
@@ -86,6 +86,7 @@ $font-colors: (
   "light": #adadad,
   "medium": #858585,
   "dark": #303030,
+  "custard": #f5f5f5,  // evaluate name of variable
   "white": #fff
 )!default;
 //

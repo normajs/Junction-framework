@@ -11,7 +11,7 @@
       "src": "lib/**/*",
       "dest": "out/",
       "comb": true,
-      "lint": true
+      "lint": false
     },
     "copy": {
       "src": "out/framework",
@@ -23,7 +23,12 @@
     },
     "styleguide-copy": {
       "@extend": "copy",
-      "dest": "styleguide/client/stylesheets/"
+      "src": "out/framework",
+      "dest": "styleguide/client/stylesheets/",
+      "order": "post",
+      "ext": [
+        "css"
+      ]
     },
     "dss": {
       "src": "lib/**/*",

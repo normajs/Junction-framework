@@ -32,7 +32,7 @@ Template.complexObjects.helpers
       for _object in objects
         if _object.name is _block.name
           continue
-
+          
         if _object.block.name is _block.block.name
           if not _block.children
             _block.children = []

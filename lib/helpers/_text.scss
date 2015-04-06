@@ -59,6 +59,17 @@ $use-text: true!default;
   }
 
   //
+  // @name .text-white
+  // @class .text-white
+  // @description sets font color of text to be white
+  //
+  // @helper true
+  //
+  .text-white {
+    color: map-get($font-colors, "white");
+  }
+
+  //
   // @name .text-brand
   // @class .text-brand
   // @description sets font color of text to be brand color

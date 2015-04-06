@@ -1,23 +1,53 @@
 
 $use-breakpoints: true!default;
 $breakpoints: (
-  // Mobile devices meant to be held with one hand
-  "palm": "screen and (max-width: 480px)",
-  "palm-wide": "screen and (min-width: 481px) and (max-width: 768px)",
-  "palm-wide-and-up": "screen and (min-width: 481px)",
-  "handheld": "screen and (max-width: 768px)",
-  // Devices meant to be held with two hands but not on a desk
-  "lap": "screen and (min-width: 769px) and (max-width: 1024px)",
-  "lap-and-up": "screen and (min-width: 769px)",
-  "lap-wide": "screen and (min-width: 1025px) and (max-width: 1280px)",
-  "lap-wide-and-up": "screen and (min-width: 1025px)",
-  "portable": "screen and (min-width: 769px) and (max-width: 1280px)",
-  // Devices meant to stand and be used on a table/desk
-  "desk": "screen and (min-width: 1281px) and (max-width: 1680px)",
-  "desk-and-up": "screen and (min-width: 1281px)",
-  "desk-wide": "screen and (min-width: 1681px)",
-  "anchored": "screen and (min-width: 1281px)",
+  "palm": (
+    max: 480px
+  ),
+  "palm-wide": (
+    min: 481px,
+    max: 768px
+  ),
+  "palm-wide-and-up": (
+    min: 481px
+  ),
+  "handheld": (
+    max: 768px
+  ),
+  "lap": (
+    min: 769px,
+    max: 1024px
+  ),
+  "lap-and-up": (
+    min: 769px
+  ),
+  "lap-wide": (
+    min: 1025px,
+    max: 1280px
+  ),
+  "lap-wide-and-up": (
+    min: 1025px
+  ),
+  "portable": (
+    min: 769px,
+    max: 1280px
+  ),
+  "desk": (
+    min: 1281px,
+    max: 1680px
+  ),
+  "desk-and-up": (
+    min: 1281px
+  ),
+  "desk-wide": (
+    min: 1681px
+  ),
+  "anchored": (
+    min: 1281px
+  )
 ) !default;
+
+
 
 @if $use-breakpoints  == true {
   //
@@ -55,12 +85,26 @@ $breakpoints: (
       @for $i from 1 through length($mq) {
         $_mq: nth($mq, $i);
         // If the media query we’ve specified has an alias and a condition...
-        @if $_mq == $alias and $condition {
+        @if $_mq == $alias {
           // ...tell the mixin that we’ve found it...
           $breakpoint-found: true;
+          // start building media query
+          $statement: "screen ";
+
+          // set min if it exists
+          @if map-has-key($condition, min) == true {
+            $_min: map-get($condition, min);
+            $statement: "#{$statement} and (min-width: #{$_min}) ";
+          }
+
+          // set max if it exists
+          @if map-has-key($condition, max) == true {
+            $_max: map-get($condition, max);
+            $statement: "#{$statement} and (max-width: #{$_max}) ";
+          }
 
           // ...and spit it out here.
-          @media #{$condition} {
+          @media #{$statement} {
             @content;
           }
         }

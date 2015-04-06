@@ -44,40 +44,42 @@
 
 
 <template name="bem">
-  <h3>
-    Writing CSS
-  </h3>
-  <p>
-  For our own components, follow the BEM (Block, Element, Modifier) method for writing & organising CSS. BEM helps keep our CSS logical and predictable. The naming convention follows this pattern:
-  </p>
-  <pre><code class="css">
-  .block {}
-  .block__element {}
-  .block__element--modifier {}
-  </code></pre>
-
-  <p>
-    <ul>
-      <li>
-        .block represents the higher level of an abstraction or component.
-      </li>
-      <li>
-        .block__element represents a descendent of .block that helps form .block as a whole.
-      </li>
-      <li>
-      .block--modifier represents a different state or version of .block.
-      </li>
-    </ul>
+  <div class="lap-and-up-soft-ends">
+    <h3>
+      Writing CSS
+    </h3>
+    <p>
+    For our own components, follow the BEM (Block, Element, Modifier) method for writing & organising CSS. BEM helps keep our CSS logical and predictable. The naming convention follows this pattern:
     </p>
-  <small>
-    <a href="http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/">
-      (Source: CSSWizardry)
-    </a>
-  </small>
+    <pre><code class="css">
+    .block {}
+    .block__element {}
+    .block__element--modifier {}
+    </code></pre>
 
-  <p>
+    <p>
+      <ul>
+        <li>
+          .block represents the higher level of an abstraction or component.
+        </li>
+        <li>
+          .block__element represents a descendent of .block that helps form .block as a whole.
+        </li>
+        <li>
+        .block--modifier represents a different state or version of .block.
+        </li>
+      </ul>
+      </p>
+    <small>
+      <a href="http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/">
+        (Source: CSSWizardry)
+      </a>
+    </small>
 
-    For more information on BEM, <a href="http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/">please see this article.</a>
-  </p>
+    <p>
+
+      For more information on BEM, <a href="http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/">please see this article.</a>
+    </p>
+  </div>
 
 </template>

@@ -56,17 +56,6 @@
 @import "./base/iframes";
 @import "./base/form";
 
-
-// Helper Objects
-@import "./helpers/text";
-@import "./helpers/outlined";
-@import "./helpers/shapes";
-@import "./helpers/widths";
-@import "./helpers/scrollable";
-@import "./helpers/float";
-
-
-
 // Object
 @import "./objects/backgrounds";
 @import "./objects/buttons";
@@ -87,7 +76,21 @@
 @import "./complex-objects/inputs";
 
 
+// Helper Objects
+@import "./helpers/text";
+@import "./helpers/outlined";
+@import "./helpers/shapes";
+@import "./helpers/widths";
+@import "./helpers/scrollable";
+@import "./helpers/float";
+@import "./helpers/constraints";
+@import "./helpers/push";
+@import "./helpers/flush";
+@import "./helpers/soft";
+@import "./helpers/hard";
+
+
+
 // Trump Objects
-@import "./trumps/spacing";
 @import "./trumps/hidden";
 @import "./trumps/type";

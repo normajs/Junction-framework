@@ -36,7 +36,7 @@ $use-buttons: true !default;
     vertical-align: middle;
     text-decoration: none;
     letter-spacing: 1px;
-    text-transform: uppercase;
+    // text-transform: uppercase;
 
     color: $brand-color;
     border: $base-border-size solid $brand-color;
@@ -66,7 +66,7 @@ $use-buttons: true !default;
   // @object true
   //
   // @markup
-  // <a href="#" class="btn">Click Me</div>
+  // <a href="#" class="btn">Click Me Now</div>
   //
   .btn {
     @extend %btn;
