@@ -2,22 +2,19 @@
 $use-outlined: true !default;
 
 @if $use-outlined == true {
-  // ============================================================
   //
-  //   $OUTLINED
+  // @name .outlined
+  // @class .outlined
+  // @description adds border and border-radius based on defaults to any element
   //
-  //   creates border and border-radius based on defaults to
-  //   any element
+  // @helper true
   //
-  //
-  // ============================================================
-
   .outlined {
-    border: $border-size solid map-get($colors, primary);
+    border: $base-border-size solid map-get($colors, primary);
 
     // if $brand-round is 0 there is no reason to output radius mixin
-    @if $border-radius > 0 {
-      @include radius($border-radius);
+    @if $base-border-radius > 0 {
+      @include radius($base-border-radius);
     }
   }
 }

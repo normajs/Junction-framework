@@ -80,4 +80,102 @@ $use-reset: true !default;
 
     outline: none;
   }
+
+  input[type="submit"],
+  input[type="reset"],
+  input[type="button"],
+  button {
+    overflow: visible;
+
+    padding: 0;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+
+    color: inherit;
+    border: 0;
+    background: none;
+
+    font: inherit;
+    line-height: normal;
+
+    -webkit-appearance: button;
+  }
+  input::-moz-focus-inner,
+  button::-moz-focus-inner {
+    padding: 0;
+
+    border: 0;
+  }
+
+
+  input,
+  label,
+  select,
+  textarea {
+    display: inline-block;
+
+    margin: 0;
+    padding: 0;
+
+    vertical-align: middle;
+    white-space: normal;
+
+    border: 0;
+    background: none;
+  }
+
+
+  input:focus {
+    outline: 0;
+  }
+
+
+
+
+  input[type=reset],
+  input[type=checkbox],
+  input[type=radio],
+  select {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+
+
+
+
+  input[type=search] {
+    -webkit-box-sizing: content-box;
+
+    -webkit-appearance: textfield;
+  }
+
+
+  ::-webkit-search-decoration {
+    display: none;
+  }
+
+
+
+  ::-webkit-file-upload-button {
+    padding: 0;
+
+    border: 0;
+    background: none;
+  }
+
+
+  textarea {
+    overflow: auto;
+
+    vertical-align: top;
+  }
+
+
+
+  select[multiple] {
+    vertical-align: top;
+  }
 }

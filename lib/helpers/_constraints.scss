@@ -1,0 +1,44 @@
+
+
+$use-contraints: true !default;
+$constraints: (
+  copy: (
+    min-width: 280px,
+    max-width: 768px
+  )
+) !default;
+
+@if $use-contraints == true {
+  %_spaced {
+    position: relative;
+
+    margin: 0 auto;
+  }
+
+  //
+  // @name Constrain
+  // @description Create a set of classes from the $constrain object
+  //
+  // @helper true
+  //
+  // @variable constraints - base set of constraints available, can be extended using the extend function
+  //
+  // @markup
+  // <div class="constrain-copy">
+  //   <p>
+  //     Vestibulum id ligula porta felis euismod semper. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vestibulum id ligula porta felis euismod semper. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+  //   </p>
+  // </div>
+  //
+
+
+  // Loop through the list of widths we’ve provided in our settings file.
+  @each $_size, $_settings in $constraints {
+    .constrain-#{$_size} {
+      @extend %_spaced;
+      @each $_property, $_value in $_settings {
+        #{$_property}: $_value;
+      }
+    }
+  }
+}

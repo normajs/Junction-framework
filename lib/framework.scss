@@ -26,8 +26,6 @@
 //
 //  MIXINS.............Mixin Library
 //
-//  NORMALIZE..........Awesome CSS reset
-//
 //  OBJECTS............Start defining objects
 //
 //
@@ -43,10 +41,8 @@
 @import "defaults";
 
 // Mixins
-@import "../bower_components/mixins/lib/mixins";
-
-// Normalize
-@import "../bower_components/normalize.sass/normalize";
+@import "mixins";
+@import "shim";
 
 // Base Sheets
 @import "./base/reset";
@@ -56,22 +52,45 @@
 @import "./base/links";
 @import "./base/lists";
 @import "./base/horizontal-rules";
-@import "./base/icons";
+@import "./base/sections";
+@import "./base/iframes";
+@import "./base/form";
 
+// Object
+@import "./objects/backgrounds";
+@import "./objects/buttons";
+@import "./objects/buttons-social";
+@import "./objects/icons";
+@import "./objects/icons-social";
+@import "./objects/modals";
+@import "./objects/cards";
 
-// Layout Objects
-@import "./layout/grids";
-@import "./layout/floating";
-@import "./layout/alignment";
-@import "./layout/fixed-ratios";
+// Complex Object
+@import "./complex-objects/accordions";
+@import "./complex-objects/grids";
+@import "./complex-objects/fixed-ratios";
+@import "./complex-objects/floating";
+@import "./complex-objects/locked";
+@import "./complex-objects/overlays";
+@import "./complex-objects/panels";
+@import "./complex-objects/inputs";
 
 
 // Helper Objects
+@import "./helpers/text";
 @import "./helpers/outlined";
 @import "./helpers/shapes";
 @import "./helpers/widths";
+@import "./helpers/scrollable";
+@import "./helpers/float";
+@import "./helpers/constraints";
+@import "./helpers/push";
+@import "./helpers/flush";
+@import "./helpers/soft";
+@import "./helpers/hard";
+
 
 
 // Trump Objects
-@import "./trumps/spacing";
 @import "./trumps/hidden";
+@import "./trumps/type";

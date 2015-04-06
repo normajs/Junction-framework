@@ -2,10 +2,17 @@
 $use-links: true !default;
 
 @if $use-links == true {
+  //
+  // @name links
+  // @description declerations to be applied to <a> tags
+  //
+  // @base true
+  //
   a {
     position: relative;
 
-    text-decoration: underline;
     word-wrap: break-word;
+
+    color: $brand-color;
   }
 }
