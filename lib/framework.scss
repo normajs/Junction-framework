@@ -42,7 +42,12 @@
 
 // Mixins
 @import "mixins";
-@import "shim";
+
+$is-newspring: true !default;
+
+@if $is-newspring == true {
+  @import "shim";
+}
 
 // Base Sheets
 @import "./base/reset";
@@ -54,7 +59,10 @@
 @import "./base/horizontal-rules";
 @import "./base/sections";
 @import "./base/iframes";
-@import "./base/form";
+@import "./base/forms";
+@import "./base/labels";
+@import "./base/inputs";
+@import "./base/checkboxes";
 
 // Object
 @import "./objects/backgrounds";
@@ -64,6 +72,7 @@
 @import "./objects/icons-social";
 @import "./objects/modals";
 @import "./objects/cards";
+@import "./objects/transitions";
 
 // Complex Object
 @import "./complex-objects/accordions";

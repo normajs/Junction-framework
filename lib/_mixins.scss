@@ -8,6 +8,7 @@
 @import "./functions/maps";
 @import "./functions/number";
 
+@import "./extends/hidden";
 
 @import "./mixins/vendor";
 @import "./mixins/rotate";
@@ -18,6 +19,7 @@
 
 @import "./mixins/breakpoints";
 @import "./mixins/namespace";
+@import "./mixins/constraints";
 
 @import "./mixins/keyframe";
 

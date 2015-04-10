@@ -70,6 +70,32 @@ $use-overlays: true !default;
   }
 
 
+  //
+  // @name .overlay--brand
+  // @class .overlay--brand
+  // @description The .overlay--brand class creates a brand overlay
+  //
+  // @block .overlay
+  // @element .overlay__item
+  // @modifier .overlay--brand
+  //
+  // @complex-object true
+  //
+  // @state :after - fill the overlay with the color
+  //
+  // @markup
+  // <div class="overlay--brand">
+  //   <h1> I'm shaded</h1>
+  // </div>
+  //
+  .overlay--brand {
+    @extend %_overlay;
+    &:after {
+      background: rgba(map-get($colors, "primary"), .65);
+    }
+  }
+
+
 
   //
   // @name .overlay--solid-light

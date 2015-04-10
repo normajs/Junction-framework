@@ -23,5 +23,9 @@ $use-base: true !default;
     line-height: #{$base-line-height};
     color: map-get($font-colors, "base");
     font-family: $base-font-family;
+    margin: 0;
+    padding: 0;
   }
+  
+
 }

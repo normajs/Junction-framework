@@ -68,4 +68,24 @@ $use-backgrounds: true!default;
     background-position: top;
     background-size: 100%;
   }
+
+  
+  .background--colored {
+  @extend %_background;
+
+    background-color: map-get($colors, primary);
+  }
+
+  .background--colored-secondary {
+    @extend %_background;
+
+    background-color: map-get($colors, secondary);
+  }
+
+  .background--colored-tertiary {
+    @extend %_background;
+
+    background-color: map-get($colors, tertiary);
+  }
+
 }

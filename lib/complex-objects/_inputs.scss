@@ -23,9 +23,11 @@ $use-inputs: true !default;
   // }
   //
   %input {
+    @extend %transition--all;
     position: relative;
 
     padding-bottom: $base-spacing-unit;
+
   }
 
   //
@@ -77,7 +79,14 @@ $use-inputs: true !default;
     @extend %input;
   }
 
+  .input--active {
+    label {
+      @extend %visible;
 
+      margin-bottom: 0;
+      padding-bottom: $half-spacing-unit * .75;
+    }
+  }
 
   //
   // @name .input--alert
