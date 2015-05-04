@@ -21,7 +21,7 @@ $use-base: true !default;
     overflow-x: hidden;
     font-size: #{(($base-font-size/16px) * 100)}%;
     line-height: #{$base-line-height};
-    color: map-get($font-colors, "base");
+    color: $base-font-color;
     font-family: $base-font-family;
     margin: 0;
     padding: 0;

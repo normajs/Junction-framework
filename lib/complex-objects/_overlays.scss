@@ -60,7 +60,7 @@ $use-overlays: true !default;
   .overlay {
     @extend %_overlay;
     &:after {
-      background: rgba(map-get($colors, "dark"), .6);
+      background: rgba($dark-color, .6);
     }
   }
 
@@ -91,7 +91,7 @@ $use-overlays: true !default;
   .overlay--brand {
     @extend %_overlay;
     &:after {
-      background: rgba(map-get($colors, "primary"), .65);
+      background: rgba($brand-color, .65);
     }
   }
 
@@ -118,7 +118,7 @@ $use-overlays: true !default;
   .overlay--solid-light {
     @extend %_overlay;
     &:after {
-      background: rgba(map-get($colors, "dark"), .1);
+      background: rgba($dark-color, .1);
     }
   }
 
@@ -143,7 +143,7 @@ $use-overlays: true !default;
   .overlay--solid-dark {
     @extend %_overlay;
     &:after {
-      background: rgba(map-get($colors, "dark"), .8);
+      background: rgba($dark-color, .8);
     }
   }
 

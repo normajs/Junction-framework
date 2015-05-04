@@ -44,7 +44,7 @@ $use-text: true!default;
   // @helper true
   //
   .text-dark {
-    color: map-get($font-colors, "dark");
+    color: $dark-color;
   }
 
   //
@@ -55,7 +55,7 @@ $use-text: true!default;
   // @helper true
   //
   .text-light {
-    color: map-get($font-colors, "light");
+    color: map-get($colors, light-secondary);
   }
 
   //
@@ -66,7 +66,7 @@ $use-text: true!default;
   // @helper true
   //
   .text-white {
-    color: map-get($font-colors, "white");
+    color: $light-color;
   }
 
   //
@@ -78,6 +78,6 @@ $use-text: true!default;
   //
   .text-brand,
   .text-primary {
-    color: map-get($colors, "primary");
+    color: $brand-color;
   }
 }

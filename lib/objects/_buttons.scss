@@ -46,7 +46,7 @@ $use-buttons: true !default;
     line-height: 1.25;
 
     &:hover {
-      color: map-get($colors, light);
+      color: $light-color;
       background: $brand-color;
     }
   }
@@ -121,13 +121,13 @@ $use-buttons: true !default;
 
     cursor: text;
 
-    color: map-get($colors, base);
-    border-color: map-get($colors, base);
+    color: $light-color;
+    border-color: $light-color;
 
     &:hover {
       cursor: text;
 
-      color: map-get($colors, base);
+      color: $light-color;
       background-color: inherit;
     }
   }
@@ -174,12 +174,12 @@ $use-buttons: true !default;
   .btn--light {
     @extend %btn;
 
-    color: map-get($colors, light);
-    border-color: map-get($colors, light);
+    color: $light-color;
+    border-color: $light-color;
 
     &:hover {
-      color: map-get($font-colors, base);
-      background-color: map-get($colors, light);
+      color: $base-font-color;
+      background-color: $light-color;
     }
   }
 
@@ -204,13 +204,13 @@ $use-buttons: true !default;
   .btn--filled {
     @extend %btn;
 
-    color: map-get($colors, light);
+    color: $light-color;
     border-color: $brand-color;
     background-color: $brand-color;
 
     &:hover {
-      border-color: darken($brand-color, 10);
-      background-color: darken($brand-color, 10);
+      border-color: map-get($colors, secondary);
+      background-color: map-get($colors, secondary);
     }
   }
 
@@ -235,13 +235,13 @@ $use-buttons: true !default;
   .btn--alert {
     @extend %btn;
 
-    color: map-get($colors, light);
+    color: $light-color;
     border-color: map-get($colors, alert);
     background-color: map-get($colors, alert);
 
     &:hover {
-      border-color: darken(map-get($colors, alert), 10);
-      background-color: darken(map-get($colors, alert), 10);
+      border-color: map-get($colors, alert);
+      background-color: map-get($colors, alert);
     }
   }
 
@@ -296,7 +296,7 @@ $use-buttons: true !default;
     &:hover {
       .icon:before,
       .icon:after {
-        border-color: map-get($colors, light);
+        border-color: $light-color;
       }
     }
 

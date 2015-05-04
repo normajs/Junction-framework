@@ -10,7 +10,7 @@ $use-typography: true !default;
   // @trump true
   //
   .capitalize {
-    text-transform: capitalize !important;
+    text-transform: capitalize;
   }
   //
   // @name .lowercase
@@ -20,7 +20,7 @@ $use-typography: true !default;
   // @trump true
   //
   .lowercase {
-    text-transform: lowercase !important;
+    text-transform: lowercase;
   }
   //
   // @name .uppercase
@@ -30,6 +30,6 @@ $use-typography: true !default;
   // @trump true
   //
   .uppercase {
-    text-transform: uppercase !important;
+    text-transform: uppercase;
   }
 }

@@ -6,13 +6,13 @@ $use-input: true !default;
   input {
     @extend %h6;
     @include placeholder {
-      color: map-get($colors, base);
+      color: $light-color;
     }
 
     width: 100%;
     padding: $half-spacing-unit * .5;
 
-    border-bottom: solid $base-border-size map-get($colors, base);
+    border-bottom: solid $base-border-size $light-color;
 
     font-weight: bold;
 

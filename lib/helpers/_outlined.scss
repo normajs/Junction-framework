@@ -10,7 +10,7 @@ $use-outlined: true !default;
   // @helper true
   //
   .outlined {
-    border: $base-border-size solid map-get($colors, primary);
+    border: $base-border-size solid $brand-color;
 
     // if $brand-round is 0 there is no reason to output radius mixin
     @if $base-border-radius > 0 {

@@ -57,9 +57,9 @@ $use-icons-social: true!default;
         @extend %icon--social;
 
         color: map-get($_brand, color);
-        &:hover {
-          color: darken(map-get($_brand, color), 5);
-        }
+        // &:hover {
+        //   color: darken(map-get($_brand, color), 5);
+        // }
 
 
         &:after {
@@ -67,12 +67,12 @@ $use-icons-social: true!default;
         }
 
         &.icon--filled {
-          color: map-get($colors, light);
+          color: $light-color;
           border-color: map-get($_brand, color);
           background-color: map-get($_brand, color);
-          &:hover {
-            background-color: darken(map-get($_brand, color), 5);
-          }
+          // &:hover {
+          //   background-color: darken(map-get($_brand, color), 5);
+          // }
         }
       }
     }

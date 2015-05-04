@@ -73,7 +73,7 @@ $use-backgrounds: true!default;
   .background--colored {
     @extend %_background;
 
-    background-color: map-get($colors, primary);
+    background-color: $brand-color;
   }
 
   .background--colored-secondary {

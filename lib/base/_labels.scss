@@ -12,7 +12,7 @@ $use-labels: true !default;
 
     text-align: left;
 
-    color: map-get($colors, base);
+    color: $light-color;
 
     // font-family: "colfax-web";
     // font-size: .875em;

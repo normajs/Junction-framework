@@ -86,7 +86,7 @@ $use-inputs: true !default;
       margin-bottom: 0;
       padding-bottom: $half-spacing-unit * .75;
 
-      font-family: map-fetch($fonts, colfax, h1, font-family);
+      font-family: map-fetch($fonts, base, h1, font-family);
     }
   }
 

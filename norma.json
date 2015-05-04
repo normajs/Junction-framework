@@ -3,20 +3,13 @@
   "tasks": {
     "sass": {
       "src": "lib/**/*",
-      "dest": "out/",
-      "comb": true,
-      "lint": false,
-      "minify": true
-    },
-    "copy": {
-      "src": "out/framework",
       "dest": "./",
-      "order": "post",
-      "ext": [
-        "css"
-      ]
+      "comb": false,
+      "lint": false,
+      "minify": false
     },
     "dss": {
+      "endpoint": "NewSpring/norma-dss",
       "src": "lib/**/*",
       "dest": "http://localhost:3000/api/v1/blocks"
     }

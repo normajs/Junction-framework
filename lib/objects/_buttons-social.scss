@@ -80,7 +80,7 @@ $brands: "facebook", "google", "twitter"!default;
     text-transform: none;
 
     &:after {
-      color: map-get($colors, light);
+      color: $light-color;
 
       font-family: FontAwesome;
     }
@@ -112,7 +112,7 @@ $brands: "facebook", "google", "twitter"!default;
     .btn--#{$brand} {
       @extend %btn--social;
 
-      color: map-get($colors, light);
+      color: $light-color;
       border-color: map-get($_brand, "color");
       background-color: map-get($_brand, "color");
       &:after {
