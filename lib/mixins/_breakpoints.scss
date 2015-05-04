@@ -65,6 +65,7 @@ $breakpoints: (
   //   @include media-query(palm) {
   //     display: none;
   //   }
+  //
   // }
   //
   // @css
@@ -74,8 +75,6 @@ $breakpoints: (
   //   }
   // }
   //
-
-
   // Mixin for creating breakpoints on the fly from a standard list
   @mixin media-query($mq...) {
     $breakpoint-found: false;

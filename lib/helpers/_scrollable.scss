@@ -11,5 +11,6 @@ $use-scrollable: true !default;
   //
   .scrollable {
     overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
   }
 }

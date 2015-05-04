@@ -53,7 +53,7 @@ $use-shapes: true!default;
 
     content: "";
   }
-
+  
   @mixin circle($size) {
     @extend %_circle;
 

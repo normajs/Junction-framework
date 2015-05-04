@@ -20,14 +20,19 @@ $use-form: true !default;
 
   legend {
     @extend %h3;
-
+    margin: 0 auto;
     margin-bottom: $base-spacing-unit * 1.25;
   }
 
 
   button {
+
     &[class*="icon"] {
       display: inline-block;
+    }
+
+    &:focus {
+      outline: none;
     }
   }
 }

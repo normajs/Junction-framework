@@ -1,0 +1,15 @@
+
+$use-display: true !default;
+
+@if $use-display == true {
+
+  .display-inline-block {
+    display: inline-block;
+  }
+
+  .display-block {
+    display: block;
+  }
+
+
+}

@@ -103,62 +103,32 @@ $use-icons: true!default;
   }
 
   //
-  // @name .icon--loading
-  // @class .icon--loading
-  // @description icon class with loading spinner
+  // @name .icon--base
+  // @class .icon--base
+  // @description icon with background primary and light text
   //
   // @block .icon
-  // @modifier .icon--loading
+  // @modifier .icon--base
   //
   // @extends %icon
-  //
-  // @state .icon fa-* - any fontawesome class will be set to correct size in icon
   //
   // @object true
   //
   // @markup
-  // <div class="icon--loading"></div>
+  // <div class="icon--base fa fa-close"></div>
   //
-  .icon--loading {
+  .icon--base {
     @extend %icon;
-    @include vendor(animation, spin 1s infinite linear);
 
-    text-indent: -9999em;
+    color: map-get($colors, base);
+    border: $base-border-size solid map-get($colors, base);
 
-    border-width: $base-border-size * 2;
-    // border-style: solid;
-    background-image: linear-gradient(to right, map-get($colors, light) 10%, rgba(map-get($colors, light), 0) 50%);
-
-    // hide fonts
 
     &:before {
-      @include absolute(top 0 left 0);
-      @include radius(100% 0 0);
-
-      z-index: 1;
-
-      width: 50%;
-      height: 50%;
-      // remove FA icons
-
-      content: "" !important;
-
-      background-color: map-get($colors, light);
-    }
-
-    &:after {
-      @include radius(50%);
-      @include absolute(top 0 bottom 0 left 0 right 0);
-
-      z-index: 2;
-
-      width: 75%;
-      height: 75%;
-      margin: auto;
-
-      content: "";
-
-      background: $brand-color;
+      color: map-get($colors, base);
     }
   }
+
+
+
 }

@@ -85,8 +85,11 @@ $use-inputs: true !default;
 
       margin-bottom: 0;
       padding-bottom: $half-spacing-unit * .75;
+      font-family: map-fetch($fonts, colfax, h1, font-family);
     }
   }
+
+
 
   //
   // @name .input--alert
@@ -115,7 +118,14 @@ $use-inputs: true !default;
     %input__message {
       color: map-get($colors, alert);
     }
+
+    // this feels overly specific to a single use case?
+    h7 + .input__status {
+      top: $base-spacing-unit * 2.5;
+      left: $base-spacing-unit * 2;
+    }
   }
+
 
   //
   // @name .input__status
