@@ -3,7 +3,6 @@
 $use-toggles: true !default;
 
 @if $use-toggles == true {
-
   //
   // @name %toggle
   //
@@ -67,5 +66,4 @@ $use-toggles: true !default;
     color: $base-font-color;
     background-color: transparent;
   }
-
 }

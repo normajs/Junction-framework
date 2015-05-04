@@ -1,17 +1,12 @@
 {
   "name": "junction-framework",
   "tasks": {
-    "bower": {
-      "/vendor": {
-        "fonts": "NewSpring/newspring-fonts",
-        "junction": "NewSpring/junction"
-      }
-    },
     "sass": {
       "src": "lib/**/*",
       "dest": "out/",
       "comb": true,
-      "lint": false
+      "lint": false,
+      "minify": true
     },
     "copy": {
       "src": "out/framework",
@@ -21,38 +16,9 @@
         "css"
       ]
     },
-    "styleguide-copy": {
-      "@extend": "copy",
-      "src": "out/framework",
-      "dest": "styleguide/client/stylesheets/",
-      "order": "post",
-      "ext": [
-        "css"
-      ]
-    },
     "dss": {
       "src": "lib/**/*",
       "dest": "http://localhost:3000/api/v1/blocks"
-    },
-    "meteor": {
-      "dev": true,
-      "src": "styleguide",
-      "settings": "styleguide/settings.json",
-      "packages": [
-        "meteor-platform",
-        "iron:router",
-        "iron:location",
-        "meteorhacks:fast-render",
-        "meteorhacks:subs-manager",
-        "cfs:http-methods",
-        "http",
-        "coffeescript",
-        "fourseven:scss"
-      ],
-      "platforms": [
-        "server",
-        "browser"
-      ]
     }
   }
 }

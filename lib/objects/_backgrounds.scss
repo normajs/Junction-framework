@@ -69,9 +69,9 @@ $use-backgrounds: true!default;
     background-size: 100%;
   }
 
-  
+
   .background--colored {
-  @extend %_background;
+    @extend %_background;
 
     background-color: map-get($colors, primary);
   }
@@ -87,5 +87,4 @@ $use-backgrounds: true!default;
 
     background-color: map-get($colors, tertiary);
   }
-
 }

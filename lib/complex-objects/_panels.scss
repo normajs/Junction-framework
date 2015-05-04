@@ -11,12 +11,13 @@ $use-panels: true !default;
   // @note handheld - paneling is turned off for handheld
   //
   %_panel {
-    -webkit-overflow-scrolling: touch;
     @include media-query(lap-and-up) {
       @include absolute(top 0 bottom 0 right 0 left 0);
 
       z-index: 0;
     }
+
+    -webkit-overflow-scrolling: touch;
   }
 
   //

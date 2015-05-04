@@ -2,7 +2,6 @@
 $use-display: true !default;
 
 @if $use-display == true {
-
   .display-inline-block {
     display: inline-block;
   }
@@ -10,6 +9,4 @@ $use-display: true !default;
   .display-block {
     display: block;
   }
-
-
 }

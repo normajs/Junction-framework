@@ -2,7 +2,6 @@
 $use-transitions: true !default;
 
 @if $use-transitions == true {
-
   %transition--all {
     @include vendor(transition, all .1s linear);
   }
@@ -10,5 +9,4 @@ $use-transitions: true !default;
   .transition {
     @extend %transition--all;
   }
-
 }

@@ -3,6 +3,11 @@ $use-fixed-ratios: true !default;
 
 
 @if $use-fixed-ratios == true {
+  @include namespace(ratio--none) {
+    .ratio__item {
+      @include relative(top auto left auto right auto bottom auto);
+    }
+  }
   //
   // @name %_ratio__item
   // @description absolutly postions child to expand to fill parent container
@@ -47,11 +52,6 @@ $use-fixed-ratios: true !default;
 
     @include namespace($alias) {
       @include fixed-ratio($width, $height);
-    }
-  }
-  @include namespace(ratio--none) {
-    .ratio__item {
-      @include relative(top auto left auto right auto bottom auto);
     }
   }
   .ratio__item {

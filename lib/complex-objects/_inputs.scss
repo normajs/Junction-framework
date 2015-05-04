@@ -24,10 +24,10 @@ $use-inputs: true !default;
   //
   %input {
     @extend %transition--all;
+
     position: relative;
 
     padding-bottom: $base-spacing-unit;
-
   }
 
   //
@@ -85,6 +85,7 @@ $use-inputs: true !default;
 
       margin-bottom: 0;
       padding-bottom: $half-spacing-unit * .75;
+
       font-family: map-fetch($fonts, colfax, h1, font-family);
     }
   }

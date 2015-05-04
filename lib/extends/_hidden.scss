@@ -2,7 +2,6 @@
 $use-hidden: true !default;
 
 @if $use-hidden == true {
-
   %hidden {
     visibility: hidden;
 
@@ -26,5 +25,4 @@ $use-hidden: true !default;
 
     opacity: 1;
   }
-
 }

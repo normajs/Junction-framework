@@ -43,11 +43,6 @@
 // Mixins
 @import "mixins";
 
-$is-newspring: true !default;
-@if $is-newspring == true {
-  @import "shim";
-}
-
 
 // Base Sheets
 @import "./base/reset";
