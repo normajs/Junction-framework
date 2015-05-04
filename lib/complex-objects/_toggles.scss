@@ -26,7 +26,7 @@ $use-toggles: true !default;
 
     vertical-align: middle;
 
-    border: $base-border-size solid $light-color;
+    border: $base-border-size solid  map-get($colors, light-tertiary);
   }
 
   %toggle__item {
@@ -50,7 +50,7 @@ $use-toggles: true !default;
   .toggle__item {
     @extend %toggle__item;
 
-    background-color: $light-color;
+    background-color:  map-get($colors, light-tertiary);
 
     &:hover {
       color: $base-font-color;

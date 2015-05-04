@@ -30,7 +30,6 @@ $use-namespace: true!default;
     //
     // @note warning! - this mixin generates a ton of code by default, use with extreme care!
     //
-
     @mixin namespace($name, $_breakpoints: $breakpoints) {
       // generate random number to prevent sharing of extends
       $_placeholder-name: random(99999);
