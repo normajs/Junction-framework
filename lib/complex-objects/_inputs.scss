@@ -87,7 +87,8 @@ $use-inputs: true !default;
       padding-bottom: $half-spacing-unit * .75;
 
       $h1-family: map-get($typography, h1);
-      font-family: map-fetch($fonts, $h1-family, h1, font-family);
+      $family: map-fetch($fonts, $h1-family, h1, font-family);
+      font-family: $family;
     }
   }
 
