@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/NewSpring/junction-framework",
   "dependencies": {
-    "norma-dss": "git://github.com/newspring/norma-dss.git"
+    "norma-dss": "git://github.com/newspring/norma-dss.git",
+    "norma-sass": "^0.4.9"
   }
 }
