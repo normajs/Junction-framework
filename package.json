@@ -1,6 +1,6 @@
 {
   "name": "junction-framework",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "CSS layout framework for the Junction Library",
   "main": "index.js",
   "scripts": {
