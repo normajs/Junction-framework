@@ -27,13 +27,16 @@ $use-icons: true!default;
     height: ($base-icon-size + ($base-border-size*2));
 
     text-decoration: none;
+    vertical-align: top;
 
     &[class*="fa-"] {
       margin-bottom: 0;
 
       text-align: center;
 
-      line-height: ($base-icon-size + ($base-border-size*2));
+      &:before {
+        font-size: $base-icon-size - $base-border-size;
+      }
     }
   }
 

@@ -437,31 +437,31 @@ label {
 	display: block;
 	padding-left: 5px;
 	text-align: left;
-	color: #ffffff;
+	color: #dddddd;
 }
 
 input {
 	width: 100%;
 	padding: 5px;
-	border-bottom: solid 3px #ffffff;
+	border-bottom: solid 3px #dddddd;
 	font-weight: bold;
 	-webkit-appearance: none;
 }
 
 input::-webkit-input-placeholder {
-	color: #ffffff;
+	color: #dddddd;
 }
 
 input:-moz-placeholder {
-	color: #ffffff;
+	color: #dddddd;
 }
 
 input::-moz-placeholder {
-	color: #ffffff;
+	color: #dddddd;
 }
 
 input:-ms-input-placeholder {
-	color: #ffffff;
+	color: #dddddd;
 }
 
 input:focus {
@@ -768,6 +768,7 @@ label + h7 {
 	width: 56px;
 	height: 56px;
 	text-decoration: none;
+	vertical-align: top;
 }
 
 [class*="fa-"].icon,
@@ -779,7 +780,16 @@ label + h7 {
 [class*="fa-"].icon--twitter {
 	margin-bottom: 0;
 	text-align: center;
-	line-height: 56px;
+}
+
+[class*="fa-"].icon:before,
+[class*="fa-"].icon--filled:before,
+[class*="fa-"].icon--alert:before,
+[class*="fa-"].icon--base:before,
+[class*="fa-"].icon--facebook:before,
+[class*="fa-"].icon--google:before,
+[class*="fa-"].icon--twitter:before {
+	font-size: 47px;
 }
 
 .icon--filled {
@@ -901,6 +911,18 @@ label + h7 {
 
 .modal--dark {
 	background-color: rgba(0, 0, 0, 0.96);
+}
+
+html.modal--opened {
+	overflow: hidden;
+}
+
+html.modal--opened body {
+	overflow: hidden;
+	min-height: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
 }
 
 .card {
@@ -1179,7 +1201,7 @@ label + h7 {
 	overflow: hidden;
 	width: 100%;
 	vertical-align: middle;
-	border: 3px solid #ffffff;
+	border: 3px solid #dddddd;
 }
 
 .toggle__item,
@@ -1192,7 +1214,7 @@ label + h7 {
 }
 
 .toggle__item {
-	background-color: #ffffff;
+	background-color: #dddddd;
 }
 
 .toggle__item:hover {
