@@ -137,9 +137,12 @@ input[type=checkbox] + label:before,
 .icon--filled,
 .icon--alert,
 .icon--base,
+.icon--outlined,
 .icon--facebook,
 .icon--google,
 .icon--twitter,
+.progress__item,
+.progress__item--active,
 .round {
 	border-radius: 50%;
 	content: "";
@@ -760,6 +763,7 @@ label + h7 {
 .icon--filled,
 .icon--alert,
 .icon--base,
+.icon--outlined,
 .icon--facebook,
 .icon--google,
 .icon--twitter {
@@ -775,6 +779,7 @@ label + h7 {
 [class*="fa-"].icon--filled,
 [class*="fa-"].icon--alert,
 [class*="fa-"].icon--base,
+[class*="fa-"].icon--outlined,
 [class*="fa-"].icon--facebook,
 [class*="fa-"].icon--google,
 [class*="fa-"].icon--twitter {
@@ -786,6 +791,7 @@ label + h7 {
 [class*="fa-"].icon--filled:before,
 [class*="fa-"].icon--alert:before,
 [class*="fa-"].icon--base:before,
+[class*="fa-"].icon--outlined:before,
 [class*="fa-"].icon--facebook:before,
 [class*="fa-"].icon--google:before,
 [class*="fa-"].icon--twitter:before {
@@ -809,6 +815,15 @@ label + h7 {
 
 .icon--base:before {
 	color: #ffffff;
+}
+
+.icon--outlined {
+	color: #858585;
+	border: 3px solid #858585;
+}
+
+.icon--outlined:before {
+	color: #858585;
 }
 
 .icon--facebook,
@@ -1225,6 +1240,56 @@ html.modal--opened body {
 	cursor: inherit;
 	color: #505050;
 	background-color: transparent;
+}
+
+.progress {
+	position: relative;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	overflow: hidden;
+	width: 100%;
+	min-width: 308px;
+	-webkit-justify-content: space-between;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+}
+
+.progress:after {
+	position: absolute;
+	right: 0;
+	left: 0;
+	z-index: 0;
+	height: 6px;
+	margin-top: 7px;
+	content: "";
+	background-color: #dddddd;
+}
+
+.progress__item,
+.progress__item--active {
+	width: 20px;
+	height: 20px;
+	position: relative;
+	z-index: 2;
+	display: inline-block;
+	cursor: pointer;
+	background-color: #dddddd;
+}
+
+.progress__item--active {
+	background-color: #6bac43;
+}
+
+.progress__item--active + .progress__item--active:before {
+	position: absolute;
+	z-index: 1;
+	right: 20px;
+	width: 100000px;
+	height: 0;
+	margin-top: 7px;
+	content: "";
+	border-bottom: 6px solid #6bac43;
 }
 
 .text-right {
@@ -1670,6 +1735,10 @@ html.modal--opened body {
 
 .uppercase {
 	text-transform: uppercase;
+}
+
+.italic {
+	font-style: italic;
 }
 
 .visuallyhidden {

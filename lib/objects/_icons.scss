@@ -131,4 +131,15 @@ $use-icons: true!default;
       color: $light-color;
     }
   }
+
+  .icon--outlined {
+    @extend %icon;
+
+    color: map-get($colors, dark-tertiary);
+    border: $base-border-size solid map-get($colors, dark-tertiary);
+
+    &:before {
+      color: map-get($colors, dark-tertiary);
+    }
+  }
 }
