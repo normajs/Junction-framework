@@ -5,11 +5,13 @@ $use-progress: true !default;
   %_progress {
     position: relative;
 
+    display: inline-block;
     display: flex;
     overflow: hidden;
 
-    width: 100%;
-    min-width: 308px;
+    min-width: 0;
+    width: 50%;
+    margin: 0 auto;
 
     justify-content: space-between;
 
@@ -18,8 +20,8 @@ $use-progress: true !default;
 
       z-index: map-get($zindex, base);
 
-      height: $base-border-size * 2;
-      margin-top: $half-spacing-unit - $base-border-size;
+      height: $base-border-size + 1;
+      margin-top: $base-border-size;
 
       content: "";
 
@@ -34,6 +36,9 @@ $use-progress: true !default;
     z-index: map-get($zindex, base) + 2;
 
     display: inline-block;
+
+    width: $base-line-height / 2;
+    height: $base-line-height / 2;
 
     cursor: pointer;
 
@@ -52,22 +57,25 @@ $use-progress: true !default;
   .progress__item--active {
     @extend %_progress__item;
 
+    width: $base-line-height / 2;
+    height: $base-line-height / 2;
+
     background-color: $brand-color;
 
     & + & {
       &:before {
         position: absolute;
         z-index: map-get($zindex, base) + 1;
-        right: $base-spacing-unit;
+        right: $half-spacing-unit / 2;
         // HACK to back fill over line to the left
 
         width: 100000px;
         height: 0;
-        margin-top: $half-spacing-unit - $base-border-size;
+        margin-top: $half-spacing-unit - 8;
 
         content: "";
 
-        border-bottom: $base-border-size * 2 solid $brand-color;
+        border-bottom: $base-border-size + 1 solid $brand-color;
 
       }
     }
