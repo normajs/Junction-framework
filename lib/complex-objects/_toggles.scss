@@ -27,6 +27,7 @@ $use-toggles: true !default;
     vertical-align: middle;
 
     border: $base-border-size solid  map-get($colors, light-tertiary);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
 
   %toggle__item {

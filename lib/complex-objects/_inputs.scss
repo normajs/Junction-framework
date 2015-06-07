@@ -28,6 +28,14 @@ $use-inputs: true !default;
     position: relative;
 
     padding-bottom: $base-spacing-unit;
+
+    &.fa-caret-down:before {
+      position: absolute;
+      top: $half-spacing-unit * .5;
+      right: $half-spacing-unit;
+
+      color: map-get($colors, light-tertiary);
+    }
   }
 
   //
@@ -89,6 +97,10 @@ $use-inputs: true !default;
       $h1-family: map-get($typography, h1);
       $family: map-fetch($fonts, $h1-family, h1, font-family);
       font-family: $family;
+    }
+
+    select {
+      color: map-get($colors, dark-primary);
     }
   }
 

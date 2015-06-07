@@ -70,21 +70,60 @@ $use-backgrounds: true!default;
   }
 
 
-  .background--colored {
+  .background--primary {
     @extend %_background;
 
     background-color: $brand-color;
   }
 
-  .background--colored-secondary {
+  .background--secondary {
     @extend %_background;
 
     background-color: map-get($colors, secondary);
   }
 
-  .background--colored-tertiary {
+  .background--tertiary {
     @extend %_background;
 
     background-color: map-get($colors, tertiary);
   }
+
+  .background--dark {
+    @extend %_background;
+
+    background-color: map-get($colors, dark-primary);
+  }
+
+  .background--dark-secondary {
+    @extend %_background;
+
+    background-color: map-get($colors, dark-secondary);
+  }
+
+  .background--dark-tertiary {
+    @extend %_background;
+
+    background-color: map-get($colors, dark-tertiary);
+  }
+
+  .background--light {
+    @extend %_background;
+
+    background-color: map-get($colors, light-primary);
+  }
+
+  .background--light-secondary {
+    @extend %_background;
+
+    background-color: map-get($colors, light-secondary);
+  }
+
+  .background--light-tertiary {
+    @extend %_background;
+
+    background-color: map-get($colors, light-tertiary);
+  }
+
+
+
 }

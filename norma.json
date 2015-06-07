@@ -11,7 +11,7 @@
     "dss": {
       "endpoint": "NewSpring/norma-dss",
       "src": "lib/**/*",
-      "dest": "http://localhost:3000/api/v1/blocks"
+      "dest": "http://localhost:2000"
     }
   }
 }

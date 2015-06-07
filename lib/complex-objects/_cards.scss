@@ -1,4 +1,5 @@
 
+
 $use-cards: true !default;
 
 @if $use-cards == true {
@@ -12,7 +13,6 @@ $use-cards: true !default;
     position: relative;
 
     margin-bottom: $half-spacing-unit;
-    padding: $half-spacing-unit;
 
     border-width: 0;
   }
@@ -41,5 +41,18 @@ $use-cards: true !default;
   //
   .card {
     @extend %card;
+
+    .card__image {
+      padding: 0;
+      margin: 0;
+    }
+
+    // nested in .card to handle using helpers like outlined
+    .card__item {
+      border-top: none;
+    }
+
   }
+
+
 }

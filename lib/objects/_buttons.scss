@@ -90,9 +90,9 @@ $use-buttons: true !default;
   .btn--small {
     @extend %btn;
 
-    padding: ($button-height * .125) + 1 $button-height * .5 ($button-height * .125) - 1;
+    padding: ($button-height * .25) $button-height * .5 ($button-height * .25);
 
-    border: $base-border-size * .75 solid $brand-color;
+    border: $base-border-size solid $brand-color;
 
     font-size: $button-height * .375;
   }
@@ -211,6 +211,18 @@ $use-buttons: true !default;
     &:hover {
       border-color: map-get($colors, secondary);
       background-color: map-get($colors, secondary);
+    }
+  }
+
+  .btn--dark-tertiary {
+
+    @extend %btn;
+    color: map-get($colors, dark-tertiary);
+    border-color: map-get($colors, dark-tertiary);
+
+    &:hover {
+      border-color: map-get($colors, dark-secondary);
+      background-color: map-get($colors, dark-secondary);
     }
   }
 

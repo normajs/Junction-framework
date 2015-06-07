@@ -34,9 +34,21 @@ $use-typography: true !default;
   // @class .italic
   // @description set item to be italic
   //
-
   //
   .italic {
     font-style: italic;
   }
+  //
+  // @name .ellipsis
+  // @class .ellipsis
+  // @description set item to be ellipsis
+  //
+  //
+  .ellipsis {
+    overflow: hidden;
+
+    vertical-align: middle;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
 }

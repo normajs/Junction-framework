@@ -1,0 +1,25 @@
+
+$use-selects: true !default;
+
+@if $use-selects == true {
+
+  select {
+    width: 100%;
+
+    padding: $half-spacing-unit * .5;
+
+    color: map-get($colors, light-tertiary);
+    border-bottom: solid $base-border-size map-get($colors, light-tertiary);
+    border-radius: 0;
+
+    @extend %h6;
+
+    -webkit-appearance: none;
+  }
+
+  &:focus {
+    border-bottom-width: 2px;
+    border-bottom-color: $base-font-color;
+  }
+
+}

@@ -312,20 +312,23 @@ img[height] {
 	max-width: none;
 }
 
-h1 {
+h1,
+.h1 {
 	font-size: 3.25em;
 	line-height: 1.05;
 	margin-bottom: 20px;
 }
 
-h2 {
+h2,
+.h2 {
 	font-size: 2.625em;
 	line-height: 1.25;
 	margin-bottom: 20px;
 }
 
 legend,
-h3 {
+h3,
+.h3 {
 	font-size: 2em;
 	line-height: 1.25;
 	margin-bottom: 20px;
@@ -338,39 +341,46 @@ h3 {
 .btn--corners,
 .btn--light,
 .btn--filled,
+.btn--dark-tertiary,
 .btn--alert,
 .btn--icon,
 .btn--facebook,
 .btn--google,
 .btn--twitter,
-h4 {
+h4,
+.h4 {
 	font-size: 1.5625em;
 	line-height: 1.22222;
 	margin-bottom: 10px;
 }
 
-h5 {
+h5,
+.h5 {
 	font-size: 1.25em;
 	line-height: 1.25;
 	margin-bottom: 10px;
 }
 
 input,
+select,
 .toggle__item,
 .toggle__item--active,
-h6 {
+h6,
+.h6 {
 	font-size: 1em;
 	line-height: 1.125;
 	margin-bottom: 10px;
 }
 
-h7 {
+h7,
+.h7 {
 	font-size: 0.875em;
 	line-height: 1.125;
 	margin-bottom: 10px;
 }
 
-p {
+p,
+.p {
 	font-size: 1.125em;
 	line-height: 1.11111;
 	margin-bottom: 20px;
@@ -413,7 +423,6 @@ embed {
 form {
 	position: relative;
 	min-width: 320px;
-	max-width: 480px;
 	padding: 20px;
 	text-align: center;
 }
@@ -449,6 +458,7 @@ input {
 	border-bottom: solid 3px #dddddd;
 	font-weight: bold;
 	-webkit-appearance: none;
+	border-radius: 0;
 }
 
 input::-webkit-input-placeholder {
@@ -530,15 +540,35 @@ label + h7 {
 	text-align: left;
 }
 
+select {
+	width: 100%;
+	padding: 5px;
+	color: #dddddd;
+	border-bottom: solid 3px #dddddd;
+	border-radius: 0;
+	-webkit-appearance: none;
+}
+
+:focus {
+	border-bottom-width: 2px;
+	border-bottom-color: #505050;
+}
+
 .background,
 .background--fill,
 .background--cover,
 .background--right,
 .background--left,
 .background--fixed,
-.background--colored,
-.background--colored-secondary,
-.background--colored-tertiary {
+.background--primary,
+.background--secondary,
+.background--tertiary,
+.background--dark,
+.background--dark-secondary,
+.background--dark-tertiary,
+.background--light,
+.background--light-secondary,
+.background--light-tertiary {
 	overflow: hidden;
 	background-repeat: no-repeat;
 	background-position: center center;
@@ -563,16 +593,40 @@ label + h7 {
 	background-size: 100%;
 }
 
-.background--colored {
+.background--primary {
 	background-color: #6bac43;
 }
 
-.background--colored-secondary {
+.background--secondary {
 	background-color: #1c683e;
 }
 
-.background--colored-tertiary {
+.background--tertiary {
 	background-color: #2a4930;
+}
+
+.background--dark {
+	background-color: #303030;
+}
+
+.background--dark-secondary {
+	background-color: #505050;
+}
+
+.background--dark-tertiary {
+	background-color: #858585;
+}
+
+.background--light {
+	background-color: #ffffff;
+}
+
+.background--light-secondary {
+	background-color: #f7f7f7;
+}
+
+.background--light-tertiary {
+	background-color: #dddddd;
 }
 
 .btn,
@@ -582,6 +636,7 @@ label + h7 {
 .btn--corners,
 .btn--light,
 .btn--filled,
+.btn--dark-tertiary,
 .btn--alert,
 .btn--icon,
 .btn--facebook,
@@ -609,6 +664,7 @@ label + h7 {
 .btn--corners:hover,
 .btn--light:hover,
 .btn--filled:hover,
+.btn--dark-tertiary:hover,
 .btn--alert:hover,
 .btn--icon:hover,
 .btn--facebook:hover,
@@ -619,8 +675,8 @@ label + h7 {
 }
 
 .btn--small {
-	padding: 7.25px 25px 5.25px;
-	border: 2.25px solid #6bac43;
+	padding: 12.5px 25px 12.5px;
+	border: 3px solid #6bac43;
 	font-size: 18.75px;
 }
 
@@ -661,6 +717,16 @@ label + h7 {
 .btn--filled:hover {
 	border-color: #1c683e;
 	background-color: #1c683e;
+}
+
+.btn--dark-tertiary {
+	color: #858585;
+	border-color: #858585;
+}
+
+.btn--dark-tertiary:hover {
+	border-color: #505050;
+	background-color: #505050;
 }
 
 .btn--alert {
@@ -826,6 +892,14 @@ label + h7 {
 	color: #858585;
 }
 
+.fa-angle-right:before {
+	margin-left: 6px;
+}
+
+.fa-angle-left:before {
+	margin-right: 6px;
+}
+
 .icon--facebook,
 .icon--google,
 .icon--twitter {
@@ -938,13 +1012,6 @@ html.modal--opened body {
 	height: 100%;
 	padding: 0;
 	margin: 0;
-}
-
-.card {
-	position: relative;
-	margin-bottom: 10px;
-	padding: 10px;
-	border-width: 0;
 }
 
 .transition,
@@ -1179,6 +1246,14 @@ html.modal--opened body {
 	padding-bottom: 20px;
 }
 
+.fa-caret-down.input--alert:before,
+.fa-caret-down.input:before {
+	position: absolute;
+	top: 5px;
+	right: 10px;
+	color: #dddddd;
+}
+
 .input--alert {
 	margin-bottom: 20px;
 }
@@ -1194,6 +1269,10 @@ html.modal--opened body {
 .input--active label {
 	margin-bottom: 0;
 	padding-bottom: 7.5px;
+}
+
+.input--active select {
+	color: #303030;
 }
 
 .input--alert input {
@@ -1217,6 +1296,7 @@ html.modal--opened body {
 	width: 100%;
 	vertical-align: middle;
 	border: 3px solid #dddddd;
+	-webkit-tap-highlight-color: transparent;
 }
 
 .toggle__item,
@@ -1298,6 +1378,21 @@ html.modal--opened body {
 	border-bottom: 4px solid #6bac43;
 }
 
+.card {
+	position: relative;
+	margin-bottom: 10px;
+	border-width: 0;
+}
+
+.card .card__image {
+	padding: 0;
+	margin: 0;
+}
+
+.card .card__item {
+	border-top: none;
+}
+
 .text-right {
 	text-align: right;
 }
@@ -1327,9 +1422,63 @@ html.modal--opened body {
 	color: #6bac43;
 }
 
-.outlined {
-	border: 3px solid #6bac43;
+.text-dark-tertiary {
+	color: #858585;
+}
+
+.text-light-tertiary {
+	color: #dddddd;
+}
+
+.outlined,
+.outlined--light,
+.outlined--dotted,
+.outlined--top,
+.outlined--left,
+.outlined--right,
+.outlined--bottom {
+	border-width: 3px;
+	border-style: solid;
+	border-color: #6bac43;
 	border-radius: 2px;
+}
+
+.outlined--light {
+	border-width: 2px;
+	border-style: solid;
+	border-color: #dddddd;
+}
+
+.outlined--dotted {
+	border-width: 3px;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	border-style: dotted;
+}
+
+.outlined--top {
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 0;
+}
+
+.outlined--left {
+	border-top: 0;
+	border-right: 0;
+	border-bottom: 0;
+}
+
+.outlined--right {
+	border-top: 0;
+	border-left: 0;
+	border-bottom: 0;
+}
+
+.outlined--bottom {
+	border-top: 0;
+	border-right: 0;
+	border-left: 0;
 }
 
 .one-whole {
@@ -1745,6 +1894,33 @@ html.modal--opened body {
 
 .italic {
 	font-style: italic;
+}
+
+.ellipsis {
+	overflow: hidden;
+	vertical-align: middle;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.rounded {
+	border-radius: 6px;
+}
+
+.rounded-top {
+	border-radius: 6px 6px 0 0;
+}
+
+.rounded-bottom {
+	border-radius: 0 0 6px 6px;
+}
+
+.rounded-right {
+	border-radius: 0 6px 6px 0;
+}
+
+.rounded-left {
+	border-radius: 6px 0 0 6px;
 }
 
 .visuallyhidden {

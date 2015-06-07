@@ -142,4 +142,14 @@ $use-icons: true!default;
       color: map-get($colors, dark-tertiary);
     }
   }
+
+  // overwrites for font-awesome alignment
+  .fa-angle-right:before {
+    margin-left: $base-border-size * 2;
+  }
+
+  .fa-angle-left:before {
+    margin-right: $base-border-size * 2;
+  }
+
 }

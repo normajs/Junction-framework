@@ -80,4 +80,27 @@ $use-text: true!default;
   .text-primary {
     color: $brand-color;
   }
+
+
+  //
+  // @name .text-dark-tertiary
+  // @class .text-dark-tertiary
+  // @description sets font color of text to be dark-tertiary;
+  //
+  // @helper true
+  //
+  .text-dark-tertiary {
+    color: map-get($colors, dark-tertiary);
+  }
+
+  //
+  // @name .text-light-tertiary
+  // @class .text-light-tertiary
+  // @description sets font color of text to be light-tertiary;
+  //
+  // @helper true
+  //
+  .text-light-tertiary {
+    color: map-get($colors, light-tertiary);
+  }
 }

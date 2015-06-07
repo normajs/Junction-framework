@@ -104,7 +104,8 @@ $typography: (
 
         // create element for styling
         %#{$_element},
-        #{$_element} {
+        #{$_element},
+        .#{$_element} {
           // loop through all styles
           @each $_property, $_value in $_styles {
             // ignore media-queries
