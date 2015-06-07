@@ -60,7 +60,7 @@ $use-inputs: true !default;
   //
   //
   %input__message {
-    @include absolute(left $half-spacing-unit bottom -2px);
+    @include absolute(left $half-spacing-unit bottom -($base-spacing-unit));
 
     text-align: left;
 

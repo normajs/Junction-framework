@@ -1260,7 +1260,6 @@ html.modal--opened body {
 
 .input__status {
 	position: absolute;
-	bottom: -2px;
 	left: 10px;
 	text-align: left;
 	font-weight: bold;
