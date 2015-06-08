@@ -7,6 +7,8 @@ $use-selects: true !default;
     width: 100%;
 
     padding: $half-spacing-unit * .5;
+    padding-right: $base-spacing-unit * 1.5;
+    white-space: nowrap;
 
     color: map-get($colors, light-tertiary);
     border-bottom: solid $base-border-size map-get($colors, light-tertiary);
