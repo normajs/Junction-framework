@@ -14,7 +14,6 @@ $use-input: true !default;
 
     border-bottom: solid $base-border-size map-get($colors, light-tertiary);
 
-    font-weight: bold;
 
     -webkit-appearance: none;
     @include radius(0);
