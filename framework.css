@@ -334,6 +334,13 @@ h3,
 	margin-bottom: 20px;
 }
 
+h4,
+.h4 {
+	font-size: 1.5625em;
+	line-height: 1.22222;
+	margin-bottom: 10px;
+}
+
 .btn,
 .btn--small,
 .btn--disabled,
@@ -347,13 +354,6 @@ h3,
 .btn--facebook,
 .btn--google,
 .btn--twitter,
-h4,
-.h4 {
-	font-size: 1.5625em;
-	line-height: 1.22222;
-	margin-bottom: 10px;
-}
-
 h5,
 .h5 {
 	font-size: 1.25em;
@@ -437,7 +437,7 @@ legend {
 	margin-bottom: 25px;
 }
 
-button[class*="btn"] {
+button[class*="icon"] {
 	display: inline-block;
 }
 
@@ -647,15 +647,13 @@ select {
 	position: relative;
 	display: inline-block;
 	overflow: hidden;
-	padding: 13.5px 50px 11.5px;
+	padding: 13.5px 30px 11.5px;
 	cursor: pointer;
 	text-align: center;
 	vertical-align: middle;
 	text-decoration: none;
 	color: #6bac43;
 	border: 3px solid #6bac43;
-	font-size: 25px;
-	line-height: 1.25;
 }
 
 .btn:hover,
@@ -675,8 +673,8 @@ select {
 }
 
 .btn--small {
-	padding: 12.5px 25px 12.5px;
-	border: 3px solid #6bac43;
+	padding: 12.5px 250px 12.5px;
+	border: 2px solid #6bac43;
 	font-size: 18.75px;
 }
 
@@ -1771,8 +1769,7 @@ html.modal--opened body {
 	padding-left: 20px;
 }
 
-.soft-ends,
-.soft-double-right {
+.soft-ends {
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
@@ -1820,7 +1817,6 @@ html.modal--opened body {
 	padding-top: 40px;
 }
 
-.soft-ends,
 .soft-double-right {
 	padding-right: 40px;
 }
@@ -2246,8 +2242,7 @@ html.modal--opened body {
 	padding-left: 20px;
 }
 
-.palm-wide-soft-ends,
-.palm-wide-soft-double-right {
+.palm-wide-soft-ends {
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
@@ -2295,7 +2290,6 @@ html.modal--opened body {
 	padding-top: 40px;
 }
 
-.palm-wide-soft-ends,
 .palm-wide-soft-double-right {
 	padding-right: 40px;
 }
@@ -2672,8 +2666,7 @@ html.modal--opened body {
 	padding-left: 20px;
 }
 
-.palm-wide-and-up-soft-ends,
-.palm-wide-and-up-soft-double-right {
+.palm-wide-and-up-soft-ends {
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
@@ -2721,7 +2714,6 @@ html.modal--opened body {
 	padding-top: 40px;
 }
 
-.palm-wide-and-up-soft-ends,
 .palm-wide-and-up-soft-double-right {
 	padding-right: 40px;
 }
@@ -3102,8 +3094,7 @@ body {
 	padding-left: 20px;
 }
 
-.portable-soft-ends,
-.portable-soft-double-right {
+.portable-soft-ends {
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
@@ -3151,7 +3142,6 @@ body {
 	padding-top: 40px;
 }
 
-.portable-soft-ends,
 .portable-soft-double-right {
 	padding-right: 40px;
 }
@@ -3528,8 +3518,7 @@ body {
 	padding-left: 20px;
 }
 
-.lap-soft-ends,
-.lap-soft-double-right {
+.lap-soft-ends {
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
@@ -3577,7 +3566,6 @@ body {
 	padding-top: 40px;
 }
 
-.lap-soft-ends,
 .lap-soft-double-right {
 	padding-right: 40px;
 }
@@ -3972,8 +3960,7 @@ body {
 	padding-left: 20px;
 }
 
-.lap-and-up-soft-ends,
-.lap-and-up-soft-double-right {
+.lap-and-up-soft-ends {
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
@@ -4021,7 +4008,6 @@ body {
 	padding-top: 40px;
 }
 
-.lap-and-up-soft-ends,
 .lap-and-up-soft-double-right {
 	padding-right: 40px;
 }
@@ -4398,8 +4384,7 @@ body {
 	padding-left: 20px;
 }
 
-.lap-wide-soft-ends,
-.lap-wide-soft-double-right {
+.lap-wide-soft-ends {
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
@@ -4447,7 +4432,6 @@ body {
 	padding-top: 40px;
 }
 
-.lap-wide-soft-ends,
 .lap-wide-soft-double-right {
 	padding-right: 40px;
 }
@@ -4824,8 +4808,7 @@ body {
 	padding-left: 20px;
 }
 
-.lap-wide-and-up-soft-ends,
-.lap-wide-and-up-soft-double-right {
+.lap-wide-and-up-soft-ends {
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
@@ -4873,7 +4856,6 @@ body {
 	padding-top: 40px;
 }
 
-.lap-wide-and-up-soft-ends,
 .lap-wide-and-up-soft-double-right {
 	padding-right: 40px;
 }
@@ -5563,14 +5545,12 @@ body {
 	padding-left: 20px;
 }
 
-.desk-and-up-soft-ends,
-.desk-and-up-soft-double-right {
+.desk-and-up-soft-ends {
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
 
-.anchored-soft-ends,
-.anchored-soft-double-right {
+.anchored-soft-ends {
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
@@ -5661,12 +5641,10 @@ body {
 	padding-top: 40px;
 }
 
-.desk-and-up-soft-ends,
 .desk-and-up-soft-double-right {
 	padding-right: 40px;
 }
 
-.anchored-soft-ends,
 .anchored-soft-double-right {
 	padding-right: 40px;
 }
@@ -6102,8 +6080,7 @@ body {
 	padding-left: 20px;
 }
 
-.desk-soft-ends,
-.desk-soft-double-right {
+.desk-soft-ends {
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
@@ -6151,7 +6128,6 @@ body {
 	padding-top: 40px;
 }
 
-.desk-soft-ends,
 .desk-soft-double-right {
 	padding-right: 40px;
 }
@@ -6528,8 +6504,7 @@ body {
 	padding-left: 20px;
 }
 
-.desk-wide-soft-ends,
-.desk-wide-soft-double-right {
+.desk-wide-soft-ends {
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
@@ -6577,7 +6552,6 @@ body {
 	padding-top: 40px;
 }
 
-.desk-wide-soft-ends,
 .desk-wide-soft-double-right {
 	padding-right: 40px;
 }
@@ -6958,8 +6932,7 @@ body {
 	padding-left: 20px;
 }
 
-.handheld-soft-ends,
-.handheld-soft-double-right {
+.handheld-soft-ends {
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
@@ -7007,7 +6980,6 @@ body {
 	padding-top: 40px;
 }
 
-.handheld-soft-ends,
 .handheld-soft-double-right {
 	padding-right: 40px;
 }
@@ -7384,8 +7356,7 @@ body {
 	padding-left: 20px;
 }
 
-.palm-soft-ends,
-.palm-soft-double-right {
+.palm-soft-ends {
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
@@ -7433,7 +7404,6 @@ body {
 	padding-top: 40px;
 }
 
-.palm-soft-ends,
 .palm-soft-double-right {
 	padding-right: 40px;
 }

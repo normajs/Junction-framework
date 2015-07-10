@@ -17,7 +17,6 @@ $use-toggles: true !default;
   %toggle {
     @include radius(1000px);
 
-    position: relative;
 
     display: inline-block;
     overflow: hidden;

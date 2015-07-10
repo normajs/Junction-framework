@@ -27,7 +27,7 @@ $use-inputs: true !default;
 
     position: relative;
 
-    padding-bottom: $base-spacing-unit;
+    padding-bottom: $base-spacing-unit * 2;
 
     &.fa-caret-down:before {
       position: absolute;
@@ -48,6 +48,7 @@ $use-inputs: true !default;
   //
   %input--with-status {
     @extend %input;
+
 
     margin-bottom: $base-spacing-unit;
   }
@@ -92,7 +93,7 @@ $use-inputs: true !default;
       @extend %visible;
 
       margin-bottom: 0;
-      padding-bottom: $half-spacing-unit * .75;
+      padding-bottom: $half-spacing-unit * 1.5;
 
       $h1-family: map-get($typography, h1);
       $family: map-fetch($fonts, $h1-family, h1, font-family);
@@ -135,9 +136,10 @@ $use-inputs: true !default;
     }
 
     // this feels overly specific to a single use case?
-    h7 + .input__status {
-      top: $base-spacing-unit * 2.5;
-      left: $base-spacing-unit * 2;
+    .input__status {
+      @extend h7;
+      top: $base-spacing-unit * 2;
+      left: $base-spacing-unit - 15;
     }
   }
 

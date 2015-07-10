@@ -14,7 +14,7 @@ $use-buttons: true !default;
   // @extend true
   //
   %btn {
-    @extend %h4;
+    @extend %h5;
     // round corners into half circles no matter the height
     @include radius(1000px);
     // contain all children elements (like abs position icons)
@@ -29,7 +29,7 @@ $use-buttons: true !default;
     // padding doesn't look equal in practice
     // the /4 is to pad half of the btn
 
-    padding: ($button-height * .25) + 1 $button-height ($button-height * .25) - 1;
+    padding: ($button-height * .25) + 1 ($button-height * .6) ($button-height * .25) - 1;
 
     cursor: pointer;
     text-align: center;
@@ -41,8 +41,6 @@ $use-buttons: true !default;
     border: $base-border-size solid $brand-color;
     // these seem like magic numbers, need to investigate
 
-    font-size: $button-height * .5;
-    line-height: 1.25;
 
     &:hover {
       color: $light-color;
@@ -89,9 +87,9 @@ $use-buttons: true !default;
   .btn--small {
     @extend %btn;
 
-    padding: ($button-height * .25) $button-height * .5 ($button-height * .25);
+    padding: ($button-height * .25) $button-height * .6 ($button-height * .25);
 
-    border: $base-border-size solid $brand-color;
+    border: 2px solid $brand-color;
 
     font-size: $button-height * .375;
   }
