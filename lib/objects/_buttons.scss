@@ -91,7 +91,7 @@ $use-buttons: true !default;
 
     padding: ($button-height * .25) $button-height * .5 ($button-height * .25);
 
-    border: $base-border-size solid $brand-color;
+    border: $base-border-size - 1 solid $brand-color;
 
     font-size: $button-height * .375;
   }
