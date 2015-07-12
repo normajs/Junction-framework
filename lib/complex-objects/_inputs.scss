@@ -101,7 +101,7 @@ $use-inputs: true !default;
       $h1-family: map-get($typography, h1);
       $family: map-fetch($fonts, $h1-family, h1, font-family);
       font-family: $family;
-      top: $base-spacing-unit;
+      top: -$base-spacing-unit;
     }
 
     select {
