@@ -118,13 +118,13 @@ $use-buttons: true !default;
 
     cursor: text;
 
-    color: $light-color;
-    border-color: $light-color;
+    color: map-get($colors, light-tertiary);
+    border-color: map-get($colors, light-tertiary);
 
     &:hover {
       cursor: text;
 
-      color: $light-color;
+      color: map-get($colors, light-tertiary);
       background-color: inherit;
     }
   }
