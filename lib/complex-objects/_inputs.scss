@@ -36,6 +36,9 @@ $use-inputs: true !default;
 
       color: map-get($colors, light-tertiary);
     }
+    label {
+      @include absolute(top 0);
+    }
   }
 
   //
@@ -98,6 +101,7 @@ $use-inputs: true !default;
       $h1-family: map-get($typography, h1);
       $family: map-fetch($fonts, $h1-family, h1, font-family);
       font-family: $family;
+      top: $base-spacing-unit;
     }
 
     select {
