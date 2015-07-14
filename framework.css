@@ -146,6 +146,14 @@ input[type=checkbox] + label:before,
 	content: "";
 }
 
+.toggle-arrow__item:before,
+.toggle-arrow__item:after {
+	display: block;
+	width: 0;
+	height: 0;
+	content: "";
+}
+
 *,
 *:before,
 *:after {
@@ -1309,12 +1317,11 @@ html.modal--opened body {
 }
 
 .toggle {
-	border-radius: 1000px;
 	display: inline-block;
-	overflow: hidden;
 	width: 100%;
 	vertical-align: middle;
-	border: 3px solid #dddddd;
+	border-top: 2px solid #dddddd;
+	border-bottom: 2px solid #dddddd;
 	-webkit-tap-highlight-color: transparent;
 }
 
@@ -1327,18 +1334,39 @@ html.modal--opened body {
 	cursor: pointer;
 }
 
-.toggle__item {
-	background-color: #dddddd;
-}
-
 .toggle__item:hover {
 	color: #505050;
 }
 
 .toggle__item--active {
 	cursor: inherit;
-	color: #505050;
+	color: #6bac43;
 	background-color: transparent;
+}
+
+.toggle-arrow {
+	position: absolute;
+	width: 100%;
+}
+
+.toggle-arrow__item:before {
+	position: absolute;
+	left: 50%;
+	margin-left: -20px;
+	bottom: -15px;
+	border-top: 15px solid #dddddd;
+	border-right: 21px solid transparent;
+	border-left: 21px solid transparent;
+}
+
+.toggle-arrow__item:after {
+	position: absolute;
+	left: 50%;
+	margin-left: -19px;
+	bottom: -12px;
+	border-top: 14px solid white;
+	border-right: 20px solid transparent;
+	border-left: 20px solid transparent;
 }
 
 .progress {
