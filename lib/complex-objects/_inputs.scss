@@ -27,7 +27,7 @@ $use-inputs: true !default;
 
     position: relative;
 
-    padding-bottom: $base-spacing-unit * 2;
+    padding-bottom: ($base-spacing-unit * 2) + $half-spacing-unit;
 
     &.fa-caret-down:before {
       position: absolute;
@@ -37,7 +37,20 @@ $use-inputs: true !default;
       color: map-get($colors, light-tertiary);
     }
     label {
-      @include absolute(top 0);
+      @include absolute(top 5px);
+      font-size: .875em;
+      left: $half-spacing-unit;
+
+      -webkit-transition-duration: .2s;
+      transition-duration: .2s;
+      -webkit-transition-timing-function: cubic-bezier(.4,0,.2,1);
+      transition-timing-function: cubic-bezier(.4,0,.2,1);
+    }
+
+    input {
+      @include placeholder {
+        display: none;
+      }
     }
   }
 
@@ -53,7 +66,7 @@ $use-inputs: true !default;
     @extend %input;
 
 
-    margin-bottom: $base-spacing-unit;
+    //margin-bottom: $base-spacing-unit;
   }
 
   //
@@ -64,11 +77,21 @@ $use-inputs: true !default;
   //
   //
   %input__message {
-    @include absolute(left $half-spacing-unit bottom -($base-spacing-unit));
+    @extend %h7;
+
+    position: absolute;
+    top: $base-spacing-unit * 2;
+    left: $half-spacing-unit;
+    bottom: -$base-spacing-unit;
 
     text-align: left;
 
     font-weight: bold;
+    -webkit-transition-duration: .2s;
+    transition-duration: .2s;
+    -webkit-transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+
   }
 
   //
@@ -93,14 +116,15 @@ $use-inputs: true !default;
 
   .input--active {
     label {
-      @extend %visible;
+      font-size: .785em;
+      visibility: visible;
 
       margin-bottom: 0;
-      padding-bottom: $half-spacing-unit * 1.5;
 
       $h1-family: map-get($typography, h1);
       $family: map-fetch($fonts, $h1-family, h1, font-family);
       font-family: $family;
+
       top: -$base-spacing-unit;
     }
 
@@ -139,12 +163,6 @@ $use-inputs: true !default;
       color: map-get($colors, alert);
     }
 
-    // this feels overly specific to a single use case?
-    .input__status {
-      @extend h7;
-      top: $base-spacing-unit * 2;
-      left: $base-spacing-unit - 15;
-    }
   }
 
 

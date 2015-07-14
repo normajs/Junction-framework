@@ -1,4 +1,3 @@
-label,
 input[type=checkbox] {
 	visibility: hidden;
 	height: 0;
@@ -9,8 +8,7 @@ input[type=checkbox] {
 	opacity: 0;
 }
 
-input[type=checkbox] + label,
-.input--active label {
+input[type=checkbox] + label {
 	visibility: visible;
 	height: inherit;
 	max-height: inherit;
@@ -372,6 +370,7 @@ h6,
 	margin-bottom: 10px;
 }
 
+.input__status,
 h7,
 .h7 {
 	font-size: 0.875em;
@@ -447,7 +446,6 @@ button:focus {
 
 label {
 	display: block;
-	padding-left: 5px;
 	text-align: left;
 	color: #dddddd;
 }
@@ -455,29 +453,28 @@ label {
 input {
 	width: 100%;
 	padding: 5px;
-	border-bottom: solid 3px #dddddd;
+	border-bottom: solid 2px #dddddd;
 	-webkit-appearance: none;
 	border-radius: 0;
 }
 
-input::-webkit-input-placeholder {
-	color: #dddddd;
+input::-webkit-input-placeholder { /* color: map-get($colors, light-tertiary); */
+	color: #fff;
 }
 
-input:-moz-placeholder {
-	color: #dddddd;
+input:-moz-placeholder { /* color: map-get($colors, light-tertiary); */
+	color: #fff;
 }
 
-input::-moz-placeholder {
-	color: #dddddd;
+input::-moz-placeholder { /* color: map-get($colors, light-tertiary); */
+	color: #fff;
 }
 
-input:-ms-input-placeholder {
-	color: #dddddd;
+input:-ms-input-placeholder { /* color: map-get($colors, light-tertiary); */
+	color: #fff;
 }
 
 input:focus {
-	border-bottom-width: 2px;
 	border-bottom-color: #505050;
 }
 
@@ -498,7 +495,6 @@ input:focus:-ms-input-placeholder {
 }
 
 input[data-value]:not([data-value=""]) {
-	border-bottom-width: 2px;
 	border-bottom-color: #505050;
 }
 
@@ -673,7 +669,7 @@ select {
 }
 
 .btn--small {
-	padding: 12.5px 250px 12.5px;
+	padding: 12.5px 30px 12.5px;
 	border: 2px solid #6bac43;
 	font-size: 18.75px;
 }
@@ -681,14 +677,14 @@ select {
 .btn--disabled,
 .btn:disabled {
 	cursor: text;
-	color: #ffffff;
-	border-color: #ffffff;
+	color: #dddddd;
+	border-color: #dddddd;
 }
 
 .btn--disabled:hover,
 .btn:disabled:hover {
 	cursor: text;
-	color: #ffffff;
+	color: #dddddd;
 	background-color: inherit;
 }
 
@@ -1241,7 +1237,7 @@ html.modal--opened body {
 .input--alert,
 .input {
 	position: relative;
-	padding-bottom: 20px;
+	padding-bottom: 50px;
 }
 
 .fa-caret-down.input--alert:before,
@@ -1252,20 +1248,52 @@ html.modal--opened body {
 	color: #dddddd;
 }
 
-.input--alert {
-	margin-bottom: 20px;
+.input--alert label,
+.input label {
+	position: absolute;
+	top: 5px;
+	font-size: .875em;
+	left: 10px;
+	transition-duration: .2s;
+	transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+}
+
+.input--alert input::-webkit-input-placeholder,
+.input input::-webkit-input-placeholder {
+	display: none;
+}
+
+.input--alert input:-moz-placeholder,
+.input input:-moz-placeholder {
+	display: none;
+}
+
+.input--alert input::-moz-placeholder,
+.input input::-moz-placeholder {
+	display: none;
+}
+
+.input--alert input:-ms-input-placeholder,
+.input input:-ms-input-placeholder {
+	display: none;
 }
 
 .input__status {
 	position: absolute;
+	top: 40px;
 	left: 10px;
+	bottom: -20px;
 	text-align: left;
 	font-weight: bold;
+	transition-duration: .2s;
+	transition-timing-function: cubic-bezier(.4, 0, .2, 1);
 }
 
 .input--active label {
+	font-size: .785em;
+	visibility: visible;
 	margin-bottom: 0;
-	padding-bottom: 7.5px;
+	top: -20px;
 }
 
 .input--active select {
@@ -1280,14 +1308,8 @@ html.modal--opened body {
 	color: #c64f55;
 }
 
-.input--alert h7 + .input__status {
-	top: 50px;
-	left: 40px;
-}
-
 .toggle {
 	border-radius: 1000px;
-	position: relative;
 	display: inline-block;
 	overflow: hidden;
 	width: 100%;
@@ -1622,6 +1644,32 @@ html.modal--opened body {
 .scrollable {
 	overflow-y: scroll;
 	-webkit-overflow-scrolling: touch;
+}
+
+.float-left {
+	float: left;
+}
+
+.float-right {
+	float: right;
+}
+
+.float-none {
+	float: none;
+}
+
+.float-inherit {
+	float: inherit;
+}
+
+.clearfix:before,
+.clearfix:after {
+	display: table;
+	content: "";
+}
+
+.clearfix:after {
+	clear: both;
 }
 
 .constrain-copy {
@@ -2102,6 +2150,22 @@ html.modal--opened body {
 	width: 91.66667%;
 }
 
+.palm-wide-float-left {
+	float: left;
+}
+
+.palm-wide-float-right {
+	float: right;
+}
+
+.palm-wide-float-none {
+	float: none;
+}
+
+.palm-wide-float-inherit {
+	float: inherit;
+}
+
 .palm-wide-push {
 	margin: 20px;
 }
@@ -2524,6 +2588,22 @@ html.modal--opened body {
 
 .palm-wide-and-up-eleven-twelfths {
 	width: 91.66667%;
+}
+
+.palm-wide-and-up-float-left {
+	float: left;
+}
+
+.palm-wide-and-up-float-right {
+	float: right;
+}
+
+.palm-wide-and-up-float-none {
+	float: none;
+}
+
+.palm-wide-and-up-float-inherit {
+	float: inherit;
 }
 
 .palm-wide-and-up-push {
@@ -2954,6 +3034,22 @@ body {
 	width: 91.66667%;
 }
 
+.portable-float-left {
+	float: left;
+}
+
+.portable-float-right {
+	float: right;
+}
+
+.portable-float-none {
+	float: none;
+}
+
+.portable-float-inherit {
+	float: inherit;
+}
+
 .portable-push {
 	margin: 20px;
 }
@@ -3376,6 +3472,22 @@ body {
 
 .lap-eleven-twelfths {
 	width: 91.66667%;
+}
+
+.lap-float-left {
+	float: left;
+}
+
+.lap-float-right {
+	float: right;
+}
+
+.lap-float-none {
+	float: none;
+}
+
+.lap-float-inherit {
+	float: inherit;
 }
 
 .lap-push {
@@ -3820,6 +3932,22 @@ body {
 	width: 91.66667%;
 }
 
+.lap-and-up-float-left {
+	float: left;
+}
+
+.lap-and-up-float-right {
+	float: right;
+}
+
+.lap-and-up-float-none {
+	float: none;
+}
+
+.lap-and-up-float-inherit {
+	float: inherit;
+}
+
 .lap-and-up-push {
 	margin: 20px;
 }
@@ -4244,6 +4372,22 @@ body {
 	width: 91.66667%;
 }
 
+.lap-wide-float-left {
+	float: left;
+}
+
+.lap-wide-float-right {
+	float: right;
+}
+
+.lap-wide-float-none {
+	float: none;
+}
+
+.lap-wide-float-inherit {
+	float: inherit;
+}
+
 .lap-wide-push {
 	margin: 20px;
 }
@@ -4666,6 +4810,22 @@ body {
 
 .lap-wide-and-up-eleven-twelfths {
 	width: 91.66667%;
+}
+
+.lap-wide-and-up-float-left {
+	float: left;
+}
+
+.lap-wide-and-up-float-right {
+	float: right;
+}
+
+.lap-wide-and-up-float-none {
+	float: none;
+}
+
+.lap-wide-and-up-float-inherit {
+	float: inherit;
 }
 
 .lap-wide-and-up-push {
@@ -5263,6 +5423,38 @@ body {
 
 .anchored-eleven-twelfths {
 	width: 91.66667%;
+}
+
+.desk-and-up-float-left {
+	float: left;
+}
+
+.anchored-float-left {
+	float: left;
+}
+
+.desk-and-up-float-right {
+	float: right;
+}
+
+.anchored-float-right {
+	float: right;
+}
+
+.desk-and-up-float-none {
+	float: none;
+}
+
+.anchored-float-none {
+	float: none;
+}
+
+.desk-and-up-float-inherit {
+	float: inherit;
+}
+
+.anchored-float-inherit {
+	float: inherit;
 }
 
 .desk-and-up-push {
@@ -5940,6 +6132,22 @@ body {
 	width: 91.66667%;
 }
 
+.desk-float-left {
+	float: left;
+}
+
+.desk-float-right {
+	float: right;
+}
+
+.desk-float-none {
+	float: none;
+}
+
+.desk-float-inherit {
+	float: inherit;
+}
+
 .desk-push {
 	margin: 20px;
 }
@@ -6362,6 +6570,22 @@ body {
 
 .desk-wide-eleven-twelfths {
 	width: 91.66667%;
+}
+
+.desk-wide-float-left {
+	float: left;
+}
+
+.desk-wide-float-right {
+	float: right;
+}
+
+.desk-wide-float-none {
+	float: none;
+}
+
+.desk-wide-float-inherit {
+	float: inherit;
 }
 
 .desk-wide-push {
@@ -6792,6 +7016,22 @@ body {
 	width: 91.66667%;
 }
 
+.handheld-float-left {
+	float: left;
+}
+
+.handheld-float-right {
+	float: right;
+}
+
+.handheld-float-none {
+	float: none;
+}
+
+.handheld-float-inherit {
+	float: inherit;
+}
+
 .handheld-push {
 	margin: 20px;
 }
@@ -7214,6 +7454,22 @@ body {
 
 .palm-eleven-twelfths {
 	width: 91.66667%;
+}
+
+.palm-float-left {
+	float: left;
+}
+
+.palm-float-right {
+	float: right;
+}
+
+.palm-float-none {
+	float: none;
+}
+
+.palm-float-inherit {
+	float: inherit;
 }
 
 .palm-push {
