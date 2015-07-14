@@ -732,14 +732,9 @@ select {
 }
 
 .btn--alert {
-	color: #ffffff;
+	background-color: #ffffff;
 	border-color: #c64f55;
-	background-color: #c64f55;
-}
-
-.btn--alert:hover {
-	border-color: #c64f55;
-	background-color: #c64f55;
+	color: #c64f55;
 }
 
 .btn--icon,
@@ -1286,6 +1281,11 @@ html.modal--opened body {
 	display: none;
 }
 
+.input--alert select + label,
+.input select + label {
+	visibility: hidden;
+}
+
 .input__status {
 	position: absolute;
 	top: 40px;
@@ -1306,6 +1306,10 @@ html.modal--opened body {
 
 .input--active select {
 	color: #303030;
+}
+
+.input--active select + label {
+	visibility: visible;
 }
 
 .input--alert input {
@@ -1332,6 +1336,8 @@ html.modal--opened body {
 	padding-bottom: 11.5px;
 	padding-left: 0;
 	cursor: pointer;
+	color: #858585;
+	font-weight: bold;
 }
 
 .toggle__item:hover {

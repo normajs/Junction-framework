@@ -244,14 +244,10 @@ $use-buttons: true !default;
   .btn--alert {
     @extend %btn;
 
-    color: $light-color;
+    background-color: $light-color;
     border-color: map-get($colors, alert);
-    background-color: map-get($colors, alert);
+    color: map-get($colors, alert);
 
-    &:hover {
-      border-color: map-get($colors, alert);
-      background-color: map-get($colors, alert);
-    }
   }
 
 

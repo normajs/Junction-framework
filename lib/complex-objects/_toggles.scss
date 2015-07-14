@@ -38,7 +38,8 @@ $use-toggles: true !default;
 
     cursor: pointer;
 
-    color: map-get($colors, white-tertiary);
+    color: map-get($colors, dark-tertiary);
+    font-weight: bold;
   }
 
   .toggle {

@@ -52,6 +52,12 @@ $use-inputs: true !default;
         display: none;
       }
     }
+
+    select {
+      & + label {
+        visibility: hidden;
+      }
+    }
   }
 
   //
@@ -130,7 +136,13 @@ $use-inputs: true !default;
 
     select {
       color: map-get($colors, dark-primary);
+
+      & + label {
+        visibility: visible;
+      }
     }
+
+
   }
 
 
