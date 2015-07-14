@@ -24,7 +24,7 @@ $use-input: true !default;
         color: #fff;
       }
 
-      border-bottom-color: $base-font-color;
+      border-bottom-color: $brand-color;
     }
 
     &[data-value]:not([data-value=""]) {
