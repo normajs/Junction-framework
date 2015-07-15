@@ -373,6 +373,7 @@ h6,
 }
 
 h7,
+.input--alert .input__status,
 .h7 {
 	font-size: 0.875em;
 	line-height: 1.125;
@@ -510,8 +511,8 @@ input[type=checkbox] + label {
 	position: absolute;
 	top: 3px;
 	left: 3px;
-	width: 10px;
-	height: 10px;
+	width: 12px;
+	height: 12px;
 	margin-top: 3px;
 	margin-left: 3px;
 	padding: 0;
@@ -519,12 +520,12 @@ input[type=checkbox] + label {
 }
 
 input[type=checkbox] + label:before {
-	width: 16px;
-	height: 16px;
+	width: 26px;
+	height: 26px;
 	border-radius: 50%;
 	position: absolute;
-	top: -3px;
-	left: -3px;
+	top: -4px;
+	left: -4px;
 	border: 2px solid #6bac43;
 }
 
@@ -532,7 +533,8 @@ input[type=checkbox]:checked + label {
 	background-color: #6bac43;
 }
 
-label + h7 {
+label + h7,
+.input--alert label + .input__status {
 	position: absolute;
 	top: 0;
 	left: 20px;
@@ -673,7 +675,7 @@ select {
 }
 
 .btn--small {
-	padding: 12.5px 250px 12.5px;
+	padding: 12.5px 30px 12.5px;
 	border: 2px solid #6bac43;
 	font-size: 18.75px;
 }
@@ -1241,7 +1243,7 @@ html.modal--opened body {
 .input--alert,
 .input {
 	position: relative;
-	padding-bottom: 20px;
+	padding-bottom: 40px;
 }
 
 .fa-caret-down.input--alert:before,
@@ -1265,7 +1267,7 @@ html.modal--opened body {
 
 .input--active label {
 	margin-bottom: 0;
-	padding-bottom: 7.5px;
+	padding-bottom: 15px;
 }
 
 .input--active select {
@@ -1280,14 +1282,13 @@ html.modal--opened body {
 	color: #c64f55;
 }
 
-.input--alert h7 + .input__status {
-	top: 50px;
-	left: 40px;
+.input--alert .input__status {
+	top: 40px;
+	left: 5px;
 }
 
 .toggle {
 	border-radius: 1000px;
-	position: relative;
 	display: inline-block;
 	overflow: hidden;
 	width: 100%;
@@ -1622,6 +1623,32 @@ html.modal--opened body {
 .scrollable {
 	overflow-y: scroll;
 	-webkit-overflow-scrolling: touch;
+}
+
+.float-left {
+	float: left;
+}
+
+.float-right {
+	float: right;
+}
+
+.float-none {
+	float: none;
+}
+
+.float-inherit {
+	float: inherit;
+}
+
+.clearfix:before,
+.clearfix:after {
+	display: table;
+	content: "";
+}
+
+.clearfix:after {
+	clear: both;
 }
 
 .constrain-copy {
@@ -2102,6 +2129,22 @@ html.modal--opened body {
 	width: 91.66667%;
 }
 
+.palm-wide-float-left {
+	float: left;
+}
+
+.palm-wide-float-right {
+	float: right;
+}
+
+.palm-wide-float-none {
+	float: none;
+}
+
+.palm-wide-float-inherit {
+	float: inherit;
+}
+
 .palm-wide-push {
 	margin: 20px;
 }
@@ -2524,6 +2567,22 @@ html.modal--opened body {
 
 .palm-wide-and-up-eleven-twelfths {
 	width: 91.66667%;
+}
+
+.palm-wide-and-up-float-left {
+	float: left;
+}
+
+.palm-wide-and-up-float-right {
+	float: right;
+}
+
+.palm-wide-and-up-float-none {
+	float: none;
+}
+
+.palm-wide-and-up-float-inherit {
+	float: inherit;
 }
 
 .palm-wide-and-up-push {
@@ -2954,6 +3013,22 @@ body {
 	width: 91.66667%;
 }
 
+.portable-float-left {
+	float: left;
+}
+
+.portable-float-right {
+	float: right;
+}
+
+.portable-float-none {
+	float: none;
+}
+
+.portable-float-inherit {
+	float: inherit;
+}
+
 .portable-push {
 	margin: 20px;
 }
@@ -3376,6 +3451,22 @@ body {
 
 .lap-eleven-twelfths {
 	width: 91.66667%;
+}
+
+.lap-float-left {
+	float: left;
+}
+
+.lap-float-right {
+	float: right;
+}
+
+.lap-float-none {
+	float: none;
+}
+
+.lap-float-inherit {
+	float: inherit;
 }
 
 .lap-push {
@@ -3820,6 +3911,22 @@ body {
 	width: 91.66667%;
 }
 
+.lap-and-up-float-left {
+	float: left;
+}
+
+.lap-and-up-float-right {
+	float: right;
+}
+
+.lap-and-up-float-none {
+	float: none;
+}
+
+.lap-and-up-float-inherit {
+	float: inherit;
+}
+
 .lap-and-up-push {
 	margin: 20px;
 }
@@ -4244,6 +4351,22 @@ body {
 	width: 91.66667%;
 }
 
+.lap-wide-float-left {
+	float: left;
+}
+
+.lap-wide-float-right {
+	float: right;
+}
+
+.lap-wide-float-none {
+	float: none;
+}
+
+.lap-wide-float-inherit {
+	float: inherit;
+}
+
 .lap-wide-push {
 	margin: 20px;
 }
@@ -4666,6 +4789,22 @@ body {
 
 .lap-wide-and-up-eleven-twelfths {
 	width: 91.66667%;
+}
+
+.lap-wide-and-up-float-left {
+	float: left;
+}
+
+.lap-wide-and-up-float-right {
+	float: right;
+}
+
+.lap-wide-and-up-float-none {
+	float: none;
+}
+
+.lap-wide-and-up-float-inherit {
+	float: inherit;
 }
 
 .lap-wide-and-up-push {
@@ -5263,6 +5402,38 @@ body {
 
 .anchored-eleven-twelfths {
 	width: 91.66667%;
+}
+
+.desk-and-up-float-left {
+	float: left;
+}
+
+.anchored-float-left {
+	float: left;
+}
+
+.desk-and-up-float-right {
+	float: right;
+}
+
+.anchored-float-right {
+	float: right;
+}
+
+.desk-and-up-float-none {
+	float: none;
+}
+
+.anchored-float-none {
+	float: none;
+}
+
+.desk-and-up-float-inherit {
+	float: inherit;
+}
+
+.anchored-float-inherit {
+	float: inherit;
 }
 
 .desk-and-up-push {
@@ -5940,6 +6111,22 @@ body {
 	width: 91.66667%;
 }
 
+.desk-float-left {
+	float: left;
+}
+
+.desk-float-right {
+	float: right;
+}
+
+.desk-float-none {
+	float: none;
+}
+
+.desk-float-inherit {
+	float: inherit;
+}
+
 .desk-push {
 	margin: 20px;
 }
@@ -6362,6 +6549,22 @@ body {
 
 .desk-wide-eleven-twelfths {
 	width: 91.66667%;
+}
+
+.desk-wide-float-left {
+	float: left;
+}
+
+.desk-wide-float-right {
+	float: right;
+}
+
+.desk-wide-float-none {
+	float: none;
+}
+
+.desk-wide-float-inherit {
+	float: inherit;
 }
 
 .desk-wide-push {
@@ -6792,6 +6995,22 @@ body {
 	width: 91.66667%;
 }
 
+.handheld-float-left {
+	float: left;
+}
+
+.handheld-float-right {
+	float: right;
+}
+
+.handheld-float-none {
+	float: none;
+}
+
+.handheld-float-inherit {
+	float: inherit;
+}
+
 .handheld-push {
 	margin: 20px;
 }
@@ -7214,6 +7433,22 @@ body {
 
 .palm-eleven-twelfths {
 	width: 91.66667%;
+}
+
+.palm-float-left {
+	float: left;
+}
+
+.palm-float-right {
+	float: right;
+}
+
+.palm-float-none {
+	float: none;
+}
+
+.palm-float-inherit {
+	float: inherit;
 }
 
 .palm-push {
