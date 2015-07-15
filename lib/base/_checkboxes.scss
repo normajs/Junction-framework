@@ -21,7 +21,7 @@ $use-checkboxes: true !default;
     background-color: transparent;
 
     &:before {
-      @include circle($base-spacing-unit + ($base-border-size * 2));
+      @include circle($base-spacing-unit);
       @include radius(50%);
       position: absolute;
       top: -4px;
