@@ -6,13 +6,14 @@ $use-input: true !default;
   input {
     @extend %h6;
     @include placeholder {
-      color: map-get($colors, light-tertiary);
+      /* color: map-get($colors, light-tertiary); */
+      color: #fff;
     }
 
     width: 100%;
     padding: $half-spacing-unit * .5;
 
-    border-bottom: solid $base-border-size map-get($colors, light-tertiary);
+    border-bottom: solid 2px map-get($colors, light-tertiary);
 
 
     -webkit-appearance: none;
@@ -23,12 +24,10 @@ $use-input: true !default;
         color: #fff;
       }
 
-      border-bottom-width: 2px;
-      border-bottom-color: $base-font-color;
+      border-bottom-color: $brand-color;
     }
 
     &[data-value]:not([data-value=""]) {
-      border-bottom-width: 2px;
       border-bottom-color: $base-font-color;
     }
   }
