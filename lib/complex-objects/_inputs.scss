@@ -34,7 +34,7 @@ $use-inputs: true !default;
       top: $half-spacing-unit * .5;
       right: $half-spacing-unit;
 
-      color: map-get($colors, light-tertiary);
+      color: map-get($colors, dark-tertiary);
     }
     label {
       @include absolute(top 5px);
@@ -124,7 +124,7 @@ $use-inputs: true !default;
     label {
       font-size: .785em;
       visibility: visible;
-      // color: map-get($colors, alert);
+
 
       margin-bottom: 0;
 
