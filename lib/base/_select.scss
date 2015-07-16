@@ -10,8 +10,8 @@ $use-selects: true !default;
     padding-right: $base-spacing-unit * 1.5;
     white-space: nowrap;
 
-    color: map-get($colors, light-tertiary);
-    border-bottom: solid $base-border-size map-get($colors, light-tertiary);
+    color: map-get($colors, dark-tertiary);
+    border-bottom: solid ($base-border-size - 1) map-get($colors, dark-tertiary);
     border-radius: 0;
 
     @extend %h6;
