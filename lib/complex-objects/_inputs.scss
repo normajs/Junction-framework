@@ -124,6 +124,7 @@ $use-inputs: true !default;
     label {
       font-size: .785em;
       visibility: visible;
+      // color: map-get($colors, alert);
 
       margin-bottom: 0;
 
@@ -134,6 +135,7 @@ $use-inputs: true !default;
       top: -$base-spacing-unit;
     }
 
+
     select {
       color: map-get($colors, dark-primary);
 
@@ -142,10 +144,13 @@ $use-inputs: true !default;
       }
     }
 
-
   }
 
-
+  .input--focused {
+    label {
+      color: $brand-color;
+    }
+  }
 
   //
   // @name .input--alert
@@ -169,6 +174,10 @@ $use-inputs: true !default;
 
     input {
       border-bottom-color: map-get($colors, alert);
+    }
+
+    label {
+      color: map-get($colors, alert);
     }
 
     %input__message {

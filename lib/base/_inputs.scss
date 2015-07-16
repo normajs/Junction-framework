@@ -13,7 +13,7 @@ $use-input: true !default;
     width: 100%;
     padding: $half-spacing-unit * .5;
 
-    border-bottom: solid 2px map-get($colors, light-tertiary);
+    border-bottom: solid 2px map-get($colors, dark-tertiary);
 
 
     -webkit-appearance: none;
@@ -29,6 +29,7 @@ $use-input: true !default;
 
     &[data-value]:not([data-value=""]) {
       border-bottom-color: $base-font-color;
+
     }
   }
 
