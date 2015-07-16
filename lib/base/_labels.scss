@@ -9,9 +9,10 @@ $use-labels: true !default;
 
     text-align: left;
 
-    color:  map-get($colors, light-tertiary);
+    color:  map-get($colors, dark-tertiary);
 
   }
+
 
 
 }
