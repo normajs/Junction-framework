@@ -29,7 +29,7 @@ $use-buttons: true !default;
     // padding doesn't look equal in practice
     // the /4 is to pad half of the btn
 
-    padding: ($button-height * .25) + 1 ($button-height * .6) ($button-height * .25) - 1;
+    padding: ($button-height * .2) + .5 ($button-height * .6) ($button-height * .2) - 1.5;
 
     cursor: pointer;
     text-align: center;
@@ -87,7 +87,7 @@ $use-buttons: true !default;
   .btn--small {
     @extend %btn;
 
-    padding: ($button-height * .25) $button-height * .6 ($button-height * .25);
+    padding: ($button-height * .23) $button-height * .6 ($button-height * .23);
 
     border: 2px solid $brand-color;
 
