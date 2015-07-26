@@ -39,8 +39,5 @@ $use-placeholder: true!default;
     &::-moz-placeholder {
       @content
     };
-    &:-ms-input-placeholder {
-      @content
-    };
   }
 }
