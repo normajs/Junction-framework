@@ -455,13 +455,13 @@ button:focus {
 label {
 	display: block;
 	text-align: left;
-	color: #dddddd;
+	color: #858585;
 }
 
 input {
 	width: 100%;
 	padding: 5px;
-	border-bottom: solid 2px #dddddd;
+	border-bottom: solid 2px #858585;
 	-webkit-appearance: none;
 	border-radius: 0;
 }
@@ -478,10 +478,6 @@ input::-moz-placeholder { /* color: map-get($colors, light-tertiary); */
 	color: #fff;
 }
 
-input:-ms-input-placeholder { /* color: map-get($colors, light-tertiary); */
-	color: #fff;
-}
-
 input:focus {
 	border-bottom-color: #6bac43;
 }
@@ -495,10 +491,6 @@ input:focus:-moz-placeholder {
 }
 
 input:focus::-moz-placeholder {
-	color: #fff;
-}
-
-input:focus:-ms-input-placeholder {
 	color: #fff;
 }
 
@@ -548,8 +540,8 @@ select {
 	padding: 5px;
 	padding-right: 30px;
 	white-space: nowrap;
-	color: #dddddd;
-	border-bottom: solid 3px #dddddd;
+	color: #858585;
+	border-bottom: solid 2px #858585;
 	border-radius: 0;
 	-webkit-appearance: none;
 }
@@ -1011,6 +1003,10 @@ html.modal--opened body {
 	margin: 0;
 }
 
+html.modal--opened .scrollable {
+	overflow: hidden;
+}
+
 .transition,
 .input--alert,
 .input {
@@ -1248,7 +1244,7 @@ html.modal--opened body {
 	position: absolute;
 	top: 5px;
 	right: 10px;
-	color: #dddddd;
+	color: #858585;
 }
 
 .input--alert label,
@@ -1273,11 +1269,6 @@ html.modal--opened body {
 
 .input--alert input::-moz-placeholder,
 .input input::-moz-placeholder {
-	display: none;
-}
-
-.input--alert input:-ms-input-placeholder,
-.input input:-ms-input-placeholder {
 	display: none;
 }
 
@@ -1312,8 +1303,16 @@ html.modal--opened body {
 	visibility: visible;
 }
 
+.input--focused label {
+	color: #6bac43;
+}
+
 .input--alert input {
 	border-bottom-color: #c64f55;
+}
+
+.input--alert label {
+	color: #c64f55;
 }
 
 .input--alert .input__status {
