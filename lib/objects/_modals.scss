@@ -127,5 +127,8 @@ $use-modals: true !default;
       padding: 0;
       margin: 0;
     }
+    .scrollable {
+      overflow: hidden;
+    }
   }
 }
