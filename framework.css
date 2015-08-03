@@ -1320,6 +1320,7 @@ html.modal--opened .scrollable {
 }
 
 .toggle {
+	position: relative;
 	display: inline-block;
 	width: 100%;
 	vertical-align: middle;
