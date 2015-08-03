@@ -49,7 +49,7 @@ $use-inputs: true !default;
 
     input {
       @include placeholder {
-        display: none;
+        opacity: 0;
       }
     }
 
