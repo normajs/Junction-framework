@@ -1262,6 +1262,8 @@ html.modal--opened .scrollable {
 	font-size: .875em;
 	left: 10px;
 	transition-duration: .2s;
+	transition-property: -webkit-transform;
+	transition-property: transform;
 	transition-timing-function: cubic-bezier(.4, 0, .2, 1);
 }
 
@@ -1305,7 +1307,9 @@ html.modal--opened .scrollable {
 	font-size: .785em;
 	visibility: visible;
 	margin-bottom: 0;
-	top: -20px;
+	-webkit-transform: translateY(-20px);
+	    -ms-transform: translateY(-20px);
+	        transform: translateY(-20px);
 }
 
 .input--active select {

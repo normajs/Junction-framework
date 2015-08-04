@@ -43,6 +43,8 @@ $use-inputs: true !default;
 
       -webkit-transition-duration: .2s;
       transition-duration: .2s;
+      -webkit-transition-property: transform;
+      transition-property: transform;
       -webkit-transition-timing-function: cubic-bezier(.4,0,.2,1);
       transition-timing-function: cubic-bezier(.4,0,.2,1);
     }
@@ -132,7 +134,7 @@ $use-inputs: true !default;
       $family: map-fetch($fonts, $h1-family, h1, font-family);
       font-family: $family;
 
-      top: -$base-spacing-unit;
+      transform: translateY(-$base-spacing-unit);
     }
 
 
