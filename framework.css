@@ -478,6 +478,10 @@ input::-moz-placeholder { /* color: map-get($colors, light-tertiary); */
 	color: #fff;
 }
 
+input::-ms-input-placeholder { /* color: map-get($colors, light-tertiary); */
+	color: #fff;
+}
+
 input:focus {
 	border-bottom-color: #6bac43;
 }
@@ -491,6 +495,10 @@ input:focus:-moz-placeholder {
 }
 
 input:focus::-moz-placeholder {
+	color: #fff;
+}
+
+input:focus::-ms-input-placeholder {
 	color: #fff;
 }
 
@@ -1259,17 +1267,22 @@ html.modal--opened .scrollable {
 
 .input--alert input::-webkit-input-placeholder,
 .input input::-webkit-input-placeholder {
-	display: none;
+	color: #fff;
 }
 
 .input--alert input:-moz-placeholder,
 .input input:-moz-placeholder {
-	display: none;
+	color: #fff;
 }
 
 .input--alert input::-moz-placeholder,
 .input input::-moz-placeholder {
-	display: none;
+	color: #fff;
+}
+
+.input--alert input::-ms-input-placeholder,
+.input input::-ms-input-placeholder {
+	color: #fff;
 }
 
 .input--alert select + label,
