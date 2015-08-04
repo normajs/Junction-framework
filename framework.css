@@ -478,7 +478,7 @@ input::-moz-placeholder { /* color: map-get($colors, light-tertiary); */
 	color: #fff;
 }
 
-input::-ms-input-placeholder { /* color: map-get($colors, light-tertiary); */
+input:-ms-input-placeholder { /* color: map-get($colors, light-tertiary); */
 	color: #fff;
 }
 
@@ -498,7 +498,7 @@ input:focus::-moz-placeholder {
 	color: #fff;
 }
 
-input:focus::-ms-input-placeholder {
+input:focus:-ms-input-placeholder {
 	color: #fff;
 }
 
@@ -1280,8 +1280,8 @@ html.modal--opened .scrollable {
 	color: #fff;
 }
 
-.input--alert input::-ms-input-placeholder,
-.input input::-ms-input-placeholder {
+.input--alert input:-ms-input-placeholder,
+.input input:-ms-input-placeholder {
 	color: #fff;
 }
 
