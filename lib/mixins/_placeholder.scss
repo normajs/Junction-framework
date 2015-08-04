@@ -39,7 +39,7 @@ $use-placeholder: true!default;
     &::-moz-placeholder {
       @content
     };
-    &::-ms-input-placeholder {
+    &:-ms-input-placeholder {
       @content
     };
   }
